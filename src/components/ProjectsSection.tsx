@@ -1,6 +1,17 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const projects = [
+  {
+    title: "TravelGuide Super App",
+    category: "Travel · Mobile",
+    description:
+      "Designed a unified travel platform combining flight booking, hotel reservations, local experiences, and itinerary management into one seamless mobile experience.",
+    tags: ["Lead Product Designer", "2024", "Figma & Maze"],
+    link: "/case-study/travelguide",
+    internal: true,
+    image: "https://onifade-ifeoluwa.vercel.app/assets/proj-4-BnPsxs6T.png",
+  },
   {
     title: "Flex2Ride Ride Hailing App",
     category: "Transport",
@@ -91,14 +102,23 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all mt-2"
-                >
-                  View Project <ArrowRight size={16} />
-                </a>
+                {(project as any).internal ? (
+                  <Link
+                    to={project.link}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all mt-2"
+                  >
+                    View Case Study <ArrowRight size={16} />
+                  </Link>
+                ) : (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all mt-2"
+                  >
+                    View Project <ArrowRight size={16} />
+                  </a>
+                )}
               </div>
             </div>
           ))}
