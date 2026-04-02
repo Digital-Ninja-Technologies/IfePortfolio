@@ -3,6 +3,16 @@ import { Link } from "react-router-dom";
 
 const projects = [
   {
+    title: "TravelGuide Super App",
+    category: "Travel · Mobile",
+    description:
+      "Designed a unified travel platform combining flight booking, hotel reservations, local experiences, and itinerary management into one seamless mobile experience.",
+    tags: ["Lead Product Designer", "2024", "Figma & Maze"],
+    link: "/case-study/travelguide",
+    internal: true,
+    image: "https://onifade-ifeoluwa.vercel.app/assets/proj-4-BnPsxs6T.png",
+  },
+  {
     title: "Flex2Ride Ride Hailing App",
     category: "Transport",
     description:
