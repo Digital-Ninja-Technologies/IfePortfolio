@@ -18,7 +18,8 @@ const projects = [
     description:
       "Designed a comprehensive ride-hailing experience focusing on seamless booking flow, driver management, and real-time tracking for urban transportation.",
     tags: ["Design Lead", "2024", "Figma & Trello"],
-    link: "https://flex2ride.com/",
+    link: "/case-study/flex2ride",
+    internal: true,
     image: "https://onifade-ifeoluwa.vercel.app/assets/proj-4-BnPsxs6T.png",
   },
   {
@@ -27,7 +28,8 @@ const projects = [
     description:
       "Product design for a Web3 chat application connecting users through decentralized messaging with a modern, intuitive interface.",
     tags: ["Product Designer", "2024", "Figma"],
-    link: "https://www.conektapp.io/",
+    link: "/case-study/connekt",
+    internal: true,
     image: "https://onifade-ifeoluwa.vercel.app/assets/proj-7-7q-eLtoI.png",
   },
   {
@@ -36,7 +38,8 @@ const projects = [
     description:
       "Designed an end-to-end food delivery platform with streamlined ordering, restaurant discovery, and a delightful checkout experience.",
     tags: ["Product Designer", "2023", "Figma"],
-    link: "https://yumdash.ng/",
+    link: "/case-study/yumdash",
+    internal: true,
     image: "https://onifade-ifeoluwa.vercel.app/assets/proj-3-CnCZqc--.png",
   },
   {
@@ -45,7 +48,8 @@ const projects = [
     description:
       "Led product design for a Web3 gaming and sports entertainment platform, crafting immersive interfaces for decentralized gaming experiences.",
     tags: ["Design Lead", "2022", "Figma"],
-    link: "https://sportrex.io/",
+    link: "/case-study/sportrex",
+    internal: true,
     image: "https://onifade-ifeoluwa.vercel.app/assets/proj-5-BLeEwTqv.png",
   },
 ];
@@ -69,7 +73,6 @@ const ProjectsSection = () => {
                 i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
               } gap-8 lg:gap-12 items-center`}
             >
-              {/* Image */}
               <div className="flex-1 w-full">
                 <div className="rounded-2xl overflow-hidden card-shadow bg-card">
                   <img
@@ -81,7 +84,6 @@ const ProjectsSection = () => {
                 </div>
               </div>
 
-              {/* Content */}
               <div className="flex-1 w-full space-y-4">
                 <p className="text-xs uppercase tracking-widest text-primary font-semibold">
                   {project.category}
@@ -102,23 +104,12 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-                {(project as any).internal ? (
-                  <Link
-                    to={project.link}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all mt-2"
-                  >
-                    View Case Study <ArrowRight size={16} />
-                  </Link>
-                ) : (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all mt-2"
-                  >
-                    View Project <ArrowRight size={16} />
-                  </a>
-                )}
+                <Link
+                  to={project.link}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all mt-2"
+                >
+                  View Case Study <ArrowRight size={16} />
+                </Link>
               </div>
             </div>
           ))}
