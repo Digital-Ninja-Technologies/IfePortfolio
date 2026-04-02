@@ -102,14 +102,23 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all mt-2"
-                >
-                  View Project <ArrowRight size={16} />
-                </a>
+                {(project as any).internal ? (
+                  <Link
+                    to={project.link}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all mt-2"
+                  >
+                    View Case Study <ArrowRight size={16} />
+                  </Link>
+                ) : (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all mt-2"
+                  >
+                    View Project <ArrowRight size={16} />
+                  </a>
+                )}
               </div>
             </div>
           ))}
