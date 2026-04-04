@@ -1,14 +1,14 @@
 import CaseStudyLayout, { type CaseStudyData } from "@/components/CaseStudyLayout";
 
 const data: CaseStudyData = {
-  title: "Yumdash Food App",
-  subtitle: "Designing an end-to-end food delivery platform with streamlined ordering, restaurant discovery, and a delightful checkout experience that drives repeat orders.",
-  tags: ["Product Design", "E-commerce", "Mobile App", "2023"],
-  heroImage: "https://onifade-ifeoluwa.vercel.app/assets/proj-3-CnCZqc--.png",
+  title: "Yumdash",
+  subtitle: "E-commerce platform for food vendors to create online food ordering websites. Designed an end-to-end food delivery platform with streamlined ordering, restaurant discovery, and a delightful checkout experience launched in 2023.",
+  tags: ["Product Design", "E-commerce", "Food App", "2023"],
+  heroImage: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/fm5qnw8ogfsbzxkxkfpz.webp",
   meta: [
     { label: "Role", value: "Product Designer" },
     { label: "Duration", value: "14 weeks (Q2 2023)" },
-    { label: "Tools", value: "Figma, Maze, Miro" },
+    { label: "Tools", value: "Figma" },
   ],
   challenge: [
     "The Nigerian food delivery market is growing rapidly, but existing apps struggle with high cart abandonment rates, confusing restaurant menus, and poor delivery tracking. Yumdash needed a design that made ordering food faster and more enjoyable than cooking.",
@@ -32,7 +32,7 @@ const data: CaseStudyData = {
       { step: "04", title: "Delivery Tracking", desc: "Built an engaging live tracking experience with animated map views, driver ETA, and order preparation status updates." },
     ],
   },
-  midImage: { src: "https://onifade-ifeoluwa.vercel.app/assets/proj-3-CnCZqc--.png", alt: "Yumdash App Screens" },
+  midImage: { src: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/fm5qnw8ogfsbzxkxkfpz.webp", alt: "Yumdash App Screens" },
   features: [
     { title: "Smart Restaurant Discovery", desc: "Personalized restaurant feed based on cuisine preferences, past orders, delivery time, and current promotions." },
     { title: "Visual Menu Builder", desc: "Photo-rich menu layouts with combo suggestions, dietary filters, and real-time availability indicators." },
