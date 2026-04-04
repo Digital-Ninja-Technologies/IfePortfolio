@@ -1,21 +1,22 @@
 import CaseStudyLayout, { type CaseStudyData } from "@/components/CaseStudyLayout";
 
 const data: CaseStudyData = {
-  title: "Sportrex",
-  subtitle: "Leading product design for a Web3 gaming and sports entertainment platform, crafting immersive interfaces for decentralized gaming experiences and NFT-based sports collectibles.",
-  tags: ["Product Design", "GameFi", "Web3", "2022"],
-  heroImage: "https://onifade-ifeoluwa.vercel.app/assets/proj-5-BLeEwTqv.png",
+  title: "Sportrex GameFi Platform",
+  subtitle: "A decentralized GameFi super platform that merges play-to-earn gaming, social networking, NFTs, and metaverse experiences into one platform. Designed to make Web3 accessible to gamers, influencers, and creators regardless of blockchain experience.",
+  tags: ["UX/UI Design", "GameFi", "Web3", "2022"],
+  heroImage: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/tgfiqelngq5qjljf4kxp.webp",
   meta: [
-    { label: "Role", value: "Design Lead" },
+    { label: "Role", value: "UX/UI Designer / Design Lead" },
     { label: "Duration", value: "20 weeks (2022)" },
-    { label: "Tools", value: "Figma, Discord, Jira" },
+    { label: "Tools", value: "Figma, Jitter, LottieFiles" },
   ],
   challenge: [
-    "Sportrex aimed to merge competitive gaming with blockchain technology — letting players earn real rewards through gameplay. The challenge was making GameFi accessible to traditional gamers who are skeptical of crypto, while satisfying the expectations of the Web3-native community.",
+    "Blockchain apps are often complex and intimidating for first-time users. Sportrex required a multi-chain experience (ETH, BNB, ARB, USDT) with wallet connections like MetaMask, Sportrex Gamers Wallet, and Trust Wallet.",
+    "Users needed clarity and trust in a space where scams are common. The app had to balance gaming excitement with financial credibility, ensuring it felt both fun and secure.",
     "The platform needed to support multiple game modes, NFT marketplaces, tournament brackets, and wallet management — all without feeling overwhelming or 'too crypto' for mainstream adoption.",
   ],
   research: {
-    intro: "I immersed myself in gaming communities and Web3 Discord servers to understand what both audiences truly valued.",
+    intro: "I interviewed early adopters — gamers, crypto traders, and creators — and defined key personas: The Gamer, The Creator, and The Newcomer to Web3.",
     stats: [
       { stat: "40+", desc: "Gamers and crypto enthusiasts surveyed across Discord communities" },
       { stat: "7", desc: "GameFi platforms analyzed for onboarding and engagement patterns" },
@@ -26,30 +27,30 @@ const data: CaseStudyData = {
   process: {
     intro: "The design philosophy was 'game first, crypto second' — leading with the fun and revealing blockchain features progressively.",
     steps: [
-      { step: "01", title: "Game-First Architecture", desc: "Structured the platform around game discovery and play, with blockchain features (wallets, NFTs, tokens) as enhancements rather than prerequisites." },
-      { step: "02", title: "Tournament System", desc: "Designed bracket-based tournament flows with real-time scoring, leaderboards, and reward distribution that works for both casual and competitive players." },
-      { step: "03", title: "NFT Marketplace", desc: "Created a visual-first marketplace for gaming NFTs with filters by game, rarity, and utility — making digital collectibles feel tangible and desirable." },
-      { step: "04", title: "Reward Dashboard", desc: "Built an earnings dashboard that clearly shows token rewards, NFT holdings, and withdrawal options without requiring deep crypto knowledge." },
+      { step: "01", title: "User Research", desc: "Interviewed early adopters and identified pain points: confusing wallet setup, unclear token utility, and overwhelming interfaces in other GameFi apps." },
+      { step: "02", title: "Information Architecture", desc: "Designed a clear navigation system: Play | Earn | NFTs | Social | Wallet. Separated core actions from secondary actions and mapped onboarding flows for both desktop and mobile." },
+      { step: "03", title: "Wireframing & Prototyping", desc: "Created low-fidelity flows to simplify token purchase to just 3 steps: Connect Wallet → Enter Amount → Confirm. Built prototypes mobile-first for Africa & Asia target regions." },
+      { step: "04", title: "UI Design & Testing", desc: "Bold, futuristic, gaming-inspired palette balanced with trust signals. Replaced technical jargon with familiar language (e.g., 'Top up' instead of 'Deposit tokens'). Conducted remote tests with 10 participants." },
     ],
   },
-  midImage: { src: "https://onifade-ifeoluwa.vercel.app/assets/proj-5-BLeEwTqv.png", alt: "Sportrex Platform Screens" },
+  midImage: { src: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/eh5tmvdiksv751xxa3dd.webp", alt: "Sportrex Platform Screens" },
   features: [
-    { title: "Play-to-Earn Hub", desc: "Central game lobby showing available matches, potential rewards, and entry requirements with one-click join for supported games." },
-    { title: "Tournament Brackets", desc: "Interactive bracket visualization with real-time updates, match scheduling, and automated prize pool distribution." },
-    { title: "NFT Collectibles", desc: "In-game achievement NFTs that unlock cosmetics, tournament access, and governance voting power within the platform." },
-    { title: "Social Leaderboards", desc: "Global and friend-based rankings with achievement badges, win streaks, and shareable stats cards for social media." },
+    { title: "Streamlined Onboarding", desc: "Onboarding wizard guiding users through wallet setup and first token purchase, reducing steps from 7 clicks to 3." },
+    { title: "Intuitive Dashboards", desc: "Clear dashboards showing balance, NFTs, and rewards at a glance with transparent fee displays and real-time progress indicators." },
+    { title: "NFT Marketplace", desc: "Visual-first marketplace for gaming NFTs with filters by game, rarity, and utility — making digital collectibles feel tangible and desirable." },
+    { title: "Community-First Design", desc: "Integrated social feed for gamers and creators with gamified elements: progress trackers, achievement badges, and glowing CTA buttons." },
   ],
   results: {
     intro: "The platform launched in beta with strong early traction in the Web3 gaming community.",
     stats: [
+      { stat: "40%", desc: "Increase in wallet connection success rate" },
+      { stat: "7→3", desc: "Onboarding steps reduced from 7 clicks to 3" },
       { stat: "10K+", desc: "Beta users in the first month of launch" },
-      { stat: "4.5/5", desc: "Community satisfaction score from Discord feedback" },
-      { stat: "68%", desc: "Day-7 retention rate among active players" },
     ],
   },
   reflection: [
-    "The 'game first, crypto second' approach proved essential. Players who came for the games naturally explored the blockchain features once they saw the value — forced crypto onboarding would have killed adoption.",
-    "One area I'd explore further is cross-game identity — letting players carry their reputation, achievements, and assets across different games on the platform.",
+    "This project showed me the importance of bridging Web2 familiarity with Web3 complexity. My design focus was on making crypto invisible, so users could just play, connect, and earn without worrying about what happens under the hood.",
+    "Users who came for the games naturally explored the blockchain features once they saw the value — forced crypto onboarding would have killed adoption. A scalable UI system was designed to support future features like betting, tournaments, and metaverse events.",
   ],
 };
 

@@ -1,14 +1,14 @@
 import CaseStudyLayout, { type CaseStudyData } from "@/components/CaseStudyLayout";
 
 const data: CaseStudyData = {
-  title: "Flex2Ride",
-  subtitle: "Designing a comprehensive ride-hailing experience focusing on seamless booking flow, driver management, and real-time tracking for urban transportation in Africa.",
-  tags: ["Product Design", "Mobile App", "Transport", "2024"],
-  heroImage: "https://onifade-ifeoluwa.vercel.app/assets/proj-4-BnPsxs6T.png",
+  title: "Flex2Ride Ride Hailing App",
+  subtitle: "Nigerian premium affordable and luxurious ride-hailing and delivery platform launched in 2024. Designed a comprehensive ride-hailing experience focusing on seamless booking flow, driver management, and real-time tracking.",
+  tags: ["Visual Design", "Mobile App", "Transport", "2024"],
+  heroImage: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/vxqjx8agke7g9rdz0kl1.webp",
   meta: [
-    { label: "Role", value: "Design Lead" },
+    { label: "Role", value: "Visual Designer" },
     { label: "Duration", value: "16 weeks (Q2 2024)" },
-    { label: "Tools", value: "Figma, Trello, Hotjar" },
+    { label: "Tools", value: "Figma, Trello" },
   ],
   challenge: [
     "The ride-hailing market in Nigeria is dominated by a few major players, yet riders consistently report pain points around pricing transparency, driver communication, and safety. Flex2Ride needed a product that addressed these gaps while building trust with first-time users.",
@@ -32,7 +32,7 @@ const data: CaseStudyData = {
       { step: "04", title: "Real-Time Features", desc: "Designed the live tracking interface with ETA updates, driver contact options, and an SOS emergency button for rider safety." },
     ],
   },
-  midImage: { src: "https://onifade-ifeoluwa.vercel.app/assets/proj-4-BnPsxs6T.png", alt: "Flex2Ride App Screens" },
+  midImage: { src: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/vxqjx8agke7g9rdz0kl1.webp", alt: "Flex2Ride App Screens" },
   features: [
     { title: "Transparent Fare Estimation", desc: "Upfront pricing with a fare breakdown showing base fare, distance, surge, and tolls — eliminating surprise charges." },
     { title: "Smart Driver Matching", desc: "Algorithm-aware UI showing driver ratings, vehicle type, and estimated pickup time to help riders make informed choices." },

@@ -2,45 +2,46 @@ import CaseStudyLayout, { type CaseStudyData } from "@/components/CaseStudyLayou
 
 const data: CaseStudyData = {
   title: "TravelGuide Super App",
-  subtitle: "Designing a unified travel platform that combines flight booking, hotel reservations, local experiences, and itinerary management into one seamless mobile experience.",
-  tags: ["Product Design", "Mobile App", "UX Research", "2024"],
-  heroImage: "https://onifade-ifeoluwa.vercel.app/assets/proj-4-BnPsxs6T.png",
+  subtitle: "Designing a high-converting, mobile-first landing page for a travel super app that combines destination guides, AI-powered itineraries, offline maps, local experiences, and travel utilities.",
+  tags: ["Product Design", "UX Strategy", "Conversion Optimization", "2024"],
+  heroImage: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/h4zvmt5l9onj9ykytydl.webp",
   meta: [
-    { label: "Role", value: "Lead Product Designer" },
-    { label: "Duration", value: "12 weeks (Q1 2024)" },
-    { label: "Tools", value: "Figma, Maze, Trello" },
+    { label: "Role", value: "Product Designer, UX Strategist, Copy & Conversion Architect" },
+    { label: "Timeline", value: "1 week" },
+    { label: "Tools", value: "Figma, ChatGPT, Jitter" },
   ],
   challenge: [
-    "Travelers today juggle multiple apps for flights, hotels, activities, and trip planning. This fragmented experience leads to frustration, missed opportunities, and wasted time switching between platforms. The goal was to unify these services under one intuitive interface without overwhelming the user.",
-    "The client needed a product that could compete with established players while differentiating through a superior user experience — particularly for multi-city trips and group travel coordination.",
+    "Most travel apps struggle with one thing: they explain features, but they don't sell the experience. Users often arrive on a landing page with low attention, high skepticism, and many alternatives.",
+    "The client needed a page that could communicate value in seconds, remove uncertainty, trigger an emotional desire to travel, and drive app installs — all from a single scrollable page.",
+    "The design challenge was: how do you compress an entire travel ecosystem into a single page that feels premium, trustworthy, exciting, and easy — without overwhelming the user.",
   ],
   research: {
-    intro: "I conducted extensive user research to understand pain points and behaviors across different traveler segments.",
+    intro: "Instead of starting with UI, I started with decision psychology. I mapped the page around the user's mental journey through five stages.",
     stats: [
-      { stat: "24", desc: "User interviews conducted across 4 traveler personas" },
-      { stat: "3", desc: "Competitive audits of leading travel platforms" },
+      { stat: "5", desc: "Conversion layers mapped to user psychology: Curiosity → Relevance → Trust → Desire → Action" },
+      { stat: "4", desc: "Core product pillars: Guides, AI Itineraries, Offline Maps, Local Experiences" },
       { stat: "87%", desc: "Of users wanted one app for all travel needs" },
       { stat: "62%", desc: "Abandoned bookings due to complex multi-step flows" },
     ],
   },
   process: {
-    intro: "The design process followed a double-diamond approach — diverging to explore possibilities, then converging on the most impactful solutions.",
+    intro: "Each section was designed to push the user forward by answering one key question in their decision journey.",
     steps: [
-      { step: "01", title: "Information Architecture", desc: "Mapped out the entire service ecosystem and designed a navigation model that keeps core actions within 2 taps." },
-      { step: "02", title: "Low-Fidelity Wireframes", desc: "Rapidly prototyped 40+ screens focusing on layout hierarchy and interaction patterns. Tested key flows with 8 users." },
-      { step: "03", title: "Visual Design System", desc: "Built a comprehensive design system with reusable components, a calming color palette inspired by sky and ocean tones." },
-      { step: "04", title: "High-Fidelity Prototyping", desc: "Crafted pixel-perfect screens with micro-interactions for booking confirmations, map integrations, and real-time updates." },
+      { step: "01", title: "Hero: Emotional Hook", desc: "Instead of talking about features, the headline sells a feeling: 'Travel smarter. Explore deeper. Enjoy every trip.' This frames the app as a lifestyle upgrade, not a tool." },
+      { step: "02", title: "Problem → Solution", desc: "Surfaced real frustrations — endless Googling, tourist traps, confusing planning — then immediately positioned the app as the solution, creating relief + contrast as a persuasion trigger." },
+      { step: "03", title: "Feature Storytelling", desc: "Instead of listing features, each was framed as a benefit. Not 'Offline maps' → 'Explore confidently without internet.' Not 'Itinerary builder' → 'Personalized daily plans.' Everything user-centric." },
+      { step: "04", title: "Social Proof + Final CTA", desc: "Testimonials placed after features to reduce doubt, reinforce value, and validate the promise. The page ends restating the core promise with one clear action: Download the app." },
     ],
   },
-  midImage: { src: "https://onifade-ifeoluwa.vercel.app/assets/proj-3-CnCZqc--.png", alt: "TravelGuide Design Screens" },
+  midImage: { src: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/rrgzfcay8b2vqwyvwfw7.webp", alt: "TravelGuide Features Section" },
   features: [
     { title: "Smart Trip Builder", desc: "AI-powered itinerary suggestions based on destination, budget, and travel style with drag-and-drop day planning." },
     { title: "Unified Search", desc: "One search bar for flights, hotels, and experiences with smart filters that adapt to context." },
-    { title: "Group Coordination", desc: "Shared trip boards where groups can vote on activities, split costs, and sync calendars in real-time." },
-    { title: "Live Trip Dashboard", desc: "Real-time gate changes, check-in reminders, weather updates, and local recommendations surfaced contextually." },
+    { title: "Offline Maps", desc: "Explore confidently without internet — download maps and guides for offline access anywhere in the world." },
+    { title: "Local Experiences", desc: "Curated local experiences and hidden gems recommended by locals, not tourist traps." },
   ],
   results: {
-    intro: "After usability testing and stakeholder reviews, the final designs achieved significant improvements over the initial benchmarks.",
+    intro: "The result is a high-converting, premium travel app landing page designed to build trust, reduce friction, and maximize downloads — all from a single page.",
     stats: [
       { stat: "40%", desc: "Reduction in booking completion time" },
       { stat: "4.7/5", desc: "Average usability score in testing" },
@@ -48,8 +49,8 @@ const data: CaseStudyData = {
     ],
   },
   reflection: [
-    "This project reinforced the importance of progressive disclosure in complex applications. Rather than showing every option upfront, I learned to layer information contextually — surfacing what matters at the right moment in the user's journey.",
-    "If I were to revisit this project, I'd invest more time in accessibility testing with screen readers and explore voice-based interactions for hands-free trip management while traveling.",
+    "This landing page doesn't try to be informative — it tries to be persuasive. It sells confidence, discovery, simplicity, and better travel experiences. That's what actually makes people install an app.",
+    "The most important takeaway: when a product is still being built, the landing page becomes the first version of the product. It's where the story, promise, and value are put to the test.",
   ],
 };
 
