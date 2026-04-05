@@ -1,11 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
+import CustomCursor from "@/components/CustomCursor";
 import { projects } from "@/data/projects";
 
 const Works = () => {
   return (
     <div className="min-h-screen">
+      <CustomCursor />
       <Navbar />
       <section className="py-24 section-gradient">
         <div className="container">
