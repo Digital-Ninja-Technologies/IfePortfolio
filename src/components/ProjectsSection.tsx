@@ -16,9 +16,9 @@ const ProjectsSection = () => {
           </h2>
         </div>
 
-        <div className="space-y-20">
+        <div className="space-y-8">
           {featured.map((project, i) => (
-            <ProjectCard key={project.title} project={project} index={i} />
+            <ProjectCard key={project.title} project={project} index={i} total={featured.length} />
           ))}
         </div>
 
