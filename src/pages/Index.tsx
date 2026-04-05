@@ -6,10 +6,12 @@ import AboutSection from "@/components/AboutSection";
 import StrengthsSection from "@/components/StrengthsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen cursor-none">
+      <CustomCursor />
       <Navbar />
       <HeroSection />
       <LogoMarquee />

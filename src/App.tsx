@@ -28,6 +28,7 @@ import CaseStudyQuickRead from "./pages/CaseStudyQuickRead.tsx";
 import CaseStudySquadPay from "./pages/CaseStudySquadPay.tsx";
 import CaseStudyKorlodworks from "./pages/CaseStudyKorlodworks.tsx";
 import CaseStudyKidsZone from "./pages/CaseStudyKidsZone.tsx";
+import Works from "./pages/Works.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/works" element={<Works />} />
           <Route path="/case-study/travelguide" element={<CaseStudyTravelGuide />} />
           <Route path="/case-study/flex2ride" element={<CaseStudyFlex2Ride />} />
           <Route path="/case-study/connekt" element={<CaseStudyConnekt />} />
