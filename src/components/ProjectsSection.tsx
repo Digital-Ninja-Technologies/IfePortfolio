@@ -4,7 +4,7 @@ import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 
 const ProjectsSection = () => {
-  const featured = projects.slice(0, 3);
+  const featured = projects.slice(0, 4);
 
   return (
     <section id="works" className="py-24 section-gradient">
