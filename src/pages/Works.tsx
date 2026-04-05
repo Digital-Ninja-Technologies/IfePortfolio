@@ -17,9 +17,9 @@ const Works = () => {
               All Projects
             </h1>
           </div>
-          <div className="space-y-20">
+          <div className="space-y-8">
             {projects.map((project, i) => (
-              <ProjectCard key={project.title} project={project} index={i} />
+              <ProjectCard key={project.title} project={project} index={i} total={projects.length} />
             ))}
           </div>
         </div>
