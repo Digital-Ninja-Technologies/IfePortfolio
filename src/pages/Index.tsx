@@ -2,9 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import LogoMarquee from "@/components/LogoMarquee";
 import ProjectsSection from "@/components/ProjectsSection";
-import AboutSection from "@/components/AboutSection";
 import StrengthsSection from "@/components/StrengthsSection";
-import ExperienceSection from "@/components/ExperienceSection";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -16,9 +14,7 @@ const Index = () => {
       <HeroSection />
       <LogoMarquee />
       <ProjectsSection />
-      <AboutSection />
       <StrengthsSection />
-      <ExperienceSection />
       <Footer />
     </div>
   );
