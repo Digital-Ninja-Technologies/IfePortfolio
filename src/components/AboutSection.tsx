@@ -1,18 +1,109 @@
+import { ArrowRight, BarChart3 } from "lucide-react";
+
+const funStats = [
+  { value: "4+", label: "Years of Experience" },
+  { value: "24+", label: "Projects Delivered" },
+  { value: "10+", label: "Happy Clients" },
+  { value: "3", label: "Design Systems Built" },
+];
+
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-card">
-      <div className="container max-w-3xl text-center">
-        <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-3">About Me</p>
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-8">
-          A bit about myself
-        </h2>
-        <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-          I'm a product designer with 4+ years of experience, focusing on Web3, mobile, and web apps.
-          I have a special interest in building for Telegram mini apps, Web3, Fin-tech and challenging tasks.
-          I design strategies, services, and products for people — with close to a decade in the tech space.
-          I approach problem-solving strategically and love helping companies pivot from level 0 to 1,
-          then strategize on what's next.
-        </p>
+    <section id="about" className="py-24">
+      {/* Hero intro - two columns */}
+      <div className="container max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left - Text */}
+          <div className="space-y-6">
+            <p className="text-sm text-muted-foreground">Hello! Nice to meet you.</p>
+
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold text-foreground leading-tight">
+              I'm Onifade, a product designer and strategic problem solver.
+            </h2>
+
+            <div className="space-y-4 text-muted-foreground text-base leading-relaxed">
+              <p>
+                UI/UX Designer with over four years of experience designing complex, data-heavy 
+                digital products across SaaS, fintech, Web3 and operational platforms. I specialise 
+                in turning complicated business requirements into interfaces that feel simple and 
+                actually work for the people using them every day.
+              </p>
+              <p>
+                I am at my best working on back-office tools, admin panels and enterprise workflows 
+                where the real challenge is making large datasets readable, edge cases manageable 
+                and user journeys frictionless.
+              </p>
+              <p>
+                I take ownership of problems before anyone has to ask, communicate my decisions 
+                clearly, and stay deeply involved through to engineering handoff and beyond.
+              </p>
+            </div>
+
+            <p className="text-muted-foreground text-base">
+              I love meeting new people, so feel free to connect!
+            </p>
+
+            <div className="flex flex-wrap gap-3 pt-2">
+              <a
+                href="https://www.linkedin.com/in/onifadeifeoluwa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+              >
+                View LinkedIn <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="https://contra.com/designninja/work?r=designninja"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border text-foreground hover:bg-muted transition-colors"
+              >
+                Download Resume <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Right - Image */}
+          <div className="relative">
+            <div
+              className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted"
+            >
+              <img
+                src="https://media.contra.com/image/upload/fl_progressive/q_auto:best/clpaauz8nsmf7qnmt5k7.webp"
+                alt="Onifade Ifeoluwa"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Fun Stats */}
+      <div className="mt-24 py-20 bg-muted/50">
+        <div className="container max-w-6xl">
+          <div className="flex flex-col items-center text-center mb-12">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border text-xs font-semibold uppercase tracking-wider text-primary mb-4">
+              <BarChart3 className="w-3.5 h-3.5" />
+              Fun Stats
+            </span>
+            <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground">
+              What I've accomplished so far
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {funStats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                  {stat.value}
+                </p>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
