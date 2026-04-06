@@ -1,4 +1,5 @@
 import { ArrowRight, BarChart3 } from "lucide-react";
+import profileImage from "@/assets/profile.jpg";
 
 const funStats = [
   { value: "4+", label: "Years of Experience" },
@@ -69,7 +70,7 @@ const AboutSection = () => {
               className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted"
             >
               <img
-                src="https://media.contra.com/image/upload/fl_progressive/q_auto:best/clpaauz8nsmf7qnmt5k7.webp"
+                src={profileImage}
                 alt="Onifade Ifeoluwa"
                 className="w-full h-full object-cover"
               />
