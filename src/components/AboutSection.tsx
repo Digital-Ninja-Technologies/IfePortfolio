@@ -69,7 +69,7 @@ const AboutSection = () => {
               className="w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted"
             >
               <img
-                src="https://media.contra.com/image/upload/fl_progressive/q_auto:best/clpaauz8nsmf7qnmt5k7.webp"
+                src={profileImage}
                 alt="Onifade Ifeoluwa"
                 className="w-full h-full object-cover"
               />
