@@ -1,4 +1,5 @@
 import { ArrowRight, BarChart3 } from "lucide-react";
+import profileImage from "@/assets/profile.jpg";
 
 const funStats = [
   { value: "4+", label: "Years of Experience" },
