@@ -31,6 +31,7 @@ import CaseStudyKorlodworks from "./pages/CaseStudyKorlodworks.tsx";
 import CaseStudyKidsZone from "./pages/CaseStudyKidsZone.tsx";
 import Works from "./pages/Works.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
 
