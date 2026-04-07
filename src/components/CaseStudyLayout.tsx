@@ -19,7 +19,11 @@ export interface CaseStudyData {
 }
 
 const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
+    <>
+    <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     <div className="min-h-screen bg-background">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
         <div className="container flex items-center justify-between h-16">
