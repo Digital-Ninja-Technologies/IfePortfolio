@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import ContactModal from "@/components/ContactModal";
 
 export interface CaseStudyData {
   title: string;
@@ -17,7 +19,11 @@ export interface CaseStudyData {
 }
 
 const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
+    <>
+    <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     <div className="min-h-screen bg-background">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
         <div className="container flex items-center justify-between h-16">
@@ -151,14 +157,12 @@ const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
         <div className="container max-w-4xl text-center">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">Interested in working together?</h2>
           <p className="text-muted-foreground mb-8">I'm always open to discussing new projects and design challenges.</p>
-          <a
-            href="https://contra.com/designninja/work?r=designninja"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setContactOpen(true)}
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
           >
             Let's Talk <ExternalLink size={16} />
-          </a>
+          </button>
         </div>
       </section>
 
@@ -168,6 +172,7 @@ const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
         </div>
       </footer>
     </div>
+    </>
   );
 };
 
