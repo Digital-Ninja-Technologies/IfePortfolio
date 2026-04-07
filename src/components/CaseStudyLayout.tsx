@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import ContactModal from "@/components/ContactModal";
 
 export interface CaseStudyData {
   title: string;
