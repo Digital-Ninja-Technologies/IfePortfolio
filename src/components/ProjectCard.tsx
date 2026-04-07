@@ -10,8 +10,9 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, index, total }: ProjectCardProps) => {
   return (
-    <div
-      className="sticky top-24"
+    <Link
+      to={project.link}
+      className="sticky top-24 block cursor-pointer"
       style={{
         zIndex: index + 1,
         paddingBottom: index < total - 1 ? "0" : undefined,
@@ -20,7 +21,7 @@ const ProjectCard = ({ project, index, total }: ProjectCardProps) => {
       <div
         className={`flex flex-col ${
           index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-        } gap-0 items-stretch shadow-lg`}
+        } gap-0 items-stretch shadow-lg transition-shadow duration-300 hover:shadow-2xl`}
         style={{
           borderRadius: "30px",
           backgroundColor: project.bgColor,
@@ -60,15 +61,12 @@ const ProjectCard = ({ project, index, total }: ProjectCardProps) => {
               </span>
             ))}
           </div>
-          <Link
-            to={project.link}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:gap-3 transition-all mt-4 hover:shadow-lg w-fit"
-          >
+          <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:gap-3 transition-all mt-4 hover:shadow-lg w-fit">
             View Case Study <ArrowRight size={16} />
-          </Link>
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
