@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import LogoMarquee from "@/components/LogoMarquee";
 import ProjectsSection from "@/components/ProjectsSection";
 import StrengthsSection from "@/components/StrengthsSection";
+import AboutPreview from "@/components/AboutPreview";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 
@@ -14,6 +15,7 @@ const Index = () => {
       <HeroSection />
       <LogoMarquee />
       <ProjectsSection />
+      <AboutPreview />
       <StrengthsSection />
       <Footer />
     </div>
