@@ -174,6 +174,7 @@ const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
         </div>
       </footer>
     </div>
+    </>
   );
 };
 
