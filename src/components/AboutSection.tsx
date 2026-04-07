@@ -2,7 +2,7 @@ import { ArrowRight, BarChart3 } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
 
 const funStats = [
-  { value: "4+", label: "Years of Experience" },
+  { value: "5+", label: "Years of Experience" },
   { value: "24+", label: "Projects Delivered" },
   { value: "10+", label: "Happy Clients" },
   { value: "3", label: "Design Systems Built" },
@@ -24,7 +24,7 @@ const AboutSection = () => {
 
             <div className="space-y-4 text-muted-foreground text-base leading-relaxed">
               <p>
-                UI/UX Designer with over four years of experience designing complex, data-heavy 
+                UI/UX Designer with over five years of experience designing complex, data-heavy 
                 digital products across SaaS, fintech, Web3 and operational platforms. I specialise 
                 in turning complicated business requirements into interfaces that feel simple and 
                 actually work for the people using them every day.

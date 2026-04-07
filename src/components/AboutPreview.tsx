@@ -27,7 +27,7 @@ const AboutPreview = () => {
               A bit about myself
             </h2>
             <p className="text-muted-foreground text-base leading-relaxed">
-              I'm a product designer with 4+ years of experience, focusing on Web3, mobile, and web
+              I'm a product designer with 5+ years of experience, focusing on Web3, mobile, and web
               apps. I have a special interest in building for Telegram mini apps, Web3, Fin-tech and
               challenging tasks. I design strategies, services, and products for people — with close
               to a decade in the tech space. I approach problem-solving strategically and love
