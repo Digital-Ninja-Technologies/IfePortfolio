@@ -2,7 +2,7 @@ import { ArrowRight, BarChart3 } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
 
 const funStats = [
-  { value: "4+", label: "Years of Experience" },
+  { value: "5+", label: "Years of Experience" },
   { value: "24+", label: "Projects Delivered" },
   { value: "10+", label: "Happy Clients" },
   { value: "3", label: "Design Systems Built" },
