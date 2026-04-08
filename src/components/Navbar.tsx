@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -23,13 +24,13 @@ const Navbar = () => {
           {/* Desktop */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <button
               onClick={() => setContactOpen(true)}
