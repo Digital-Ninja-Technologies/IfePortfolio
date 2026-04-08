@@ -25,14 +25,14 @@ const AboutSection = () => {
             <div className="space-y-4 text-muted-foreground text-base leading-relaxed">
               <p>
                 UI/UX Designer with over five years of experience designing complex, data-heavy 
-                digital products across SaaS, fintech, Web3 and operational platforms. I specialise 
+                digital products across SaaS, fintech, Web3, and operational platforms. I specialise 
                 in turning complicated business requirements into interfaces that feel simple and 
                 actually work for the people using them every day.
               </p>
               <p>
-                I am at my best working on back-office tools, admin panels and enterprise workflows 
-                where the real challenge is making large datasets readable, edge cases manageable 
-                and user journeys frictionless.
+                I am at my best working on back-office tools, admin panels, and enterprise workflows 
+                where the real challenge is making large datasets readable, and edge cases manageable 
+                and user journeys are frictionless.
               </p>
               <p>
                 I take ownership of problems before anyone has to ask, communicate my decisions 
@@ -54,10 +54,11 @@ const AboutSection = () => {
                 View LinkedIn <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="https://contra.com/designninja/work?r=designninja"
+                href="../assets/profile.jpg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border text-foreground hover:bg-muted transition-colors"
+                download
               >
                 Download Resume <ArrowRight className="w-4 h-4" />
               </a>
