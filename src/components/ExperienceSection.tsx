@@ -112,7 +112,7 @@ const ExperienceSection = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border text-foreground hover:bg-muted transition-colors"
           >
-            Download Resume <ArrowRight className="w-4 h-4" />
+            Hire Me On Contra <ArrowRight className="w-4 h-4" />
           </a>
         </div>
       </div>
