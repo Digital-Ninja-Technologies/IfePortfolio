@@ -1,5 +1,6 @@
 import { ArrowRight, BarChart3 } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
+import resumeFile from "@/assets/Ifeoluwa_Onifade UX:UI.pdf";
 
 const funStats = [
   { value: "5+", label: "Years of Experience" },
@@ -54,9 +55,7 @@ const AboutSection = () => {
                 View LinkedIn <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="../assets/Ifeoluwa_Onifade UX:UI.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                href={resumeFile}
                 className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full border border-border text-foreground hover:bg-muted transition-colors"
                 download
               >
