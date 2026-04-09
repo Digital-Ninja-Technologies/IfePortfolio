@@ -25,7 +25,8 @@ const Footer = () => {
             LinkedIn
           </a>
         </div>
-        <p>Call Me +2348145865720</p>
+     <p style="color: grey; font-size: 12px;">Call Me +2348145865720</p>
+
 
         <p className="text-xs text-muted-foreground">
           © {new Date().getFullYear()} – Onifade Ifeoluwa
