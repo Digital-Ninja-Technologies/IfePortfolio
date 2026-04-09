@@ -26,7 +26,7 @@ const Footer = () => {
           </a>
         </div>
       
-        <p className="text-xs text-muted-foreground">
+        <p className="text-s text-muted-foreground">
           Call Me +2348145865720
         </p>
 
