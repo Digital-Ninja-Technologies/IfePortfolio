@@ -95,7 +95,7 @@ const HeroSection = () => {
         </div>
         <div className="flex items-center gap-1">
           <span>📍</span>
-          <span>Lagos, Nigeria</span>
+          <span>Work Remotely Across Global Time Zone</span>
         </div>
       </div>
     </section>
