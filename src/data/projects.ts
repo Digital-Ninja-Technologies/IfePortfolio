@@ -1,6 +1,7 @@
 export interface Project {
   title: string;
   category: string;
+  categories: string[];
   description: string;
   tags: string[];
   link: string;
@@ -12,6 +13,7 @@ export const projects: Project[] = [
   {
     title: "TravelGuide Super App",
     category: "Travel · Mobile",
+    categories: ["Mobile Apps", "Websites & Landing Pages"],
     description: "Designed a high-converting, mobile-first landing page for a travel super app combining destination guides, AI-powered itineraries, offline maps, and local experiences.",
     tags: ["Lead Product Designer", "2024", "Figma & Maze"],
     link: "/case-study/travelguide",
@@ -21,6 +23,7 @@ export const projects: Project[] = [
   {
     title: "Bible Verse Display App",
     category: "Church Tech · App",
+    categories: ["AI Products", "Mobile Apps"],
     description: "A real-time Bible verse display tool for church services that listens to sermons and instantly projects referenced scriptures onto large screens.",
     tags: ["UX/UI Designer", "2025", "Figma & Claude"],
     link: "/case-study/bible-verse",
@@ -30,6 +33,7 @@ export const projects: Project[] = [
   {
     title: "Eskro Mobile App",
     category: "E-Commerce · Marketplace",
+    categories: ["Mobile Apps"],
     description: "Secure peer-to-peer marketplace combining identity verification, escrow payments, QR-verified meetups, and buyer protection to eliminate fraud.",
     tags: ["UX Designer", "2025", "Figma & Balsamiq"],
     link: "/case-study/eskro",
@@ -39,6 +43,7 @@ export const projects: Project[] = [
   {
     title: "Flex2Ride Ride Hailing App",
     category: "Transport",
+    categories: ["Mobile Apps"],
     description: "Nigerian premium affordable and luxurious ride-hailing and delivery platform with seamless booking flow and real-time tracking.",
     tags: ["Visual Designer", "2024", "Figma & Trello"],
     link: "/case-study/flex2ride",
@@ -48,6 +53,7 @@ export const projects: Project[] = [
   {
     title: "Taptap Send Redesign",
     category: "FinTech · Website",
+    categories: ["Websites & Landing Pages"],
     description: "Redesigned the marketing website for a remittance platform to improve conversion, readability, and visual clarity for first-time visitors.",
     tags: ["UI/UX Designer", "2025", "Figma"],
     link: "/case-study/taptap-send",
@@ -57,6 +63,7 @@ export const projects: Project[] = [
   {
     title: "Sylostem SaaS Dashboard",
     category: "SaaS · Freelancer Tools",
+    categories: ["SaaS & Dashboards"],
     description: "All-in-one client management dashboard for freelancers and agencies to manage clients, track projects, monitor payments, and automate communication.",
     tags: ["UI/UX Designer", "2025", "Figma & Jitter"],
     link: "/case-study/sylostem",
@@ -66,6 +73,7 @@ export const projects: Project[] = [
   {
     title: "Conekt Mobile App",
     category: "Chat App · Web3",
+    categories: ["Mobile Apps", "Web3 & Crypto"],
     description: "Social networking app connecting Web3 creatives through instant messaging and real-time discovery, blending WhatsApp familiarity with swipe-based matching.",
     tags: ["UX/UI Designer", "2024", "Figma & Jira"],
     link: "/case-study/connekt",
@@ -75,6 +83,7 @@ export const projects: Project[] = [
   {
     title: "ConektApp Website Redesign",
     category: "Web3 · Website",
+    categories: ["Web3 & Crypto", "Websites & Landing Pages"],
     description: "Full website redesign to modernize the interface, improve brand perception, and enhance user engagement for a Web3 social app.",
     tags: ["Mobile Designer", "2025", "Figma & Jitter"],
     link: "/case-study/conekt-website",
@@ -84,6 +93,7 @@ export const projects: Project[] = [
   {
     title: "Salsa & Sangria Website",
     category: "Tourism · Dance",
+    categories: ["Websites & Landing Pages"],
     description: "Vibrant, conversion-driven website for an immersive Latin dance and tourism experience in Spain, Portugal, and Latin America.",
     tags: ["UX/UI Designer", "2025", "Figma & WordPress"],
     link: "/case-study/salsa-sangria",
@@ -93,6 +103,7 @@ export const projects: Project[] = [
   {
     title: "Yumdash",
     category: "E-commerce · Food App",
+    categories: ["Mobile Apps", "Websites & Landing Pages"],
     description: "E-commerce platform for food vendors to create online food ordering websites with streamlined ordering, restaurant discovery, and delightful checkout.",
     tags: ["Product Designer", "2023", "Figma"],
     link: "/case-study/yumdash",
@@ -102,6 +113,7 @@ export const projects: Project[] = [
   {
     title: "Gigatalik Meme-Token",
     category: "Crypto · Landing Page",
+    categories: ["Web3 & Crypto", "Websites & Landing Pages"],
     description: "Conversion-focused landing page for a utilities-backed memecoin project combining humor with dynamic utilities in the crypto space.",
     tags: ["Product Designer", "2025", "Figma & Photoshop"],
     link: "/case-study/gigatalik",
@@ -111,6 +123,7 @@ export const projects: Project[] = [
   {
     title: "BlowX Cryptocurrency",
     category: "Web3 · AI · Metaverse",
+    categories: ["AI Products", "Web3 & Crypto", "Websites & Landing Pages"],
     description: "User-centric digital experience communicating BlowX's mission to tokenize real-world assets and offer decentralized utilities.",
     tags: ["UX/UI Designer", "2025", "Figma & Photoshop"],
     link: "/case-study/blowx",
@@ -120,6 +133,7 @@ export const projects: Project[] = [
   {
     title: "RippleCat Telegram Game",
     category: "Gaming · Web3",
+    categories: ["Web3 & Crypto", "Websites & Landing Pages"],
     description: "Marketing website for a Web3 tap-to-earn Telegram mini-game. Central hub for driving traffic, explaining mechanics, and onboarding users.",
     tags: ["UX/UI Designer", "2025", "Figma & Midjourney"],
     link: "/case-study/ripplecat",
@@ -129,6 +143,7 @@ export const projects: Project[] = [
   {
     title: "SPT Airdrop Page",
     category: "Crypto · Landing Page",
+    categories: ["Web3 & Crypto", "Websites & Landing Pages"],
     description: "Bold, high-converting airdrop landing page that amplified excitement and drove action with zero-friction Web3 onboarding.",
     tags: ["UI/UX Designer", "2025", "Figma & Jitter"],
     link: "/case-study/spt-airdrop",
@@ -138,6 +153,7 @@ export const projects: Project[] = [
   {
     title: "Sportrex GameFi Platform",
     category: "GameFi · Web3",
+    categories: ["Web3 & Crypto", "SaaS & Dashboards"],
     description: "Decentralized GameFi super platform merging play-to-earn gaming, social networking, NFTs, and metaverse experiences.",
     tags: ["Design Lead", "2022", "Figma & LottieFiles"],
     link: "/case-study/sportrex",
@@ -147,6 +163,7 @@ export const projects: Project[] = [
   {
     title: "Sportrex Gamers Wallet",
     category: "Web3 · Gaming",
+    categories: ["Web3 & Crypto", "Websites & Landing Pages"],
     description: "Landing page for GamersWallet — converting in-game achievements and virtual currency into real-world value for gamers.",
     tags: ["Lead Product Designer", "2025", "Figma & Jitter"],
     link: "/case-study/gamers-wallet",
@@ -156,6 +173,7 @@ export const projects: Project[] = [
   {
     title: "RaySup Wrestling Website",
     category: "Sports · WordPress",
+    categories: ["Websites & Landing Pages", "WordPress"],
     description: "Figma to WordPress development for a US-based wrestling promotion. Pixel-perfect, responsive website delivered in 3 days.",
     tags: ["WordPress Developer", "2025", "Elementor & CSS"],
     link: "/case-study/raysup",
@@ -165,6 +183,7 @@ export const projects: Project[] = [
   {
     title: "VR Experience Landing Page",
     category: "AR/VR · Landing Page",
+    categories: ["Websites & Landing Pages"],
     description: "Visually captivating, emotionally immersive landing page exploring the intersection of human consciousness and machine intelligence.",
     tags: ["Motion Designer", "2025", "Figma & Jitter"],
     link: "/case-study/vr-experience",
@@ -174,6 +193,7 @@ export const projects: Project[] = [
   {
     title: "FarmLease MVP",
     category: "AgroTech · SaaS",
+    categories: ["SaaS & Dashboards"],
     description: "MVP design for a platform bridging farmland owners and agricultural investors with verified listings and digital agreements.",
     tags: ["Lead Product Designer", "2025", "Figma & Notion"],
     link: "/case-study/farmlease",
@@ -183,6 +203,7 @@ export const projects: Project[] = [
   {
     title: "BigJay Shortlet Apartment",
     category: "Real Estate · SaaS",
+    categories: ["SaaS & Dashboards", "Websites & Landing Pages"],
     description: "Digital platform for a modern shortlet brand — guest-facing booking website plus internal admin dashboard for apartment management.",
     tags: ["Product Designer", "2025", "Figma & Jitter"],
     link: "/case-study/bigjay",
@@ -192,6 +213,7 @@ export const projects: Project[] = [
   {
     title: "QuickRead AI App",
     category: "AI · Mobile App",
+    categories: ["AI Products", "Mobile Apps"],
     description: "AI-powered mobile app helping users read, summarize, and interact with PDFs effortlessly through smart summaries, Q&A, and audio playback.",
     tags: ["UX/UI & Brand Designer", "2025", "Figma"],
     link: "/case-study/quickread",
@@ -201,6 +223,7 @@ export const projects: Project[] = [
   {
     title: "SquadPay Waitlist Page",
     category: "FinTech · Landing Page",
+    categories: ["Websites & Landing Pages"],
     description: "Modern, conversion-optimized waitlist landing page for a group payments platform designed to validate interest pre-launch.",
     tags: ["Product Designer", "2023", "Figma & Jitter"],
     link: "/case-study/squadpay",
@@ -210,6 +233,7 @@ export const projects: Project[] = [
   {
     title: "Korlodworks Website",
     category: "Agency · WordPress",
+    categories: ["Websites & Landing Pages", "WordPress"],
     description: "Complete homepage redesign and six core sub-pages for a creative agency, modernizing branding and driving engagement.",
     tags: ["Lead UI/UX Designer", "2025", "Figma & Elementor"],
     link: "/case-study/korlodworks",
@@ -219,6 +243,7 @@ export const projects: Project[] = [
   {
     title: "Kids Zone Learning App",
     category: "Education · Mobile App",
+    categories: ["Mobile Apps"],
     description: "Educational mobile app for children aged 2-6 to learn the alphabet through voice recognition, playful visuals, and gamified interactions.",
     tags: ["UX/UI Designer", "2024", "Figma & Flutter"],
     link: "/case-study/kids-zone",
