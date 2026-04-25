@@ -1,31 +1,53 @@
 import { useState } from "react";
-import { ArrowRight, X as XIcon } from "lucide-react";
+import { ArrowRight, X as XIcon, Loader } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 interface ContactModalProps {
   open: boolean;
   onClose: () => void;
 }
 
+// Initialize EmailJS with your public key
+emailjs.init("qRx-Kl0GHl3JkLI4p");
+
 const ContactModal = ({ open, onClose }: ContactModalProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   if (!open) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoLink = `mailto:onifadeifeoluwa@gmail.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AFrom: ${encodeURIComponent(name)} (${encodeURIComponent(email)})`;
-    window.open(mailtoLink, "_blank");
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setName("");
-      setEmail("");
-      setMessage("");
-      onClose();
-    }, 2000);
+    setLoading(true);
+    setError("");
+
+    try {
+      // Send email using EmailJS
+      await emailjs.send("service_rz8jj2c", "template_60wvv1e", {
+        from_name: name,
+        from_email: email,
+        message: message,
+        to_email: "ifeoluwa.designs@gmail.com",
+      });
+
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setName("");
+        setEmail("");
+        setMessage("");
+        setLoading(false);
+        onClose();
+      }, 2000);
+    } catch (err) {
+      setError("Failed to send message. Please try again.");
+      setLoading(false);
+      console.error("EmailJS error:", err);
+    }
   };
 
   return (
@@ -53,11 +75,33 @@ const ContactModal = ({ open, onClose }: ContactModalProps) => {
         </p>
 
         {submitted ? (
-          <p className="text-center text-primary font-semibold py-8">
-            Thanks! Opening your email client…
-          </p>
+          <div className="flex flex-col items-center justify-center py-8 gap-3">
+            <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+              <svg
+                className="w-6 h-6 text-primary"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+            <p className="text-center text-primary font-semibold">
+              Thanks! Your message has been sent.
+            </p>
+          </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
+            {error && (
+              <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-600 text-sm">
+                {error}
+              </div>
+            )}
             <div>
               <label className="text-sm font-medium text-foreground mb-1.5 block">
                 Name
@@ -65,10 +109,11 @@ const ContactModal = ({ open, onClose }: ContactModalProps) => {
               <input
                 type="text"
                 required
+                disabled={loading}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your name"
-                className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
+                className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
             <div>
@@ -78,10 +123,11 @@ const ContactModal = ({ open, onClose }: ContactModalProps) => {
               <input
                 type="email"
                 required
+                disabled={loading}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
+                className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
             <div>
@@ -90,18 +136,27 @@ const ContactModal = ({ open, onClose }: ContactModalProps) => {
               </label>
               <textarea
                 required
+                disabled={loading}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Tell me about your project…"
                 rows={4}
-                className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition resize-none"
+                className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition resize-none disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
             <button
               type="submit"
-              className="w-full py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
+              disabled={loading}
+              className="w-full py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
-              Send Message
+              {loading ? (
+                <>
+                  <Loader className="w-4 h-4 animate-spin" />
+                  Sending...
+                </>
+              ) : (
+                "Send Message"
+              )}
             </button>
           </form>
         )}
