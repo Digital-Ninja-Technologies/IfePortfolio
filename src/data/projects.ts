@@ -260,4 +260,14 @@ export const projects: Project[] = [
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/z9ubd9eaziwzg3vdqbn2.webp",
     bgColor: "hsl(120 50% 95%)",
   },
+  {
+    title: "CineMetric AI",
+    category: "Film Analytics · Web App",
+    categories: ["AI Products", "Web Applications"],
+    description: "AI-powered analytics platform that helps filmmakers and studios analyze scripts and predict audience appeal before production. Solo vibe-coded project from concept to live deployment.",
+    tags: ["UX/UI Designer & Developer", "2026", "Claude & Lovable"],
+    link: "/case-study/cinemetric",
+    image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/flsmsz3pqostvf6jkgzf.webp",
+    bgColor: "hsl(50 60% 95%)",
+  },
 ];
