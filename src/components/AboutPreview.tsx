@@ -24,6 +24,7 @@ const AboutPreview = () => {
       x: -50,
       duration: 1,
       ease: "power3.out",
+      immediateRender: false,
       scrollTrigger: {
         trigger: imageContainer,
         start: "top 80%",
@@ -36,6 +37,7 @@ const AboutPreview = () => {
       x: 50,
       duration: 1,
       ease: "power3.out",
+      immediateRender: false,
       scrollTrigger: {
         trigger: textContainer,
         start: "top 80%",

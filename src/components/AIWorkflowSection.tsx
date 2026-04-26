@@ -53,6 +53,7 @@ const AIWorkflowSection = () => {
         opacity: 0,
         x: -50,
         duration: 1,
+        immediateRender: false,
         scrollTrigger: {
           trigger: mainCardRef.current,
           start: "top 80%",
@@ -69,6 +70,7 @@ const AIWorkflowSection = () => {
         y: 50,
         duration: 0.8,
         stagger: 0.15,
+        immediateRender: false,
         scrollTrigger: {
           trigger: toolsGridRef.current,
           start: "top 80%",

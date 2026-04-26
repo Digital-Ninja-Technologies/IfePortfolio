@@ -36,6 +36,7 @@ const WhyMeSection = () => {
         y: 30,
         duration: 0.8,
         stagger: 0.2,
+        immediateRender: false,
         scrollTrigger: {
           trigger: headingRef.current,
           start: "top 80%",
@@ -52,6 +53,7 @@ const WhyMeSection = () => {
         y: 50,
         duration: 0.8,
         stagger: 0.1,
+        immediateRender: false,
         scrollTrigger: {
           trigger: cardsRef.current,
           start: "top 80%",

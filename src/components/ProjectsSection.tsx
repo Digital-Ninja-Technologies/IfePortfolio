@@ -20,6 +20,7 @@ const ProjectsSection = () => {
         y: 30,
         duration: 0.8,
         stagger: 0.2,
+        immediateRender: false,
         scrollTrigger: {
           trigger: headingRef.current,
           start: "top 80%",
@@ -34,6 +35,7 @@ const ProjectsSection = () => {
         y: 50,
         duration: 0.8,
         stagger: 0.2,
+        immediateRender: false,
         scrollTrigger: {
           trigger: cardsContainerRef.current,
           start: "top 80%",

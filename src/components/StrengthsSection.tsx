@@ -55,6 +55,7 @@ const StrengthsSection = () => {
         scale: 0.8,
         duration: 0.6,
         stagger: 0.08,
+        immediateRender: false,
         scrollTrigger: {
           trigger: gridRef.current,
           start: "top 80%",
