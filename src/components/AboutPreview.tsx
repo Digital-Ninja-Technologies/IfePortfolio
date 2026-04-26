@@ -1,65 +1,20 @@
-import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import profileImage from "@/assets/profile.jpg";
 import Card3D from "@/components/Card3D";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const AboutPreview = () => {
-  const imageContainerRef = useRef<HTMLDivElement>(null);
-  const textContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const imageContainer = imageContainerRef.current;
-    const textContainer = textContainerRef.current;
-
-    if (!imageContainer || !textContainer) return;
-
-    // Scroll trigger for image animation
-    gsap.from(imageContainer, {
-      opacity: 0,
-      x: -50,
-      duration: 1,
-      ease: "power3.out",
-      immediateRender: false,
-      scrollTrigger: {
-        trigger: imageContainer,
-        start: "top 80%",
-      },
-    });
-
-    // Scroll trigger for text animation
-    gsap.from(textContainer, {
-      opacity: 0,
-      x: 50,
-      duration: 1,
-      ease: "power3.out",
-      immediateRender: false,
-      scrollTrigger: {
-        trigger: textContainer,
-        start: "top 80%",
-      },
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
-
   return (
     <section className="py-24">
       <div className="container max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
-          <div ref={imageContainerRef} className="relative">
+          <div className="relative">
             <Card3D image={profileImage} alt="Onifade Ifeoluwa" />
           </div>
 
           {/* Text */}
-          <div ref={textContainerRef} className="space-y-6">
+          <div className="space-y-6">
             <p className="text-sm uppercase tracking-widest text-primary font-semibold">
               About Me
             </p>

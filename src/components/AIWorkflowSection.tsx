@@ -1,14 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ContactModal from "@/components/ContactModal";
 import chatgptIcon from "@/assets/ai-tools/chatgpt.svg";
 import claudeIcon from "@/assets/ai-tools/claude.svg";
 import lovableIcon from "@/assets/ai-tools/lovable.ico";
 import perplexityIcon from "@/assets/ai-tools/perplexity.svg";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const aiTools = [
   {
@@ -43,73 +39,13 @@ const aiTools = [
 
 const AIWorkflowSection = () => {
   const [contactOpen, setContactOpen] = useState(false);
-  const mainCardRef = useRef<HTMLDivElement>(null);
-  const toolsGridRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Main card animation
-    if (mainCardRef.current) {
-      gsap.from(mainCardRef.current, {
-        opacity: 0,
-        x: -50,
-        duration: 1,
-        immediateRender: false,
-        scrollTrigger: {
-          trigger: mainCardRef.current,
-          start: "top 80%",
-        },
-      });
-    }
-
-    // Tools grid animation with stagger
-    if (toolsGridRef.current) {
-      const tools = toolsGridRef.current.querySelectorAll(".ai-tool-card");
-
-      gsap.from(tools, {
-        opacity: 0,
-        y: 50,
-        duration: 0.8,
-        stagger: 0.15,
-        immediateRender: false,
-        scrollTrigger: {
-          trigger: toolsGridRef.current,
-          start: "top 80%",
-        },
-      });
-
-      // Add hover animation to tools
-      tools.forEach((tool) => {
-        tool.addEventListener("mouseenter", () => {
-          gsap.to(tool, {
-            y: -8,
-            boxShadow: "0 18px 50px -20px rgba(0, 0, 0, 0.2)",
-            duration: 0.4,
-            ease: "power2.out",
-          });
-        });
-
-        tool.addEventListener("mouseleave", () => {
-          gsap.to(tool, {
-            y: 0,
-            boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
-            duration: 0.4,
-            ease: "power2.out",
-          });
-        });
-      });
-    }
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
 
   return (
     <>
       <section className="py-24 bg-background">
         <div className="container max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div ref={mainCardRef} className="relative overflow-hidden rounded-[2rem] border border-border bg-card p-8 md:p-10 card-shadow">
+            <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card p-8 md:p-10 card-shadow">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,hsl(var(--primary)/0.18),transparent_38%)]" />
               <div className="relative">
                 <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
@@ -148,11 +84,11 @@ const AIWorkflowSection = () => {
               </div>
             </div>
 
-            <div ref={toolsGridRef} className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2">
               {aiTools.map((tool) => (
                 <div
                   key={tool.name}
-                  className="ai-tool-card group relative overflow-hidden rounded-[1.75rem] border border-border bg-card p-6 transition-all duration-300"
+                  className="group relative overflow-hidden rounded-[1.75rem] border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_50px_-20px_hsl(var(--foreground)/0.2)]"
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${tool.accent}`} />
                   <div className="relative flex h-full flex-col">

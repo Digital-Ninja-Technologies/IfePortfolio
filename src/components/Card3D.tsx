@@ -1,6 +1,3 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-
 interface Card3DProps {
   image: string;
   alt: string;
@@ -8,101 +5,18 @@ interface Card3DProps {
 }
 
 const Card3D = ({ image, alt, className = "" }: Card3DProps) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    const card = cardRef.current;
-    if (!card) return;
-
-    // Set up 3D perspective
-    card.style.perspective = "1000px";
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = (y - centerY) / 10;
-      const rotateY = (centerX - x) / 10;
-
-      // Animate to the new rotation
-      gsap.to(card, {
-        rotationX: rotateX,
-        rotationY: rotateY,
-        duration: 0.6,
-        ease: "power2.out",
-      });
-
-      // Scale image slightly on hover
-      gsap.to(imageRef.current, {
-        scale: 1.05,
-        duration: 0.6,
-        ease: "power2.out",
-      });
-    };
-
-    const handleMouseLeave = () => {
-      // Reset rotation and scale on mouse leave
-      gsap.to(card, {
-        rotationX: 0,
-        rotationY: 0,
-        duration: 0.8,
-        ease: "power2.out",
-      });
-
-      gsap.to(imageRef.current, {
-        scale: 1,
-        duration: 0.8,
-        ease: "power2.out",
-      });
-    };
-
-    // Set initial 3D style
-    gsap.set(card, { transformStyle: "preserve-3d" });
-
-    card.addEventListener("mousemove", handleMouseMove);
-    card.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      card.removeEventListener("mousemove", handleMouseMove);
-      card.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
-
-  // Entrance animation
-  useEffect(() => {
-    gsap.from(cardRef.current, {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      ease: "power3.out",
-    });
-  }, []);
-
   return (
     <div
-      ref={cardRef}
-      className={`relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-muted shadow-2xl group cursor-none ${className}`}
-      style={{
-        transformStyle: "preserve-3d",
-      }}
+      className={`relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-muted shadow-2xl group ${className}`}
     >
       {/* Gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/20 pointer-events-none z-10" />
 
-      {/* Image with gloss effect */}
+      {/* Image */}
       <img
-        ref={imageRef}
         src={image}
         alt={alt}
-        className="w-full h-full object-cover transition-transform duration-600"
-        style={{
-          transformStyle: "preserve-3d",
-        }}
+        className="w-full h-full object-cover transition-transform duration-300"
       />
 
       {/* Gloss shine effect */}
