@@ -250,4 +250,14 @@ export const projects: Project[] = [
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/md3t2poq4cb3zbfsbz4o.webp",
     bgColor: "hsl(40 60% 95%)",
   },
+  {
+    title: "OPay Landing Page Redesign",
+    category: "FinTech · Website",
+    categories: ["Websites & Landing Pages", "FinTech & Payments"],
+    description: "Redesigned OPay's landing page to improve clarity, trust, and conversion for first-time visitors. Focused on visual hierarchy, reduced cognitive load, and mobile-first experience.",
+    tags: ["UX/UI Designer", "2026", "Figma & ChatGPT"],
+    link: "/case-study/opay",
+    image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/z9ubd9eaziwzg3vdqbn2.webp",
+    bgColor: "hsl(120 50% 95%)",
+  },
 ];

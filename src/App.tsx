@@ -29,6 +29,7 @@ import CaseStudyQuickRead from "./pages/CaseStudyQuickRead.tsx";
 import CaseStudySquadPay from "./pages/CaseStudySquadPay.tsx";
 import CaseStudyKorlodworks from "./pages/CaseStudyKorlodworks.tsx";
 import CaseStudyKidsZone from "./pages/CaseStudyKidsZone.tsx";
+import CaseStudyOPay from "./pages/CaseStudyOPay.tsx";
 import Works from "./pages/Works.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
@@ -70,6 +71,7 @@ const App = () => (
           <Route path="/case-study/squadpay" element={<CaseStudySquadPay />} />
           <Route path="/case-study/korlodworks" element={<CaseStudyKorlodworks />} />
           <Route path="/case-study/kids-zone" element={<CaseStudyKidsZone />} />
+          <Route path="/case-study/opay" element={<CaseStudyOPay />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
