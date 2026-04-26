@@ -18,32 +18,29 @@ const AboutPreview = () => {
 
     if (!imageContainer || !textContainer) return;
 
-    // Scroll trigger for image and text stagger animation
-    gsap.timeline({
+    // Scroll trigger for image animation
+    gsap.from(imageContainer, {
+      opacity: 0,
+      x: -50,
+      duration: 1,
+      ease: "power3.out",
       scrollTrigger: {
-        trigger: imageContainer.parentElement,
-        start: "top 70%",
-        end: "top 30%",
-        scrub: 1,
+        trigger: imageContainer,
+        start: "top 80%",
       },
-    }).fromTo(
-      imageContainer,
-      { opacity: 0, x: -50 },
-      { opacity: 1, x: 0, duration: 1 }
-    );
+    });
 
-    gsap.timeline({
+    // Scroll trigger for text animation
+    gsap.from(textContainer, {
+      opacity: 0,
+      x: 50,
+      duration: 1,
+      ease: "power3.out",
       scrollTrigger: {
         trigger: textContainer,
-        start: "top 70%",
-        end: "top 30%",
-        scrub: 1,
+        start: "top 80%",
       },
-    }).fromTo(
-      textContainer,
-      { opacity: 0, x: 50 },
-      { opacity: 1, x: 0, duration: 1 }
-    );
+    });
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());

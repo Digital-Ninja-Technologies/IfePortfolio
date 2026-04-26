@@ -36,7 +36,7 @@ const ProjectsSection = () => {
         stagger: 0.2,
         scrollTrigger: {
           trigger: cardsContainerRef.current,
-          start: "top 70%",
+          start: "top 80%",
         },
       });
     }

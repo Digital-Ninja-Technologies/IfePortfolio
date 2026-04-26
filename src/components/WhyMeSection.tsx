@@ -54,7 +54,7 @@ const WhyMeSection = () => {
         stagger: 0.1,
         scrollTrigger: {
           trigger: cardsRef.current,
-          start: "top 70%",
+          start: "top 80%",
         },
       });
 
