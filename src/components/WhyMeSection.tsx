@@ -1,4 +1,9 @@
+import { useEffect, useRef } from "react";
 import { ArrowRight, Quote, Star } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const testimonials = [
   {
@@ -20,10 +25,70 @@ const testimonials = [
 ];
 
 const WhyMeSection = () => {
+  const headingRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Heading animation
+    if (headingRef.current) {
+      gsap.from(headingRef.current.querySelectorAll("p, h2"), {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 80%",
+        },
+      });
+    }
+
+    // Testimonial cards with stagger and 3D effect
+    if (cardsRef.current) {
+      const cards = cardsRef.current.querySelectorAll(".testimonial-card");
+
+      gsap.from(cards, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: cardsRef.current,
+          start: "top 70%",
+        },
+      });
+
+      // Add 3D hover effect to cards
+      cards.forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+          gsap.to(card, {
+            y: -10,
+            boxShadow: "0 20px 40px rgba(0, 0, 0, 0.15)",
+            duration: 0.4,
+            ease: "power2.out",
+          });
+        });
+
+        card.addEventListener("mouseleave", () => {
+          gsap.to(card, {
+            y: 0,
+            boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
+            duration: 0.4,
+            ease: "power2.out",
+          });
+        });
+      });
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
     <section className="py-24 bg-muted/30">
       <div className="container max-w-6xl">
-        <div className="text-center mb-16">
+        <div ref={headingRef} className="text-center mb-16">
           <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-3">
             Testimonials
           </p>
@@ -35,11 +100,11 @@ const WhyMeSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="relative rounded-2xl border border-border bg-card p-8 flex flex-col justify-between transition-shadow duration-300 hover:shadow-lg"
+              className="testimonial-card relative rounded-2xl border border-border bg-card p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-lg cursor-pointer"
             >
               <Quote className="w-8 h-8 text-primary/20 mb-4" />
               <p className="text-foreground leading-relaxed text-base mb-6">

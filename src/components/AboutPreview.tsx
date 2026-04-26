@@ -1,25 +1,66 @@
+import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import profileImage from "@/assets/profile.jpg";
+import Card3D from "@/components/Card3D";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutPreview = () => {
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+  const textContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const imageContainer = imageContainerRef.current;
+    const textContainer = textContainerRef.current;
+
+    if (!imageContainer || !textContainer) return;
+
+    // Scroll trigger for image and text stagger animation
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: imageContainer.parentElement,
+        start: "top 70%",
+        end: "top 30%",
+        scrub: 1,
+      },
+    }).fromTo(
+      imageContainer,
+      { opacity: 0, x: -50 },
+      { opacity: 1, x: 0, duration: 1 }
+    );
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: textContainer,
+        start: "top 70%",
+        end: "top 30%",
+        scrub: 1,
+      },
+    }).fromTo(
+      textContainer,
+      { opacity: 0, x: 50 },
+      { opacity: 1, x: 0, duration: 1 }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
     <section className="py-24">
       <div className="container max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
-          <div className="relative">
-            <div className="w-full aspect-[4/5] rounded-2xl overflow-hidden bg-muted">
-              <img
-                src={profileImage}
-                alt="Onifade Ifeoluwa"
-                className="w-full h-full object-cover"
-              />
-            </div>
+          <div ref={imageContainerRef} className="relative">
+            <Card3D image={profileImage} alt="Onifade Ifeoluwa" />
           </div>
 
           {/* Text */}
-          <div className="space-y-6">
+          <div ref={textContainerRef} className="space-y-6">
             <p className="text-sm uppercase tracking-widest text-primary font-semibold">
               About Me
             </p>
