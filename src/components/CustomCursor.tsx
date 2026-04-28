@@ -7,6 +7,9 @@ const CustomCursor = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Hide the default cursor
+    document.documentElement.style.cursor = "none";
+
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
       setIsVisible(true);
@@ -31,6 +34,8 @@ const CustomCursor = () => {
     document.addEventListener("mouseout", handleHoverEnd);
 
     return () => {
+      // Restore default cursor
+      document.documentElement.style.cursor = "auto";
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
