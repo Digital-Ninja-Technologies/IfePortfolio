@@ -157,12 +157,22 @@ const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
         <div className="container max-w-4xl text-center">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">Interested in working together?</h2>
           <p className="text-muted-foreground mb-8">I'm always open to discussing new projects and design challenges.</p>
-          <button
-            onClick={() => setContactOpen(true)}
-            className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
-          >
-            Let's Talk <ExternalLink size={16} />
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={() => setContactOpen(true)}
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
+            >
+              Let's Talk <ExternalLink size={16} />
+            </button>
+            <a
+              href="https://contra.com/designninja?r=designninja"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-primary text-primary font-medium hover:bg-primary/10 transition-colors"
+            >
+              Hire me on Contra <ExternalLink size={16} />
+            </a>
+          </div>
         </div>
       </section>
 
