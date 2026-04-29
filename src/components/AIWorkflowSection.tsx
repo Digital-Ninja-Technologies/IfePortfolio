@@ -74,13 +74,24 @@ const AIWorkflowSection = () => {
                     </p>
                   </div>
                 </div>
-                <button
-                  onClick={() => setContactOpen(true)}
-                  className="group mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_hsl(var(--primary)/0.35)]"
-                >
-                  Work With Me
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </button>
+                <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                  <button
+                    onClick={() => setContactOpen(true)}
+                    className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_hsl(var(--primary)/0.35)]"
+                  >
+                    Work With Me
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </button>
+                  <a
+                    href="https://contra.com/designninja?r=designninja"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 rounded-full border border-primary px-7 py-3.5 text-sm font-semibold text-primary transition-all duration-300 hover:bg-primary/10"
+                  >
+                    Hire me on Contra
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </a>
+                </div>
               </div>
             </div>
 
