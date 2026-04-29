@@ -1,14 +1,10 @@
 import { useState } from "react";
 import { ArrowRight, X as XIcon, Loader } from "lucide-react";
-import emailjs from "@emailjs/browser";
 
 interface ContactModalProps {
   open: boolean;
   onClose: () => void;
 }
-
-// Initialize EmailJS with your public key
-emailjs.init("qRx-Kl0GHl3JkLI4p");
 
 const ContactModal = ({ open, onClose }: ContactModalProps) => {
   const [name, setName] = useState("");
@@ -26,13 +22,24 @@ const ContactModal = ({ open, onClose }: ContactModalProps) => {
     setError("");
 
     try {
-      // Send email using EmailJS
-      await emailjs.send("service_rz8jj2c", "template_60wvv1e", {
-        from_name: name,
-        from_email: email,
-        message: message,
-        to_email: "ifeoluwa.designs@gmail.com",
+      // Send email using Resend via Netlify function
+      const response = await fetch("/.netlify/functions/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
       });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
 
       setSubmitted(true);
       setTimeout(() => {
@@ -44,9 +51,9 @@ const ContactModal = ({ open, onClose }: ContactModalProps) => {
         onClose();
       }, 2000);
     } catch (err) {
-      setError("Failed to send message. Please try again.");
+      setError(err instanceof Error ? err.message : "Failed to send message. Please try again.");
       setLoading(false);
-      console.error("EmailJS error:", err);
+      console.error("Error sending email:", err);
     }
   };
 
