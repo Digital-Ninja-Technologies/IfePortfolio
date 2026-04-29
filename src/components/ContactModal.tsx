@@ -22,8 +22,8 @@ const ContactModal = ({ open, onClose }: ContactModalProps) => {
     setError("");
 
     try {
-      // Send email using Resend via Netlify function
-      const response = await fetch("/.netlify/functions/send-email", {
+      // Send email using Formspree
+      const response = await fetch("https://formspree.io/f/mpqkvjbr", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
