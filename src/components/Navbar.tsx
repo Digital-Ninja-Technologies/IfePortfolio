@@ -22,7 +22,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
@@ -32,12 +32,22 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <button
-              onClick={() => setContactOpen(true)}
-              className="px-5 py-2 text-sm font-medium rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
-            >
-              Let's Talk
-            </button>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://contra.com/designninja?r=designninja"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2 text-sm font-medium rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors"
+              >
+                Hire on Contra
+              </a>
+              <button
+                onClick={() => setContactOpen(true)}
+                className="px-5 py-2 text-sm font-medium rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+              >
+                Let's Talk
+              </button>
+            </div>
           </div>
 
           {/* Mobile toggle */}
@@ -64,6 +74,15 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
+              <a
+                href="https://contra.com/designninja?r=designninja"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="px-5 py-2.5 text-sm font-medium rounded-full border border-primary text-primary text-center hover:bg-primary/10 transition-colors"
+              >
+                Hire on Contra
+              </a>
               <button
                 onClick={() => {
                   setOpen(false);
