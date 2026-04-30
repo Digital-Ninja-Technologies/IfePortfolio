@@ -7,6 +7,7 @@ export interface Project {
   link: string;
   image: string;
   bgColor: string;
+  liveUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -27,6 +28,7 @@ export const projects: Project[] = [
     description: "A real-time Bible verse display tool for church services that listens to sermons and instantly projects referenced scriptures onto large screens.",
     tags: ["UX/UI Designer", "2025", "Figma & Claude"],
     link: "/case-study/bible-verse",
+    liveUrl: "https://scriptureview.netlify.app/",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/clpaauz8nsmf7qnmt5k7.webp",
     bgColor: "hsl(270 50% 95%)",
   },
@@ -37,6 +39,7 @@ export const projects: Project[] = [
     description: "Secure peer-to-peer marketplace combining identity verification, escrow payments, QR-verified meetups, and buyer protection to eliminate fraud.",
     tags: ["UX Designer", "2025", "Figma & Balsamiq"],
     link: "/case-study/eskro",
+    liveUrl: "https://eskroapp.ca/",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/bkn7him14iauu7jelqww.webp",
     bgColor: "hsl(150 50% 95%)",
   },
@@ -47,6 +50,7 @@ export const projects: Project[] = [
     description: "Nigerian premium affordable and luxurious ride-hailing and delivery platform with seamless booking flow and real-time tracking.",
     tags: ["Visual Designer", "2024", "Figma & Trello"],
     link: "/case-study/flex2ride",
+    liveUrl: "https://www.flex2ride.com/",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/vxqjx8agke7g9rdz0kl1.webp",
     bgColor: "hsl(30 60% 95%)",
   },
@@ -57,6 +61,7 @@ export const projects: Project[] = [
     description: "Redesigned the marketing website for a remittance platform to improve conversion, readability, and visual clarity for first-time visitors.",
     tags: ["UI/UX Designer", "2025", "Figma"],
     link: "/case-study/taptap-send",
+    liveUrl: "https://contra.com/p/P6scNRUL-taptap-send-website-redesign-personal-project",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/vg8vopw01zmin3e3gxn3.webp",
     bgColor: "hsl(340 50% 95%)",
   },

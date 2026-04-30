@@ -64,6 +64,17 @@ const ProjectCard = ({ project, index, total }: ProjectCardProps) => {
           <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:gap-3 transition-all mt-4 hover:shadow-lg w-fit">
             View Case Study <ArrowRight size={16} />
           </span>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-primary text-primary font-semibold text-sm hover:bg-primary/10 transition-all mt-2 hover:shadow-lg w-fit"
+            >
+              View Live <ArrowRight size={16} />
+            </a>
+          )}
         </div>
       </div>
     </Link>
