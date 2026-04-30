@@ -257,7 +257,7 @@ export const projects: Project[] = [
     description: "Redesigned OPay's landing page to improve clarity, trust, and conversion for first-time visitors. Focused on visual hierarchy, reduced cognitive load, and mobile-first experience.",
     tags: ["UX/UI Designer", "2026", "Figma & ChatGPT"],
     link: "/case-study/opay",
-    image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/z9ubd9eaziwzg3vdqbn2.webp",
+    image: "/opay-thumbnail.png",
     bgColor: "hsl(120 50% 95%)",
   },
   {
