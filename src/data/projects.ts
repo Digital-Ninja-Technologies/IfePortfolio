@@ -72,6 +72,7 @@ export const projects: Project[] = [
     description: "All-in-one client management dashboard for freelancers and agencies to manage clients, track projects, monitor payments, and automate communication.",
     tags: ["UI/UX Designer", "2025", "Figma & Jitter"],
     link: "/case-study/sylostem",
+    liveUrl: "https://contra.com/p/MPNLlOes-saa-s-designing-sylostem-a-smart-dashboard-for-freelancers",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/dpywflxflhjqj20dowgs.webp",
     bgColor: "hsl(220 50% 95%)",
   },
@@ -84,6 +85,7 @@ export const projects: Project[] = [
     link: "/case-study/connekt",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/n0y4flsaq3s4le0vvkok.webp",
     bgColor: "hsl(174 50% 95%)",
+    liveUrl: "https://co-nekt-landing-page.netlify.app/",
   },
   {
     title: "ConektApp Website Redesign",
@@ -114,6 +116,7 @@ export const projects: Project[] = [
     link: "/case-study/yumdash",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/fm5qnw8ogfsbzxkxkfpz.webp",
     bgColor: "hsl(45 60% 95%)",
+    liveUrl: "https://yumdash.ng/",
   },
   {
     title: "Gigatalik Meme-Token",
@@ -124,6 +127,7 @@ export const projects: Project[] = [
     link: "/case-study/gigatalik",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/svixixid69saxzf3o7xl.webp",
     bgColor: "hsl(120 40% 95%)",
+    liveUrl: "https://www.gigatalik.com/",
   },
   {
     title: "BlowX Cryptocurrency",
@@ -134,6 +138,7 @@ export const projects: Project[] = [
     link: "/case-study/blowx",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/wyp4lmhpjm2jz8yobfz5.webp",
     bgColor: "hsl(240 50% 95%)",
+    liveUrl: "https://blowx-waitlist.vercel.app/",
   },
   {
     title: "RippleCat Telegram Game",
@@ -164,6 +169,7 @@ export const projects: Project[] = [
     link: "/case-study/sportrex",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/tgfiqelngq5qjljf4kxp.webp",
     bgColor: "hsl(190 50% 95%)",
+    liveUrl: "https://www.sportrex.io/get-whitelisted",
   },
   {
     title: "Sportrex Gamers Wallet",
@@ -174,6 +180,7 @@ export const projects: Project[] = [
     link: "/case-study/gamers-wallet",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/lnmhareyqtfkgh3xmupp.webp",
     bgColor: "hsl(160 50% 95%)",
+    liveUrl: "https://gamerswallet-landingpage.netlify.app/",
   },
   {
     title: "RaySup Wrestling Website",
@@ -244,6 +251,7 @@ export const projects: Project[] = [
     link: "/case-study/korlodworks",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/s450bxiq5tlws5tm9jpq.webp",
     bgColor: "hsl(320 40% 95%)",
+    liveUrl: "https://korlodworks.com/",
   },
   {
     title: "Kids Zone Learning App",
@@ -274,5 +282,6 @@ export const projects: Project[] = [
     link: "/case-study/cinemetric",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/xsz4mweuognklublrhvb.webp",
     bgColor: "hsl(50 60% 95%)",
+    liveUrl: "https://cinemetricai.netlify.app/",
   },
 ];
