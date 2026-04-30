@@ -267,7 +267,7 @@ export const projects: Project[] = [
     description: "AI-powered analytics platform that helps filmmakers and studios analyze scripts and predict audience appeal before production. Solo vibe-coded project from concept to live deployment.",
     tags: ["UX/UI Designer & Developer", "2026", "Claude & Lovable"],
     link: "/case-study/cinemetric",
-    image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/flsmsz3pqostvf6jkgzf.webp",
+    image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/xsz4mweuognklublrhvb.webp",
     bgColor: "hsl(50 60% 95%)",
   },
 ];
