@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import Navbar from "@/components/Navbar";
 import ContactModal from "@/components/ContactModal";
 
 export interface CaseStudyData {
@@ -23,42 +24,29 @@ const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
 
   return (
     <>
-    <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
-    <div className="min-h-screen bg-background">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-        <div className="container flex items-center justify-between h-16">
-          <Link to="/" className="text-lg font-heading font-bold text-foreground tracking-tight">
-            Onifade<span className="text-primary">.</span>
-          </Link>
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft size={16} /> Back to Home
-          </Link>
-        </div>
-      </nav>
-
-      <section className="pt-32 pb-16 hero-gradient">
-        <div className="container max-w-4xl">
-          <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-4 animate-fade-in-up">
-            Case Study
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6 animate-fade-in-up animate-delay-100">
-            {data.title}
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl animate-fade-in-up animate-delay-200">
-            {data.subtitle}
-          </p>
-          <div className="flex flex-wrap gap-3 mt-8 animate-fade-in-up animate-delay-300">
-            {data.tags.map((tag) => (
-              <span key={tag} className="px-4 py-1.5 text-xs rounded-full bg-secondary text-secondary-foreground font-medium">
-                {tag}
-              </span>
-            ))}
+      <Navbar />
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
+      <div className="min-h-screen bg-background">
+        <section className="pt-32 pb-16 hero-gradient">
+          <div className="container max-w-4xl">
+            <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-4 animate-fade-in-up">
+              Case Study
+            </p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6 animate-fade-in-up animate-delay-100">
+              {data.title}
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl animate-fade-in-up animate-delay-200">
+              {data.subtitle}
+            </p>
+            <div className="flex flex-wrap gap-3 mt-8 animate-fade-in-up animate-delay-300">
+              {data.tags.map((tag) => (
+                <span key={tag} className="px-4 py-1.5 text-xs rounded-full bg-secondary text-secondary-foreground font-medium">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       <section className="container max-w-5xl -mt-2 mb-20">
         <div className="rounded-2xl overflow-hidden card-shadow">
