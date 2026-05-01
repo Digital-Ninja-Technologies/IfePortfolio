@@ -96,6 +96,7 @@ export const projects: Project[] = [
     link: "/case-study/conekt-website",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/xylr6xpol40h9y9vu0xl.webp",
     bgColor: "hsl(260 50% 95%)",
+    liveUrl: "https://conekt-landing-page-v2.vercel.app",
   },
   {
     title: "Salsa & Sangria Website",
@@ -272,6 +273,7 @@ export const projects: Project[] = [
     link: "/case-study/opay",
     image: "/opay-thumbnail.png",
     bgColor: "hsl(120 50% 95%)",
+    liveUrl: "https://contra.com/p/E2smMlEW-o-pay-landing-page-redesign",
   },
   {
     title: "CineMetric AI",
