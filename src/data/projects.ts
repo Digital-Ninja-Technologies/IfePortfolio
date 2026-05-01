@@ -12,6 +12,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "OPay Landing Page Redesign",
+    category: "FinTech · Website",
+    categories: ["Websites & Landing Pages", "FinTech & Payments"],
+    description: "Redesigned OPay's landing page to improve clarity, trust, and conversion for first-time visitors. Focused on visual hierarchy, reduced cognitive load, and mobile-first experience.",
+    tags: ["UX/UI Designer", "2026", "Figma & ChatGPT"],
+    link: "/case-study/opay",
+    image: "/opay-thumbnail.png",
+    bgColor: "hsl(120 50% 95%)",
+    liveUrl: "https://contra.com/p/E2smMlEW-o-pay-landing-page-redesign",
+  },
+  {
+    title: "Synclove",
+    category: "Dating · Web App",
+    categories: ["Web Applications", "Websites & Landing Pages"],
+    description: "Real-time, web-based private chat app for couples in love. Designed for emotional presence and connection with zero distraction — just you and your partner.",
+    tags: ["Product Designer", "2026", "Claude, Lovable & ChatGPT"],
+    link: "/case-study/synclove",
+    image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/lsivtws87rxzv8wrjla6.webp",
+    bgColor: "hsl(340 60% 95%)",
+    liveUrl: "https://lovesyn.lovable.app/",
+  },
+  {
     title: "TravelGuide Super App",
     category: "Travel · Mobile",
     categories: ["Mobile Apps", "Websites & Landing Pages"],
