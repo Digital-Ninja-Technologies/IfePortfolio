@@ -60,6 +60,7 @@ const HeroSection = () => {
                 speed={40}
                 delay={500}
                 className="font-medium text-foreground"
+                roles={["Product Designer", "Technical Virtual Assistant", "VibeCoder", "Low Code Developer"]}
               />
             </p>
           </div>
