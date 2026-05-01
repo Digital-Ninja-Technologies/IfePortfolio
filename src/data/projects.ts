@@ -276,6 +276,17 @@ export const projects: Project[] = [
     liveUrl: "https://contra.com/p/E2smMlEW-o-pay-landing-page-redesign",
   },
   {
+    title: "Synclove",
+    category: "Dating · Web App",
+    categories: ["Web Applications", "Websites & Landing Pages"],
+    description: "Real-time, web-based private chat app for couples in love. Designed for emotional presence and connection with zero distraction — just you and your partner.",
+    tags: ["Product Designer", "2026", "Claude, Lovable & ChatGPT"],
+    link: "/case-study/synclove",
+    image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/lsivtws87rxzv8wrjla6.webp",
+    bgColor: "hsl(340 60% 95%)",
+    liveUrl: "https://lovesyn.lovable.app/",
+  },
+  {
     title: "CineMetric AI",
     category: "Film Analytics · Web App",
     categories: ["AI Products", "Web Applications"],
