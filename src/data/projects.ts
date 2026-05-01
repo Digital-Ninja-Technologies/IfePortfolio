@@ -85,7 +85,7 @@ export const projects: Project[] = [
     link: "/case-study/connekt",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/n0y4flsaq3s4le0vvkok.webp",
     bgColor: "hsl(174 50% 95%)",
-    liveUrl: "https://co-nekt-landing-page.netlify.app/",
+    liveUrl: "https://contra.com/p/v3OoLo6L-conekt-mobile-app-uxui-design-for-web3-users",
   },
   {
     title: "ConektApp Website Redesign",
@@ -181,7 +181,7 @@ export const projects: Project[] = [
     link: "/case-study/gamers-wallet",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/lnmhareyqtfkgh3xmupp.webp",
     bgColor: "hsl(160 50% 95%)",
-    liveUrl: "https://gamerswallet-landingpage.netlify.app/",
+    liveUrl: "https://www.sportrex.io/home",
   },
   {
     title: "RaySup Wrestling Website",
