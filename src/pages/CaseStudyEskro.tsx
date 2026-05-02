@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "Usability testing revealed confusion around the final payment release step. This was resolved by introducing a visual escrow progress indicator and reassurance copy.",
     "Eskro demonstrated that visual reassurance is just as important as actual security — users need to see and feel trust at every step of the transaction.",
   ],
+  liveUrl: "https://eskroapp.ca/",
 };
 
 const CaseStudyEskro = () => <CaseStudyLayout data={data} />;

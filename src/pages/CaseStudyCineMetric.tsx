@@ -56,6 +56,7 @@ const data: CaseStudyData = {
     "Aesthetic choices are strategic. The dark-gold visual language wasn't a style preference—it was a positioning decision communicating authority and industry-nativeness before any words.",
     "Domain immersion is non-negotiable. Two weeks of studying film distribution and box office analytics made every design decision sharper and more credible.",
   ],
+  liveUrl: "https://cinemetricai.netlify.app/",
 };
 
 const CaseStudyCineMetric = () => <CaseStudyLayout data={data} />;

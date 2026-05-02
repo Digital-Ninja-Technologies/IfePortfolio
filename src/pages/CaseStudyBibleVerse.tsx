@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "This project reinforced the importance of designing for distance and context — a church service requires calm, distraction-free interfaces that communicate content clearly within seconds.",
     "The most impactful design decisions were the simplest: centered layout, large typography, and soft transitions that maintain a reverent atmosphere.",
   ],
+  liveUrl: "https://scriptureview.netlify.app/",
 };
 
 const CaseStudyBibleVerse = () => <CaseStudyLayout data={data} />;

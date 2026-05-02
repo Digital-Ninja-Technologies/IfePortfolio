@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "Sylostem is more than a tool; it's a workflow optimizer for freelancers. Designing for this audience meant balancing simplicity with flexibility.",
     "By focusing on real-world freelance pain points, Sylostem streamlines the chaotic backend of creative work into a calm, intuitive space.",
   ],
+  liveUrl: "https://contra.com/p/MPNLlOes-saa-s-designing-sylostem-a-smart-dashboard-for-freelancers",
 };
 
 const CaseStudySylostem = () => <CaseStudyLayout data={data} />;

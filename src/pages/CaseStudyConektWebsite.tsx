@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "The ConektApp website redesign was more than just a visual refresh — it was a strategic realignment of the brand's digital experience with user expectations.",
     "Good design connects — great design Conekts. By combining intuitive UX, consistent UI, and emotionally resonant design, we helped ConektApp scale its impact.",
   ],
+  liveUrl: "https://conekt-landing-page-v2.vercel.app",
 };
 
 const CaseStudyConektWebsite = () => <CaseStudyLayout data={data} />;

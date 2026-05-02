@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "Designing Conekt pushed me to merge conventional UX patterns with the evolving needs of decentralized users. It taught me how to simplify new interactions without compromising on engagement — a critical lesson in designing for emerging tech.",
     "Conekt bridges traditional social UX with Web3 principles, positioning itself as a go-to hub for creative networking in the crypto space.",
   ],
+  liveUrl: "https://contra.com/p/v3OoLo6L-conekt-mobile-app-uxui-design-for-web3-users",
 };
 
 const CaseStudyConnekt = () => <CaseStudyLayout data={data} />;

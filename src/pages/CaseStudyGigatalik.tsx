@@ -50,6 +50,7 @@ const data: CaseStudyData = {
     "Gigatalik demonstrated that even in the playful memecoin space, clear information architecture and user-friendly design drive engagement and trust.",
     "By focusing on originality and community engagement, Gigatalik positions itself as a noteworthy player in the memecoin landscape.",
   ],
+  liveUrl: "https://www.gigatalik.com/",
 };
 
 const CaseStudyGigatalik = () => <CaseStudyLayout data={data} />;

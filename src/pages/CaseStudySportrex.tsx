@@ -52,6 +52,7 @@ const data: CaseStudyData = {
     "This project showed me the importance of bridging Web2 familiarity with Web3 complexity. My design focus was on making crypto invisible, so users could just play, connect, and earn without worrying about what happens under the hood.",
     "Users who came for the games naturally explored the blockchain features once they saw the value — forced crypto onboarding would have killed adoption. A scalable UI system was designed to support future features like betting, tournaments, and metaverse events.",
   ],
+  liveUrl: "https://www.sportrex.io/get-whitelisted",
 };
 
 const CaseStudySportrex = () => <CaseStudyLayout data={data} />;

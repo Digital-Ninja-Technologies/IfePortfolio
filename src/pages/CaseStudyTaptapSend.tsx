@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "This redesign demonstrates how visual hierarchy and intentional color usage can dramatically improve a website's conversion potential without changing the product itself.",
     "The most important takeaway: clarity beats creativity. When users understand the value quickly and feel confident, conversions follow.",
   ],
+  liveUrl: "https://contra.com/p/P6scNRUL-taptap-send-website-redesign-personal-project",
 };
 
 const CaseStudyTaptapSend = () => <CaseStudyLayout data={data} />;

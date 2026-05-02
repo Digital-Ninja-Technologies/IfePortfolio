@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "The biggest win was the one-tap reorder feature — it seemed simple but required careful thought about edge cases like unavailable items, price changes, and restaurant closures.",
     "If I could do it again, I'd push harder for a restaurant onboarding tool that helps vendors upload high-quality food photos. The visual quality of menu items directly impacted conversion rates.",
   ],
+  liveUrl: "https://yumdash.ng/",
 };
 
 const CaseStudyYumdash = () => <CaseStudyLayout data={data} />;

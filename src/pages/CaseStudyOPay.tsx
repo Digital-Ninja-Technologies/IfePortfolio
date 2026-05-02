@@ -55,6 +55,7 @@ const data: CaseStudyData = {
     "For fintech products, trust signals (security, user stats, testimonials) are just as important as feature highlights. They directly impact conversion.",
     "Mobile-first design isn't just responsive layout — it's about restructuring information architecture to prioritize what matters most on smaller screens.",
   ],
+  liveUrl: "https://contra.com/p/E2smMlEW-o-pay-landing-page-redesign",
 };
 
 const CaseStudyOPay = () => <CaseStudyLayout data={data} />;

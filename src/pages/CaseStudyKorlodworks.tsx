@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "Functional design systems paired with Elementor streamline execution and iteration. Prioritizing UX fundamentals directly enhances user engagement.",
     "A mobile-first mindset ensures brand impact across devices. The client reports a notable uptick in quality feedback from prospects and partners.",
   ],
+  liveUrl: "https://korlodworks.com/",
 };
 
 const CaseStudyKorlodworks = () => <CaseStudyLayout data={data} />;

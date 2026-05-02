@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "Designing for the African market taught me to prioritize performance and simplicity over visual complexity. Every animation and asset had to justify its bandwidth cost.",
     "The most impactful decision was the hybrid payment system — respecting that cash is still king in many markets while gently nudging users toward digital payments.",
   ],
+  liveUrl: "https://www.flex2ride.com/",
 };
 
 const CaseStudyFlex2Ride = () => <CaseStudyLayout data={data} />;

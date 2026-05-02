@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "Designing the GamersWallet landing page was a strategic balance between gaming culture and financial utility.",
     "The result is a sleek, conversion-focused platform that positions the product for meaningful user adoption and growth in the Web3 gaming economy.",
   ],
+  liveUrl: "https://www.sportrex.io/home",
 };
 
 const CaseStudyGamersWallet = () => <CaseStudyLayout data={data} />;

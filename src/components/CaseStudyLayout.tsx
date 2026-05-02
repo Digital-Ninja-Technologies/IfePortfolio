@@ -17,6 +17,7 @@ export interface CaseStudyData {
   features: { title: string; desc: string }[];
   results: { intro: string; stats: { stat: string; desc: string }[] };
   reflection: string[];
+  liveUrl?: string;
 }
 
 const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
@@ -163,6 +164,28 @@ const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
           </div>
         </div>
       </section>
+
+      {/* View Live Section */}
+      {data.liveUrl && (
+        <section className="py-16 bg-primary/5 border-t border-border/50">
+          <div className="container max-w-4xl text-center">
+            <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">
+              Ready to see it in action?
+            </h3>
+            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Experience the live version of this project and see the design and functionality in action.
+            </p>
+            <a
+              href={data.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg hover:opacity-90 transition-all hover:shadow-lg hover:scale-105"
+            >
+              View Live Project <ExternalLink size={20} />
+            </a>
+          </div>
+        </section>
+      )}
 
       <footer className="py-8 border-t border-border/50">
         <div className="container text-center text-sm text-muted-foreground">

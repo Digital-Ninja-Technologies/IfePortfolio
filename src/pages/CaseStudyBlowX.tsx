@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "BlowX exemplifies how effective UX/UI design can transform a complex Web3 concept into an accessible, engaging, and investor-friendly platform.",
     "Platforms that prioritize clarity, trust, and user experience will stand out — not just for their technology but for how intuitively they connect with their audience.",
   ],
+  liveUrl: "https://blowx-waitlist.vercel.app/",
 };
 
 const CaseStudyBlowX = () => <CaseStudyLayout data={data} />;
