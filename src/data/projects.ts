@@ -42,7 +42,7 @@ export const projects: Project[] = [
     link: "/case-study/sportrex",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/tgfiqelngq5qjljf4kxp.webp",
     bgColor: "hsl(190 50% 95%)",
-    liveUrl: "https://www.sportrex.io/get-whitelisted",
+    liveUrl: "https://www.sportrex.io/home",
   },
   {
     title: "Synclove",
