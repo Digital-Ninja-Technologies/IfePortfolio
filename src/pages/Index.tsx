@@ -34,7 +34,7 @@ const Index = () => {
         path="/"
         jsonLd={[personLd, websiteLd]}
       />
-      <CustomCursor />
+      
       <Navbar />
       <main>
         <HeroSection />
