@@ -7,7 +7,7 @@ import StrengthsSection from "@/components/StrengthsSection";
 import AboutPreview from "@/components/AboutPreview";
 import WhyMeSection from "@/components/WhyMeSection";
 import Footer from "@/components/Footer";
-import CustomCursor from "@/components/CustomCursor";
+
 import SEO from "@/components/SEO";
 
 const Index = () => {
