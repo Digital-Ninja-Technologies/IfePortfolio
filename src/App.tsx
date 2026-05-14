@@ -37,6 +37,7 @@ import Works from "./pages/Works.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import ReadyToWorkWidget from "./components/ReadyToWorkWidget.tsx";
+import CustomCursor from "./components/CustomCursor.tsx";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <CustomCursor />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
