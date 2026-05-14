@@ -56,6 +56,8 @@ const data: CaseStudyData = {
     "Real-time interaction dramatically increases the sense of presence and connection.",
     "Future improvements: deeper personalization, richer interaction features, mobile-first optimization, and expanding into a broader social ecosystem.",
   ],
+  liveUrl: "https://lovesyn.lovable.app/",
+  contraUrl: "https://contra.com/p/rYBqbULX-synclove-enhancing-real-time-emotional-connection",
 };
 
 const CaseStudySynclove = () => <CaseStudyLayout data={data} />;
