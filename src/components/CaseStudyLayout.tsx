@@ -18,6 +18,7 @@ export interface CaseStudyData {
   results: { intro: string; stats: { stat: string; desc: string }[] };
   reflection: string[];
   liveUrl?: string;
+  contraUrl?: string;
 }
 
 const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
