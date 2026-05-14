@@ -230,7 +230,7 @@ const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
           © {new Date().getFullYear()} Onifade Ifeoluwa. All rights reserved.
         </div>
       </footer>
-    </div>
+    </main>
     </>
   );
 };
