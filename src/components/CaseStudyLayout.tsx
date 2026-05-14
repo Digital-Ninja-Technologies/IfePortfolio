@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import ContactModal from "@/components/ContactModal";
+import SEO from "@/components/SEO";
 
 export interface CaseStudyData {
   title: string;
@@ -23,12 +25,33 @@ export interface CaseStudyData {
 
 const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
   const [contactOpen, setContactOpen] = useState(false);
+  const location = useLocation();
+  const seoTitle = `${data.title} — Case Study | Onifade Ifeoluwa`;
+  const seoDescription = data.subtitle.length > 160 ? `${data.subtitle.slice(0, 157)}...` : data.subtitle;
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    headline: data.title,
+    description: data.subtitle,
+    image: data.heroImage,
+    keywords: data.tags.join(", "),
+    author: { "@type": "Person", name: "Onifade Ifeoluwa" },
+    url: `https://inspired-showcase-spark.lovable.app${location.pathname}`,
+  };
 
   return (
     <>
+      <SEO
+        title={seoTitle.length > 60 ? `${data.title} — Case Study` : seoTitle}
+        description={seoDescription}
+        path={location.pathname}
+        ogType="article"
+        image={data.heroImage}
+        jsonLd={articleLd}
+      />
       <Navbar />
       <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
-      <div className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background">
         <section className="pt-32 pb-16 hero-gradient">
           <div className="container max-w-4xl">
             <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-4 animate-fade-in-up">
