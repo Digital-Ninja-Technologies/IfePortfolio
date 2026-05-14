@@ -16,7 +16,7 @@ const LogoMarquee = () => {
           {[...logos, ...logos].map((name, i) => (
             <span
               key={i}
-              className="mx-8 text-lg font-semibold text-muted-foreground/40 select-none"
+              className="mx-8 text-lg font-semibold text-muted-foreground select-none"
             >
               {name}
             </span>
