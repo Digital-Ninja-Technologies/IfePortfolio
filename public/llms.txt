@@ -1,0 +1,21 @@
+# Onifade Ifeoluwa — Product Designer
+
+> Portfolio of Onifade Ifeoluwa (Design Ninja), a product designer with 5+ years building Web2, Web3, AI, mobile, and web apps that move clients from 0 to 1.
+
+## Pages
+
+- [Home](/): Portfolio overview, featured work, and how I help teams ship.
+- [About](/about): Background, experience timeline, and testimonials.
+- [Works](/works): Full project archive filterable by category.
+
+## Case Studies
+
+- [OPay Landing Page Redesign](/case-study/opay): FinTech landing page redesign focused on clarity, trust, and conversion.
+- [Synclove](/case-study/synclove): Real-time, web-based private chat app for couples.
+- [Moducode](/case-study/moducode): Trust-driven hiring platform connecting global companies with African tech talent.
+- [BlowX Cryptocurrency](/case-study/blowx): Web3 platform tokenizing real-world assets.
+- [Sportrex GameFi Platform](/case-study/sportrex): Decentralized GameFi super platform.
+- [TravelGuide Super App](/case-study/travelguide): Mobile-first travel super app landing.
+- [CineMetric AI](/case-study/cinemetric): Film industry analytics platform.
+- [Eskro Marketplace](/case-study/eskro): Secure peer-to-peer marketplace with escrow.
+- [Flex2Ride](/case-study/flex2ride): Premium Nigerian ride-hailing and delivery app.
