@@ -56,6 +56,7 @@ const data: CaseStudyData = {
     "Strong UX writing and visual hierarchy can dramatically improve perception within the first few seconds of interaction.",
   ],
   liveUrl: "https://www.moducode.com/",
+  contraUrl: "https://contra.com/p/N3UqFcrr-moducode-uxui-design-project",
 };
 
 const CaseStudyModucode = () => <CaseStudyLayout data={data} />;

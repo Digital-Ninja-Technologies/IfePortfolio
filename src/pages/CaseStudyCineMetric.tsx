@@ -57,6 +57,7 @@ const data: CaseStudyData = {
     "Domain immersion is non-negotiable. Two weeks of studying film distribution and box office analytics made every design decision sharper and more credible.",
   ],
   liveUrl: "https://cinemetricai.netlify.app/",
+  contraUrl: "https://contra.com/p/m6EovMBU-cine-metric-ai-film-industry-analytics-platform",
 };
 
 const CaseStudyCineMetric = () => <CaseStudyLayout data={data} />;
