@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
+import SEO from "@/components/SEO";
 
 const Works = () => {
   const filterCategories = [
@@ -18,7 +19,13 @@ const Works = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="All Projects — Onifade Ifeoluwa Portfolio"
+        description="Browse the full portfolio of Onifade Ifeoluwa: case studies across Web2, Web3, AI, FinTech, mobile apps, SaaS dashboards, and conversion-driven websites."
+        path="/works"
+      />
       <Navbar />
+      <main>
       <section className="py-24 section-gradient">
         <div className="container">
           <div className="text-center mb-16">
@@ -85,6 +92,7 @@ const Works = () => {
           </div>
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );

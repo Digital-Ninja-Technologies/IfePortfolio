@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://inspired-showcase-spark.lovable.app/sitemap.xml
