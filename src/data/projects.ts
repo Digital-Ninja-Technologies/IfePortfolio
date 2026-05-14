@@ -56,6 +56,17 @@ export const projects: Project[] = [
     liveUrl: "https://lovesyn.lovable.app/",
   },
   {
+    title: "Moducode Hiring Platform",
+    category: "B2B SaaS · Recruitment",
+    categories: ["Websites & Landing Pages", "SaaS & Dashboards"],
+    description: "Trust-driven UX/UI for a talent-matching platform connecting global companies with vetted remote software and data engineers from Africa. Designed to reduce hiring friction and drive consultation bookings.",
+    tags: ["UX/UI Designer", "2026", "Figma & ChatGPT"],
+    link: "/case-study/moducode",
+    image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/b83wbaujeckx5c0pzjva.webp",
+    bgColor: "hsl(210 50% 95%)",
+    liveUrl: "https://www.moducode.com/",
+  },
+  {
     title: "TravelGuide Super App",
     category: "Travel · Mobile",
     categories: ["Mobile Apps", "Websites & Landing Pages"],
