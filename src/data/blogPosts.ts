@@ -4,6 +4,7 @@ import fintechTrustCover from "@/assets/blog/fintech-trust.jpg";
 import darkUxCover from "@/assets/blog/dark-ux.jpg";
 import clarityCover from "@/assets/blog/clarity.jpg";
 import zeroToOneCover from "@/assets/blog/zero-to-one.jpg";
+import promptingCover from "@/assets/blog/prompting.jpg";
 
 export interface BlogPost {
   slug: string;
@@ -17,6 +18,37 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "ai-is-a-mirror-the-real-skill-is-prompting",
+    title: "AI Is a Mirror: The Real Skill Is Prompting",
+    excerpt:
+      "AI isn't magic — it reflects how clearly you think. Here's how to write prompts that get real results.",
+    date: "May 18, 2026",
+    readTime: "5 min read",
+    category: "AI & Design",
+    cover: promptingCover,
+    content: [
+      {
+        body: "Most people think AI is magic. It's not. It's a mirror. You get back exactly how well you think. Prompting is a skill, and the quality of your results depends on how detailed and intentional your prompts are. I've learned this the hard way — vague prompts equal average output. Every single time.",
+      },
+      {
+        heading: "What actually works",
+        body: "Be specific about what you want. Give context — don't assume the AI 'just knows.' Define the format you need (post, list, table, brief). Iterate — your first prompt is rarely your best. Think like a teacher explaining to a student, not a manager barking orders.",
+      },
+      {
+        heading: "See the difference",
+        body: "Poor prompt: 'Write a post about AI.' Better prompt: 'Write a LinkedIn post about how AI tools are changing the way freelancers work. Target beginner freelancers. Use a conversational tone, include 3 key insights, and keep it under 150 words.' Same tool. Completely different output.",
+      },
+      {
+        heading: "Another one",
+        body: "Poor prompt: 'Design a website.' Better prompt: 'Design a modern landing page for a Web3 messaging app called Conekt App. Target students and crypto-native users. Use a dark theme with neon accents. Include hero, features, and CTA sections.' Specificity isn't extra work — it's the work.",
+      },
+      {
+        heading: "AI is powerful, but it's still a tool",
+        body: "Your results will always reflect your level of clarity. If your outputs are mid, your prompts probably are too. No hard feelings — just sharpen the input, and the output sharpens itself.",
+      },
+    ],
+  },
   {
     slug: "microcopy-the-quietest-part-of-your-ui-doing-the-heaviest-lifting",
     title: "Microcopy: The Quietest Part of Your UI Doing the Heaviest Lifting",
