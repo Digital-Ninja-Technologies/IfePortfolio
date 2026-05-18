@@ -1,6 +1,9 @@
 import microcopyCover from "@/assets/blog/microcopy.jpg";
 import perfectPixelCover from "@/assets/blog/perfect-pixel.jpg";
 import fintechTrustCover from "@/assets/blog/fintech-trust.jpg";
+import darkUxCover from "@/assets/blog/dark-ux.jpg";
+import clarityCover from "@/assets/blog/clarity.jpg";
+import zeroToOneCover from "@/assets/blog/zero-to-one.jpg";
 
 export interface BlogPost {
   slug: string;
@@ -120,6 +123,7 @@ export const blogPosts: BlogPost[] = [
     date: "May 16, 2026",
     readTime: "5 min read",
     category: "UX Ethics",
+    cover: darkUxCover,
     content: [
       {
         body: "When people hear \"Dark UX,\" many immediately think of sleek dark-mode interfaces, futuristic dashboards, and premium visuals. But in professional UX conversations, \"Dark UX\" can also refer to dark patterns — design decisions intentionally crafted to manipulate user behavior.",
@@ -158,6 +162,7 @@ export const blogPosts: BlogPost[] = [
     date: "May 12, 2026",
     readTime: "6 min read",
     category: "UX Principles",
+    cover: clarityCover,
     content: [
       {
         body: "As designers, we're often tempted to impress. A clever micro-interaction here, an unconventional navigation pattern there. But after five years of designing products across fintech, Web3, and AI tools, I've come to believe that clarity beats cleverness every single time.",
@@ -187,6 +192,7 @@ export const blogPosts: BlogPost[] = [
     date: "April 28, 2026",
     readTime: "8 min read",
     category: "Product Design",
+    cover: zeroToOneCover,
     content: [
       {
         body: "Most MVPs fail not because the idea was wrong, but because the team shipped the wrong slice of it. Here's the playbook I use when designing 0-to-1 products with founders.",

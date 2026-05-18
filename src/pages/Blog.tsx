@@ -15,7 +15,7 @@ const Blog = () => {
       />
       <Navbar />
       <main className="pt-24 pb-16">
-        <section className="container max-w-4xl">
+        <section className="container max-w-6xl">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-3">
               Blog
@@ -28,7 +28,7 @@ const Blog = () => {
             </p>
           </div>
 
-          <div className="grid gap-8">
+          <div className="grid gap-6 md:gap-8 md:grid-cols-2">
             {blogPosts.map((post) => (
               <Link
                 key={post.slug}
