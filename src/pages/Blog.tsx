@@ -33,8 +33,21 @@ const Blog = () => {
               <Link
                 key={post.slug}
                 to={`/blog/${post.slug}`}
-                className="group block rounded-2xl border border-border bg-card p-8 md:p-10 transition-all duration-300 hover:shadow-lg hover:border-primary/40"
+                className="group block rounded-2xl border border-border bg-card overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/40"
               >
+                {post.cover && (
+                  <div className="aspect-[16/9] overflow-hidden bg-muted">
+                    <img
+                      src={post.cover}
+                      alt={post.title}
+                      loading="lazy"
+                      width={1280}
+                      height={720}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                )}
+                <div className="p-8 md:p-10">
                 <span className="inline-block text-xs uppercase tracking-widest text-primary font-semibold mb-3">
                   {post.category}
                 </span>
@@ -55,6 +68,7 @@ const Blog = () => {
                     Read post
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
+                </div>
                 </div>
               </Link>
             ))}

@@ -39,7 +39,7 @@ const BlogPost = () => {
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6 leading-tight">
             {post.title}
           </h1>
-          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-12 pb-8 border-b border-border">
+          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-8">
             <span className="inline-flex items-center gap-1.5">
               <Calendar className="w-4 h-4" /> {post.date}
             </span>
@@ -47,6 +47,18 @@ const BlogPost = () => {
               <Clock className="w-4 h-4" /> {post.readTime}
             </span>
           </div>
+
+          {post.cover && (
+            <div className="rounded-2xl overflow-hidden mb-12 border border-border bg-muted">
+              <img
+                src={post.cover}
+                alt={post.title}
+                width={1280}
+                height={720}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          )}
 
           <div className="space-y-8">
             {post.content.map((block, i) => (
