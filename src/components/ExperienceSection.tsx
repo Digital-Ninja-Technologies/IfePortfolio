@@ -25,7 +25,7 @@ const experiences = [
   {
     company: "Sportrex",
     role: "Web3 Product Design Lead",
-    period: "2023 – 2025",
+    period: "2022 – 2025",
     tags: ["Web3", "Design Strategy", "B2C"],
     active: false,
   },
