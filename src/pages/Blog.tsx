@@ -5,13 +5,44 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { blogPosts } from "@/data/blogPosts";
 
+const SITE_URL = "https://inspired-showcase-spark.lovable.app";
+
 const Blog = () => {
+  const blogLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Onifade Ifeoluwa — UX Design Blog",
+    url: `${SITE_URL}/blog`,
+    description:
+      "UX design thoughts, frameworks, and product lessons from a designer with 5+ years across Web2, Web3, AI, and mobile products.",
+    author: { "@type": "Person", name: "Onifade Ifeoluwa", url: SITE_URL },
+    blogPost: blogPosts.map((p) => ({
+      "@type": "BlogPosting",
+      headline: p.title,
+      description: p.excerpt,
+      url: `${SITE_URL}/blog/${p.slug}`,
+      datePublished: new Date(p.date).toISOString(),
+      image: p.cover ? `${SITE_URL}${p.cover}` : undefined,
+      author: { "@type": "Person", name: "Onifade Ifeoluwa" },
+    })),
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+    ],
+  };
+
   return (
     <div className="min-h-screen cursor-none">
       <SEO
-        title="Blog — Onifade Ifeoluwa | UX Design Notes"
+        title="UX Design Blog — Onifade Ifeoluwa | Product Design Notes"
         description="UX design thoughts, frameworks, and product lessons from Onifade Ifeoluwa — a product designer with 5+ years shipping Web2, Web3, AI, and mobile products."
         path="/blog"
+        jsonLd={[blogLd, breadcrumbLd]}
       />
       <Navbar />
       <main className="pt-24 pb-16">
