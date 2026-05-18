@@ -15,6 +15,42 @@ const BlogPost = () => {
 
   if (!post) return <NotFound />;
 
+  const url = `${SITE_URL}/blog/${post.slug}`;
+  const image = post.cover ? `${SITE_URL}${post.cover}` : undefined;
+  const datePublished = new Date(post.date).toISOString();
+
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    image: image ? [image] : undefined,
+    datePublished,
+    dateModified: datePublished,
+    author: {
+      "@type": "Person",
+      name: "Onifade Ifeoluwa",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Person",
+      name: "Onifade Ifeoluwa",
+      url: SITE_URL,
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    articleSection: post.category,
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: url },
+    ],
+  };
+
   return (
     <div className="min-h-screen cursor-none">
       <SEO
@@ -22,6 +58,8 @@ const BlogPost = () => {
         description={post.excerpt}
         path={`/blog/${post.slug}`}
         ogType="article"
+        image={image}
+        jsonLd={[articleLd, breadcrumbLd]}
       />
       <Navbar />
       <main className="pt-24 pb-16">
