@@ -15,7 +15,7 @@ const Blog = () => {
       />
       <Navbar />
       <main className="pt-24 pb-16">
-        <section className="container max-w-4xl">
+        <section className="container max-w-6xl">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-3">
               Blog
