@@ -8,6 +8,10 @@ import { blogPosts } from "@/data/blogPosts";
 const SITE_URL = "https://inspired-showcase-spark.lovable.app";
 
 const Blog = () => {
+  const sortedPosts = [...blogPosts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
+
   const blogLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
