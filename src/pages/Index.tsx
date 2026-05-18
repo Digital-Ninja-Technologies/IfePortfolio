@@ -7,6 +7,7 @@ import StrengthsSection from "@/components/StrengthsSection";
 import AboutPreview from "@/components/AboutPreview";
 import WhyMeSection from "@/components/WhyMeSection";
 import Footer from "@/components/Footer";
+import BlogCTA from "@/components/BlogCTA";
 
 import SEO from "@/components/SEO";
 
@@ -44,6 +45,7 @@ const Index = () => {
         <AboutPreview />
         <WhyMeSection />
         <StrengthsSection />
+        <BlogCTA />
       </main>
       <Footer />
     </div>
