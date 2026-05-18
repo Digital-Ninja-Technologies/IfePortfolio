@@ -3,8 +3,11 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import ShareButtons from "@/components/ShareButtons";
 import NotFound from "@/pages/NotFound";
 import { blogPosts } from "@/data/blogPosts";
+
+const SITE_URL = "https://inspired-showcase-spark.lovable.app";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -58,6 +61,10 @@ const BlogPost = () => {
                 </p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-16 pt-8 border-t border-border">
+            <ShareButtons title={post.title} url={`${SITE_URL}/blog/${post.slug}`} />
           </div>
         </article>
       </main>
