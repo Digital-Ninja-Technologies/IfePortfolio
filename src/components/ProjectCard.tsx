@@ -12,22 +12,21 @@ const ProjectCard = ({ project, index, total }: ProjectCardProps) => {
   return (
     <Link
       to={project.link}
-      className="sticky top-24 block cursor-pointer"
+      className="relative lg:sticky lg:top-24 block cursor-pointer"
       style={{
         zIndex: index + 1,
-        paddingBottom: index < total - 1 ? "0" : undefined,
       }}
     >
       <div
         className={`flex flex-col ${
           index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-        } gap-0 items-stretch shadow-lg transition-shadow duration-300 hover:shadow-2xl`}
+        } gap-0 items-stretch shadow-lg transition-shadow duration-300 hover:shadow-2xl lg:[transform:scale(var(--card-scale))]`}
         style={{
           borderRadius: "30px",
           backgroundColor: project.bgColor,
           overflow: "hidden",
-          transform: `scale(${1 - index * 0.01})`,
           transformOrigin: "top center",
+          ["--card-scale" as any]: `${1 - index * 0.01}`,
         }}
       >
         <div className="flex-1 w-full p-6">
