@@ -47,10 +47,10 @@ const ProjectCard = ({ project, index, total }: ProjectCardProps) => {
           <h3 className="text-base md:text-lg lg:text-3xl font-heading font-bold text-foreground">
             {project.title}
           </h3>
-          <p className="hidden lg:block text-muted-foreground leading-relaxed">
+          <p className="text-sm md:text-base lg:text-lg text-muted-foreground leading-relaxed">
             {project.description}
           </p>
-          <div className="hidden lg:flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <span
                 key={tag}
