@@ -1,6 +1,9 @@
 import microcopyCover from "@/assets/blog/microcopy.jpg";
 import perfectPixelCover from "@/assets/blog/perfect-pixel.jpg";
 import fintechTrustCover from "@/assets/blog/fintech-trust.jpg";
+import darkUxCover from "@/assets/blog/dark-ux.jpg";
+import clarityCover from "@/assets/blog/clarity.jpg";
+import zeroToOneCover from "@/assets/blog/zero-to-one.jpg";
 
 export interface BlogPost {
   slug: string;
