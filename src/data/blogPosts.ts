@@ -10,6 +10,101 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "microcopy-the-quietest-part-of-your-ui-doing-the-heaviest-lifting",
+    title: "Microcopy: The Quietest Part of Your UI Doing the Heaviest Lifting",
+    excerpt:
+      "Buttons, empty states, error messages — the small words decide whether users feel confident or confused.",
+    date: "May 14, 2026",
+    readTime: "5 min read",
+    category: "UX Writing",
+    content: [
+      {
+        body: "Designers obsess over layouts, colors, and components — but the words inside those components quietly do most of the work. A button labeled \"Submit\" and one labeled \"Send my request\" lead to the same action, yet they create completely different experiences.",
+      },
+      {
+        heading: "Microcopy is UX",
+        body: "Every label, tooltip, empty state, and error message is a tiny conversation between your product and the user. Done well, microcopy reduces hesitation, builds trust, and prevents support tickets before they happen. Done poorly, it's the reason users abandon flows you spent weeks designing.",
+      },
+      {
+        heading: "Three rules I use",
+        body: "First, be specific — \"Saved\" is better than \"Success.\" Second, be human — write the way you'd explain it to a friend, not the way a database thinks. Third, be honest — if something failed, say what failed and what the user can do next.",
+      },
+      {
+        heading: "Edge cases are where products earn trust",
+        body: "Empty states, zero-result searches, failed payments, and timeouts are the moments users remember. Treat them as design opportunities, not afterthoughts. A thoughtful empty state can teach users how to succeed; a generic one just tells them they failed.",
+      },
+      {
+        body: "Before shipping any screen, read every word out loud. If it sounds robotic, rewrite it. The interface that talks to users like humans always wins.",
+      },
+    ],
+  },
+  {
+    slug: "the-myth-of-the-perfect-pixel",
+    title: "The Myth of the Perfect Pixel",
+    excerpt:
+      "Pixel perfection feels like craft, but it can quietly slow down teams and hide what really matters: outcomes.",
+    date: "May 10, 2026",
+    readTime: "6 min read",
+    category: "Design Process",
+    content: [
+      {
+        body: "Somewhere along the way, \"pixel perfect\" became a badge of honor in design. We zoom in to 400%, nudge a label by one pixel, and feel proud. But pixel perfection in isolation is a trap — and it's costing teams more than they realize.",
+      },
+      {
+        heading: "What pixel perfection optimizes for",
+        body: "It optimizes for the screenshot, not the product. It assumes a single viewport, a single browser, a single user. The moment your design hits real devices, real content lengths, and real users with accessibility settings, those perfect pixels rearrange themselves anyway.",
+      },
+      {
+        heading: "What we should optimize for instead",
+        body: "Systems, not screens. A solid type scale, spacing rhythm, and component library will produce consistent results across thousands of screens you'll never personally polish. Spend your craft budget on the system — the screens take care of themselves.",
+      },
+      {
+        heading: "When pixel-level care is worth it",
+        body: "Logos, brand moments, marketing hero sections, and the first 30 seconds of a flow. These are the surfaces users notice. Everything else benefits more from solid logic than visual fussing.",
+      },
+      {
+        body: "Pixel perfection isn't the enemy. Pixel obsession is. Ship the system, measure the outcome, and save the micro-tuning for the moments that actually shape how users feel.",
+      },
+    ],
+  },
+  {
+    slug: "designing-for-trust-in-fintech-products",
+    title: "Designing for Trust in Fintech Products",
+    excerpt:
+      "In finance, users aren't buying features — they're buying confidence. Here's how design earns it.",
+    date: "May 6, 2026",
+    readTime: "7 min read",
+    category: "Fintech UX",
+    content: [
+      {
+        body: "I've designed for several fintech and payments products, and one lesson keeps repeating: in money apps, trust is the product. Users don't care how beautiful your UI is if they're not sure their money is safe. Every design decision either deposits into the trust account or withdraws from it.",
+      },
+      {
+        heading: "1. Show, don't promise",
+        body: "Marketing pages say \"secure.\" Trustworthy products show it — visible security indicators, clear session states, confirmation screens that summarize exactly what's about to happen. Users believe what they can see, not what they're told.",
+      },
+      {
+        heading: "2. Make money movements feel inevitable",
+        body: "Before a transfer, the user should know: who's receiving it, how much, in what currency, with what fee, and when it arrives. Surprises are fine in birthday cards — not in banking. A boring, predictable confirmation step is a feature, not friction.",
+      },
+      {
+        heading: "3. Default to clarity over cleverness",
+        body: "A balance card with three numbers, a chart, and a streak badge looks impressive in a portfolio shot. In real use, it makes people anxious. Show the balance. Show what's pending. Show what's available. Save the cleverness for screens that aren't carrying someone's rent money.",
+      },
+      {
+        heading: "4. Errors are trust moments",
+        body: "When a payment fails, the user's first thought is \"is my money gone?\" A vague \"Something went wrong\" message destroys trust instantly. Tell them what happened, whether their money is safe, and exactly what to do next. Handled well, a failed transaction can actually increase trust.",
+      },
+      {
+        heading: "5. Respect the boring stuff",
+        body: "Receipts, statements, transaction histories, and dispute flows are where loyalty is built. They're rarely glamorous, but they're the screens users return to when something matters. Design them with the same care you give the onboarding.",
+      },
+      {
+        body: "In fintech, trust compounds quietly and breaks loudly. Every small, honest design decision adds up — and one careless one can undo months of work. Design like the user's money depends on it, because it does.",
+      },
+    ],
+  },
+  {
     slug: "dark-ux-where-do-we-draw-the-ethical-line",
     title: "Dark UX: Where Do We Draw the Ethical Line?",
     excerpt:
