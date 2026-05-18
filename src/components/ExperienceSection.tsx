@@ -9,6 +9,13 @@ const experiences = [
     active: true,
   },
   {
+    company: "Sportrex",
+    role: "Web3 Product Design Lead",
+    period: "2022 – 2025",
+    tags: ["Web3", "Design Strategy", "B2C"],
+    active: false,
+  },
+  {
     company: "SquadPay",
     role: "Product Designer",
     period: "2024",
@@ -20,13 +27,6 @@ const experiences = [
     role: "UX/UI Designer",
     period: "2024",
     tags: ["Web3", "Gamification", "FinTech"],
-    active: false,
-  },
-  {
-    company: "Sportrex",
-    role: "Web3 Product Design Lead",
-    period: "2022 – 2025",
-    tags: ["Web3", "Design Strategy", "B2C"],
     active: false,
   },
   {
