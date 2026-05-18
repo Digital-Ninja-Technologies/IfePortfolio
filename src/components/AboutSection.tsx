@@ -5,7 +5,7 @@ import resumeFile from "@/assets/Ifeoluwa_Onifade UX:UI.pdf";
 const funStats = [
   { value: "5+", label: "Years of Experience" },
   { value: "24+", label: "Projects Delivered" },
-  { value: "10+", label: "Happy Clients" },
+  { value: "18+", label: "Happy Clients" },
   { value: "3", label: "Design Systems Built" },
 ];
 
