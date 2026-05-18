@@ -32,6 +32,9 @@ const entries: SitemapEntry[] = [
   { path: "/blog/dark-ux-where-do-we-draw-the-ethical-line", changefreq: "monthly", priority: "0.6" },
   { path: "/blog/designing-for-clarity-not-cleverness", changefreq: "monthly", priority: "0.6" },
   { path: "/blog/from-0-to-1-shipping-mvps-that-people-actually-use", changefreq: "monthly", priority: "0.6" },
+  { path: "/blog/microcopy-the-quietest-part-of-your-ui-doing-the-heaviest-lifting", changefreq: "monthly", priority: "0.6" },
+  { path: "/blog/the-myth-of-the-perfect-pixel", changefreq: "monthly", priority: "0.6" },
+  { path: "/blog/designing-for-trust-in-fintech-products", changefreq: "monthly", priority: "0.6" },
 ];
 
 function generateSitemap(entries: SitemapEntry[]) {
