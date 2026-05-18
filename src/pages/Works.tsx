@@ -80,7 +80,7 @@ const Works = () => {
             </div>
           </div>
 
-          <div className="space-y-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-4 md:gap-6 lg:gap-0 lg:space-y-8">
             {filteredProjects.map((project, i) => (
               <ProjectCard
                 key={project.title}
