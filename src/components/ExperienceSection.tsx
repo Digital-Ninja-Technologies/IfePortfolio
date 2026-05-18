@@ -30,7 +30,7 @@ const experiences = [
     active: false,
   },
   {
-    company: "SMARTSAFE Consulting",
+    company: "SmartsafeUK",
     role: "UX/UI Designer & Design Lead",
     period: "2021 – 2024",
     tags: ["SaaS", "Design Systems", "Enterprise"],
