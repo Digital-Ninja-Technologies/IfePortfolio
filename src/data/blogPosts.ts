@@ -5,6 +5,7 @@ import darkUxCover from "@/assets/blog/dark-ux.jpg";
 import clarityCover from "@/assets/blog/clarity.jpg";
 import zeroToOneCover from "@/assets/blog/zero-to-one.jpg";
 import promptingCover from "@/assets/blog/prompting.jpg";
+import startupLeadCover from "@/assets/blog/startup-lead.jpg";
 
 export interface BlogPost {
   slug: string;
@@ -18,6 +19,48 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "leading-in-a-tech-startup-what-its-really-taught-me",
+    title: "Leading in a Tech Startup: What It's Really Taught Me",
+    excerpt:
+      "Product decisions before noon, design reviews, team energy, quiet pressure — what leading inside a startup actually builds in you.",
+    date: "May 18, 2026",
+    readTime: "6 min read",
+    category: "Leadership",
+    cover: startupLeadCover,
+    content: [
+      {
+        body: "Ifeoluwa, manage. You will feel it like you want to die, but you will not die — is that clear? That's the line I repeat to myself on the hard days. Leading in a tech startup has stretched me in ways I didn't expect, and somehow I'm still standing and still delivering.",
+      },
+      {
+        heading: "There is no manual for this",
+        body: "Some days I'm making product decisions. Other days I'm reviewing designs, fixing small issues, jumping on calls, and managing team energy — all before noon. Funtasky. The role doesn't sit neatly on a job description; it shapes itself around whatever the company needs that week.",
+      },
+      {
+        heading: "Clarity is more powerful than hype",
+        body: "If the team doesn't understand the vision clearly, execution suffers. It's that simple. Hype gets people excited for a week. Clarity gets them shipping for a year.",
+      },
+      {
+        heading: "Systems save you",
+        body: "Motivation is great, but processes are what keep things moving when energy drops — and energy will always drop. That's as normal as norm. Build the system once so the team doesn't have to summon willpower every Monday morning.",
+      },
+      {
+        heading: "Ownership beats talent",
+        body: "I'd rather work with someone accountable and hungry than someone extremely skilled but passive. I'm real on this — your skill will not be effective in a team you're passive in. Ownership multiplies talent; passivity divides it.",
+      },
+      {
+        heading: "You carry pressure quietly",
+        body: "First son or first daughter kind of pressure. There are moments of uncertainty, but as a lead, you can't transfer fear to the team. You have to stay steady — at least on the outside — while you process the storm inside.",
+      },
+      {
+        heading: "Startups test character, not just skill",
+        body: "Patience. Emotional control. Decision-making. Resilience. Most importantly, I've realized startups don't just test your skills, they test your character. It's not always glamorous, but it's building me into a stronger leader every single day. I feel it like I'm going to die — but I just got stronger and better by each day.",
+      },
+      {
+        body: "If you're leading a team in a startup right now, I respect you. It's not easy, but it's shaping us. Manage. You will not die.",
+      },
+    ],
+  },
   {
     slug: "ai-is-a-mirror-the-real-skill-is-prompting",
     title: "AI Is a Mirror: The Real Skill Is Prompting",

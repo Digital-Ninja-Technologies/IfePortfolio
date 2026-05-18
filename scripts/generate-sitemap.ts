@@ -29,6 +29,7 @@ const entries: SitemapEntry[] = [
     priority: "0.7",
   })),
   { path: "/blog", changefreq: "weekly", priority: "0.8" },
+  { path: "/blog/leading-in-a-tech-startup-what-its-really-taught-me", changefreq: "monthly", priority: "0.6" },
   { path: "/blog/ai-is-a-mirror-the-real-skill-is-prompting", changefreq: "monthly", priority: "0.6" },
   { path: "/blog/dark-ux-where-do-we-draw-the-ethical-line", changefreq: "monthly", priority: "0.6" },
   { path: "/blog/designing-for-clarity-not-cleverness", changefreq: "monthly", priority: "0.6" },
