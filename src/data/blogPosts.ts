@@ -10,6 +10,44 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "dark-ux-where-do-we-draw-the-ethical-line",
+    title: "Dark UX: Where Do We Draw the Ethical Line?",
+    excerpt:
+      "Dark patterns work — but at what cost? A look at the trade-offs between persuasion and manipulation in product design.",
+    date: "May 16, 2026",
+    readTime: "5 min read",
+    category: "UX Ethics",
+    content: [
+      {
+        body: "When people hear \"Dark UX,\" many immediately think of sleek dark-mode interfaces, futuristic dashboards, and premium visuals. But in professional UX conversations, \"Dark UX\" can also refer to dark patterns — design decisions intentionally crafted to manipulate user behavior.",
+      },
+      {
+        heading: "Common dark patterns",
+        body: "Hidden unsubscribe buttons. Misleading CTA labels. Forced urgency countdowns. Confusing privacy settings. Hard-to-cancel subscriptions. Guilt-driven popups. The truth is, Dark UX exists because it can be effective.",
+      },
+      {
+        heading: "The pros (why teams reach for it)",
+        body: "Dark patterns can increase conversions, improve short-term engagement metrics, reduce drop-offs in funnels, create urgency that speeds up decision-making, and help businesses optimize revenue quickly. On a dashboard, the numbers look great.",
+      },
+      {
+        heading: "The cons (why it eventually backfires)",
+        body: "It damages long-term user trust, creates frustration and poor experience, increases churn and negative brand perception, can lead to legal and compliance issues, and — eventually — users recognize the manipulation. The short-term win turns into a long-term loss.",
+      },
+      {
+        heading: "The real question",
+        body: "The conversation isn't whether behavioral psychology should exist in design — all design influences behavior. The question is: where do we draw the ethical line?",
+      },
+      {
+        heading: "Persuasion that's actually fair",
+        body: "There are situations where persuasion in UX can be used safely and responsibly: encouraging users to complete onboarding, reminding them to enable security features, highlighting important deadlines clearly, reducing confusion during flows, and guiding users toward beneficial actions without deception. The key difference is transparency.",
+      },
+      {
+        heading: "Good UX persuades. Dark UX manipulates.",
+        body: "As designers, we should optimize for both business goals and user trust — because sustainable products are built on credibility, not tricks.",
+      },
+    ],
+  },
+  {
     slug: "designing-for-clarity-not-cleverness",
     title: "Designing for Clarity, Not Cleverness",
     excerpt:
