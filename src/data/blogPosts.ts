@@ -1,3 +1,7 @@
+import microcopyCover from "@/assets/blog/microcopy.jpg";
+import perfectPixelCover from "@/assets/blog/perfect-pixel.jpg";
+import fintechTrustCover from "@/assets/blog/fintech-trust.jpg";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -18,6 +22,7 @@ export const blogPosts: BlogPost[] = [
     date: "May 14, 2026",
     readTime: "5 min read",
     category: "UX Writing",
+    cover: microcopyCover,
     content: [
       {
         body: "Designers obsess over layouts, colors, and components — but the words inside those components quietly do most of the work. A button labeled \"Submit\" and one labeled \"Send my request\" lead to the same action, yet they create completely different experiences.",
@@ -47,6 +52,7 @@ export const blogPosts: BlogPost[] = [
     date: "May 10, 2026",
     readTime: "6 min read",
     category: "Design Process",
+    cover: perfectPixelCover,
     content: [
       {
         body: "Somewhere along the way, \"pixel perfect\" became a badge of honor in design. We zoom in to 400%, nudge a label by one pixel, and feel proud. But pixel perfection in isolation is a trap — and it's costing teams more than they realize.",
@@ -76,6 +82,7 @@ export const blogPosts: BlogPost[] = [
     date: "May 6, 2026",
     readTime: "7 min read",
     category: "Fintech UX",
+    cover: fintechTrustCover,
     content: [
       {
         body: "I've designed for several fintech and payments products, and one lesson keeps repeating: in money apps, trust is the product. Users don't care how beautiful your UI is if they're not sure their money is safe. Every design decision either deposits into the trust account or withdraws from it.",
