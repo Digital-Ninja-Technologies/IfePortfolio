@@ -78,9 +78,9 @@ const BlogPost = () => {
             {post.title}
           </h1>
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-8">
-            <span className="inline-flex items-center gap-1.5">
+            <time dateTime={datePublished} className="inline-flex items-center gap-1.5">
               <Calendar className="w-4 h-4" /> {post.date}
-            </span>
+            </time>
             <span className="inline-flex items-center gap-1.5">
               <Clock className="w-4 h-4" /> {post.readTime}
             </span>
