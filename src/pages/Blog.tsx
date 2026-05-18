@@ -28,7 +28,7 @@ const Blog = () => {
             </p>
           </div>
 
-          <div className="grid gap-8">
+          <div className="grid gap-6 md:gap-8 md:grid-cols-2">
             {blogPosts.map((post) => (
               <Link
                 key={post.slug}
