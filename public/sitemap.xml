@@ -155,4 +155,49 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://inspired-showcase-spark.lovable.app/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://inspired-showcase-spark.lovable.app/blog/leading-in-a-tech-startup-what-its-really-taught-me</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://inspired-showcase-spark.lovable.app/blog/ai-is-a-mirror-the-real-skill-is-prompting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://inspired-showcase-spark.lovable.app/blog/dark-ux-where-do-we-draw-the-ethical-line</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://inspired-showcase-spark.lovable.app/blog/designing-for-clarity-not-cleverness</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://inspired-showcase-spark.lovable.app/blog/from-0-to-1-shipping-mvps-that-people-actually-use</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://inspired-showcase-spark.lovable.app/blog/microcopy-the-quietest-part-of-your-ui-doing-the-heaviest-lifting</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://inspired-showcase-spark.lovable.app/blog/the-myth-of-the-perfect-pixel</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://inspired-showcase-spark.lovable.app/blog/designing-for-trust-in-fintech-products</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
