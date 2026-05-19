@@ -5,7 +5,6 @@ const logos = [
   { name: "BlowX", domain: "blowx.ai" },
   { name: "Brand360", domain: "brand360.com.my" },
   { name: "Korlod Works", domain: "korlodworks.com" },
-  { name: "Sinelah", domain: "sinelah.com" },
   { name: "Sportzlite", domain: "sportzlite.com" },
 ];
 
