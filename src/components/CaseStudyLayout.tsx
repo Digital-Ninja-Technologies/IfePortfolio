@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import ContactModal from "@/components/ContactModal";
 import BlogCTA from "@/components/BlogCTA";
+import RecommendedProjects from "@/components/RecommendedProjects";
 import SEO from "@/components/SEO";
 
 export interface CaseStudyData {
@@ -225,6 +226,8 @@ const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
           </div>
         </section>
       )}
+      <RecommendedProjects currentProjectTitle={data.title} limit={3} />
+
       <BlogCTA />
 
 

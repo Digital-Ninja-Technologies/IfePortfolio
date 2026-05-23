@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
 import { Link } from "react-router-dom";
 
@@ -13,6 +13,29 @@ const navLinks = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    // Check system preference or localStorage
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("theme");
+      if (saved) return saved === "dark";
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    return true;
+  });
+
+  // Apply theme to document
+  useEffect(() => {
+    const html = document.documentElement;
+    if (isDark) {
+      html.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      html.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDark]);
+
+  const toggleDarkMode = () => setIsDark(!isDark);
 
   return (
     <>
@@ -34,6 +57,14 @@ const Navbar = () => {
               </Link>
             ))}
             <div className="flex items-center gap-3">
+              {/* Dark mode toggle */}
+              <button
+                onClick={toggleDarkMode}
+                className="p-2 rounded-full border border-border hover:bg-primary/10 transition-colors"
+                aria-label="Toggle dark mode"
+              >
+                {isDark ? <Sun size={16} /> : <Moon size={16} />}
+              </button>
               <a
                 href="https://contra.com/designninja?r=designninja"
                 target="_blank"
@@ -52,13 +83,22 @@ const Navbar = () => {
           </div>
 
           {/* Mobile toggle */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 text-foreground"
+              aria-label="Toggle dark mode"
+            >
+              {isDark ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+            <button
+              onClick={() => setOpen(!open)}
+              className="p-2 text-foreground"
+              aria-label="Toggle menu"
+            >
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
