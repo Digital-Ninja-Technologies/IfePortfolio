@@ -4,6 +4,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import ContactModal from "@/components/ContactModal";
+import BlogCTA from "@/components/BlogCTA";
 import SEO from "@/components/SEO";
 
 export interface CaseStudyData {
@@ -224,6 +225,8 @@ const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
           </div>
         </section>
       )}
+      <BlogCTA />
+
 
       <footer className="py-8 border-t border-border/50">
         <div className="container text-center text-sm text-muted-foreground">

@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BlogCTA from "@/components/BlogCTA";
 import SEO from "@/components/SEO";
 import ShareButtons from "@/components/ShareButtons";
 import NotFound from "@/pages/NotFound";
@@ -117,6 +118,7 @@ const BlogPost = () => {
             <ShareButtons title={post.title} url={`${SITE_URL}/blog/${post.slug}`} />
           </div>
         </article>
+        <BlogCTA />
       </main>
       <Footer />
     </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
+import BlogCTA from "@/components/BlogCTA";
 import { projects } from "@/data/projects";
 import SEO from "@/components/SEO";
 
@@ -92,6 +93,7 @@ const Works = () => {
           </div>
         </div>
       </section>
+      <BlogCTA />
       </main>
       <Footer />
     </div>

@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import AboutSection from "@/components/AboutSection";
 import ExperienceSection from "@/components/ExperienceSection";
+import BlogCTA from "@/components/BlogCTA";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import SEO from "@/components/SEO";
@@ -18,6 +19,7 @@ const About = () => {
       <main className="pt-16">
         <AboutSection />
         <ExperienceSection />
+        <BlogCTA />
       </main>
       <Footer />
     </div>
