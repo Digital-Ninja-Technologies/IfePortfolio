@@ -44,23 +44,23 @@ const ProjectCard = ({ project, index, total }: ProjectCardProps) => {
           <p className="text-[10px] md:text-xs uppercase tracking-widest text-primary font-semibold">
             {project.category}
           </p>
-          <h3 className="text-base md:text-lg lg:text-3xl font-heading font-bold text-foreground">
+          <h3 className="text-base md:text-lg lg:text-3xl font-heading font-bold text-black">
             {project.title}
           </h3>
-          <p className="text-sm md:text-base lg:text-lg text-muted-foreground leading-relaxed">
+          <p className="text-sm md:text-base lg:text-lg text-black/70 leading-relaxed">
             {project.description}
           </p>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground"
+                className="px-3 py-1 text-xs rounded-full bg-white/30 text-black font-medium"
               >
                 {tag}
               </span>
             ))}
           </div>
-          <span className="inline-flex items-center gap-1.5 lg:gap-2 px-3 py-1.5 lg:px-6 lg:py-3 rounded-full bg-primary text-primary-foreground font-semibold text-[11px] lg:text-sm hover:gap-3 transition-all lg:mt-4 hover:shadow-lg w-fit">
+          <span className="inline-flex items-center gap-1.5 lg:gap-2 px-3 py-1.5 lg:px-6 lg:py-3 rounded-full bg-primary text-white font-semibold text-[11px] lg:text-sm hover:gap-3 transition-all lg:mt-4 hover:shadow-lg w-fit">
             View Case Study <ArrowRight size={12} className="lg:hidden" /><ArrowRight size={16} className="hidden lg:inline" />
           </span>
           {project.liveUrl && (
