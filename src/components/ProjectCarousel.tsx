@@ -5,39 +5,46 @@ import { Link } from "react-router-dom";
 const ProjectCarousel = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const scrollPositionRef = useRef(0);
+  const animationIdRef = useRef<number>();
 
   // Get first 20 projects
   const displayProjects = projects.slice(0, 20);
 
-  // Duplicate projects for infinite scroll effect
-  const duplicatedProjects = [...displayProjects, ...displayProjects];
+  // Duplicate projects for infinite scroll effect - triple for smoother loop
+  const duplicatedProjects = [...displayProjects, ...displayProjects, ...displayProjects];
 
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    let scrollPosition = 0;
-    const scrollSpeed = 1; // pixels per frame
-    let animationId: number;
+    const scrollSpeed = 2; // pixels per frame for smooth motion
+    const maxScroll = container.scrollWidth / 3; // One third is the original content
 
-    const scroll = () => {
+    const animate = () => {
       if (!isPaused) {
-        scrollPosition += scrollSpeed;
+        scrollPositionRef.current += scrollSpeed;
 
         // Reset to beginning when we've scrolled past the first set
-        if (scrollPosition > container.scrollWidth / 2) {
-          scrollPosition = 0;
+        if (scrollPositionRef.current >= maxScroll) {
+          scrollPositionRef.current = 0;
+          container.scrollLeft = 0;
+        } else {
+          container.scrollLeft = scrollPositionRef.current;
         }
-
-        container.scrollLeft = scrollPosition;
       }
-      animationId = requestAnimationFrame(scroll);
+
+      animationIdRef.current = requestAnimationFrame(animate);
     };
 
-    animationId = requestAnimationFrame(scroll);
+    animationIdRef.current = requestAnimationFrame(animate);
 
-    return () => cancelAnimationFrame(animationId);
-  }, [isPaused]);
+    return () => {
+      if (animationIdRef.current) {
+        cancelAnimationFrame(animationIdRef.current);
+      }
+    };
+  }, [isPaused, displayProjects.length]);
 
   return (
     <section className="py-24 bg-background border-t border-border/50 overflow-hidden">
@@ -60,9 +67,9 @@ const ProjectCarousel = () => {
         ref={scrollContainerRef}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="flex overflow-x-auto gap-4 px-4 md:px-8 snap-x snap-mandatory scroll-smooth"
+        className="flex gap-4 px-4 md:px-8 overflow-x-hidden scroll-smooth"
         style={{
-          scrollBehavior: "smooth",
+          scrollBehavior: "auto",
           WebkitOverflowScrolling: "touch",
         }}
       >
@@ -70,7 +77,7 @@ const ProjectCarousel = () => {
           <Link
             key={`${project.title}-${index}`}
             to={project.link}
-            className="flex-shrink-0 group relative snap-start"
+            className="flex-shrink-0 group relative"
           >
             <div className="relative h-64 w-80 rounded-2xl overflow-hidden bg-muted border border-border/50 group-hover:border-primary/50 transition-all duration-300 hover:shadow-2xl">
               {/* Image */}
@@ -98,7 +105,7 @@ const ProjectCarousel = () => {
 
               {/* Badge */}
               <div className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-black/50 text-white text-xs font-semibold backdrop-blur-sm">
-                {index % displayProjects.length + 1} / {displayProjects.length}
+                {(index % displayProjects.length) + 1} / {displayProjects.length}
               </div>
             </div>
           </Link>
