@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import LogoMarquee from "@/components/LogoMarquee";
+import ProjectCarousel from "@/components/ProjectCarousel";
 import AIWorkflowSection from "@/components/AIWorkflowSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import StrengthsSection from "@/components/StrengthsSection";
@@ -40,6 +41,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <LogoMarquee />
+        <ProjectCarousel />
         <AIWorkflowSection />
         <ProjectsSection />
         <AboutPreview />
