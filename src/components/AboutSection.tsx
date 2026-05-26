@@ -11,7 +11,7 @@ const keyMetrics = [
 
 const expertise = [
   { category: "Mobile Design", items: ["iOS & Android Design", "Mobile Navigation Patterns", "Touch Interactions", "App Architecture", "Mobile Performance"] },
-  { category: "Web Design", items: ["Responsive Web Apps", "Web UI/UX", "Interaction Design", "Accessible Design", "User Testing"] },
+  { category: "Web & Web3 Design", items: ["Responsive Web Apps", "Web UI/UX", "Web3 Interfaces", "Blockchain Design", "Accessible Design"] },
   { category: "Product Skills", items: ["User Research", "Wireframing & Prototyping", "Design Systems", "User Flows", "Hand-off to Developers"] },
 ];
 
