@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 const ProjectCarousel = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const scrollPositionRef = useRef(0);
   const animationIdRef = useRef<number>();
+  const dragStartRef = useRef(0);
 
   // Get first 20 projects
   const displayProjects = projects.slice(0, 20);
@@ -22,7 +24,7 @@ const ProjectCarousel = () => {
     const maxScroll = container.scrollWidth / 3; // One third is the original content
 
     const animate = () => {
-      if (!isPaused) {
+      if (!isPaused && !isDragging) {
         scrollPositionRef.current += scrollSpeed;
 
         // Reset to beginning when we've scrolled past the first set
@@ -44,7 +46,16 @@ const ProjectCarousel = () => {
         cancelAnimationFrame(animationIdRef.current);
       }
     };
-  }, [isPaused, displayProjects.length]);
+  }, [isPaused, isDragging, displayProjects.length]);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    dragStartRef.current = e.clientX;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
 
   return (
     <section className="py-24 bg-background border-t border-border/50 overflow-hidden">
@@ -67,24 +78,33 @@ const ProjectCarousel = () => {
         ref={scrollContainerRef}
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
-        className="flex gap-4 px-4 md:px-8 overflow-x-hidden scroll-smooth"
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        className="flex gap-4 px-4 md:px-8 overflow-x-hidden scroll-smooth cursor-grab active:cursor-grabbing select-none"
         style={{
           scrollBehavior: "auto",
           WebkitOverflowScrolling: "touch",
+          userSelect: "none",
         }}
       >
         {duplicatedProjects.map((project, index) => (
           <Link
             key={`${project.title}-${index}`}
             to={project.link}
-            className="flex-shrink-0 group relative"
+            className="flex-shrink-0 group relative pointer-events-auto"
+            draggable={false}
           >
             <div className="relative h-64 w-80 rounded-2xl overflow-hidden bg-muted border border-border/50 group-hover:border-primary/50 transition-all duration-300 hover:shadow-2xl">
-              {/* Image */}
+              {/* Image with Lazy Loading */}
               <img
                 src={project.image}
                 alt={project.title}
+                loading="lazy"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                style={{
+                  contentVisibility: "auto",
+                }}
               />
 
               {/* Overlay Gradient */}
