@@ -3,16 +3,16 @@ import profileImage from "@/assets/profile.jpg";
 import resumeFile from "@/assets/Ifeoluwa_Onifade UX:UI.pdf";
 
 const keyMetrics = [
-  { icon: Target, value: "5+", label: "Years Building Products", subtext: "Web2, Web3, AI, Mobile, SaaS" },
-  { icon: Users, value: "26", label: "Projects Delivered", subtext: "From startups to enterprises" },
-  { icon: BarChart3, value: "100K+", label: "Users Impacted", subtext: "Across multiple platforms" },
-  { icon: Zap, value: "18+", label: "Satisfied Clients", subtext: "Returning partnerships & referrals" },
+  { icon: Target, value: "5+", label: "Years Building Apps", subtext: "Mobile apps, web apps, Web2 products" },
+  { icon: Users, value: "26", label: "Products Designed", subtext: "Mobile & web experiences" },
+  { icon: BarChart3, value: "500K+", label: "Downloads & Users", subtext: "Across mobile and web platforms" },
+  { icon: Zap, value: "18+", label: "Happy Clients", subtext: "Startups to scale-ups" },
 ];
 
 const expertise = [
-  { category: "Product Design", items: ["User Research & Personas", "Information Architecture", "Interaction Design", "Design Systems", "Usability Testing"] },
-  { category: "Technical Skills", items: ["Figma", "Prototyping", "Design Handoff", "Low-Code Tools", "User Analytics"] },
-  { category: "Specializations", items: ["SaaS Dashboards", "FinTech Platforms", "Web3 Products", "Admin Interfaces", "Data Visualization"] },
+  { category: "Mobile Design", items: ["iOS & Android Design", "Mobile Navigation Patterns", "Touch Interactions", "App Architecture", "Mobile Performance"] },
+  { category: "Web Design", items: ["Responsive Web Apps", "Web UI/UX", "Interaction Design", "Accessible Design", "User Testing"] },
+  { category: "Product Skills", items: ["User Research", "Wireframing & Prototyping", "Design Systems", "User Flows", "Hand-off to Developers"] },
 ];
 
 const AboutSection = () => {
@@ -26,16 +26,16 @@ const AboutSection = () => {
             <div>
               <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-3">Who I Am</p>
               <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground leading-tight">
-                Product Designer solving complex problems for ambitious teams
+                Product Designer crafting exceptional mobile apps, web apps, and web2 products
               </h1>
             </div>
 
             <div className="space-y-4 text-foreground/80 text-lg leading-relaxed">
               <p>
-                I'm <strong>Onifade Ifeoluwa</strong>, a product designer with 5+ years of experience building digital products that users actually love. I specialize in transforming complex business requirements into intuitive, scalable interfaces.
+                I'm <strong>Onifade Ifeoluwa</strong>, a product designer with 5+ years of experience building digital products that users actually love. I specialize in creating intuitive, scalable interfaces for <strong>mobile apps, web apps, and Web2 products</strong>.
               </p>
               <p>
-                My sweet spot: <strong>SaaS dashboards, FinTech platforms, and Web3 products</strong> where data-heavy complexity meets user-friendly design.
+                My sweet spot: <strong>Designing user-centered experiences</strong> that combine beautiful interfaces with seamless functionality, whether on mobile or web platforms.
               </p>
             </div>
 
@@ -44,15 +44,15 @@ const AboutSection = () => {
               <ul className="space-y-2 text-foreground/70">
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span>Turning messy data into readable, actionable interfaces</span>
+                  <span>Mobile-first design for iOS and Android experiences</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span>Designing systems that scale across teams and products</span>
+                  <span>Responsive web apps that work flawlessly across devices</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold">•</span>
-                  <span>Bridging gap between design vision and engineering reality</span>
+                  <span>User research & testing to validate design decisions</span>
                 </li>
               </ul>
             </div>
