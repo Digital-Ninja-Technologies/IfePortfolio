@@ -26,7 +26,7 @@ const AboutSection = () => {
             <div>
               <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-3">Who I Am</p>
               <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground leading-tight">
-                Product Designer crafting exceptional mobile apps, web apps, and web2 products
+                Product Designer crafting exceptional mobile apps, web apps, and web2 or web3 products
               </h1>
             </div>
 
