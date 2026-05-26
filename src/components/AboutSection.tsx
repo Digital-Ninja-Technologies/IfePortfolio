@@ -148,27 +148,130 @@ const AboutSection = () => {
       </div>
 
       {/* Working Together */}
-      <div className="mt-24 py-20 bg-muted/50 border-t border-border/50">
-        <div className="container max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
-            How I work
-          </h2>
-          <p className="text-lg text-foreground/80 mb-8">
-            I believe in collaborative design. I work closely with founders, product managers, and engineers to understand your challenges and deliver solutions that actually move the needle.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="space-y-2">
-              <p className="font-semibold text-foreground">Discovery</p>
-              <p className="text-sm text-foreground/70">Deep dive into your business & users</p>
+      <div className="mt-24 py-20 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 border-t border-primary/20">
+        <div className="container max-w-5xl">
+          <div className="text-center mb-16">
+            <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-4">My Process</p>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+              How I Work
+            </h2>
+            <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+              Collaborative, iterative, and obsessed with creating products people love. Here's my journey with you:
+            </p>
+          </div>
+
+          {/* Interactive Process Flow */}
+          <div className="space-y-4">
+            {/* Step 1 */}
+            <div className="group relative">
+              <div className="flex items-start gap-6 p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg cursor-pointer">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-primary text-white font-bold text-lg group-hover:scale-110 transition-transform duration-300">
+                    01
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-foreground mb-2">Discovery & Alignment</h3>
+                  <p className="text-foreground/70">
+                    We dive deep into your vision, users, and goals. I ask tough questions, listen actively, and build a shared understanding of what success looks like.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary font-semibold">Research</span>
+                    <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary font-semibold">Workshops</span>
+                    <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary font-semibold">Strategy</span>
+                  </div>
+                </div>
+                <div className="hidden lg:flex items-center flex-shrink-0">
+                  <svg className="w-8 h-8 text-primary/30 group-hover:text-primary/60 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </div>
+              </div>
             </div>
-            <div className="space-y-2">
-              <p className="font-semibold text-foreground">Design</p>
-              <p className="text-sm text-foreground/70">Create solutions with measurable impact</p>
+
+            {/* Step 2 */}
+            <div className="group relative lg:ml-12">
+              <div className="flex items-start gap-6 p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg cursor-pointer">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-primary text-white font-bold text-lg group-hover:scale-110 transition-transform duration-300">
+                    02
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-foreground mb-2">Design & Iterate</h3>
+                  <p className="text-foreground/70">
+                    I create wireframes, prototypes, and interactive designs. We test with real users, gather feedback, and iterate rapidly. Design is a conversation, not a monologue.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary font-semibold">Wireframes</span>
+                    <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary font-semibold">Prototypes</span>
+                    <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary font-semibold">Testing</span>
+                  </div>
+                </div>
+                <div className="hidden lg:flex items-center flex-shrink-0">
+                  <svg className="w-8 h-8 text-primary/30 group-hover:text-primary/60 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </div>
+              </div>
             </div>
-            <div className="space-y-2">
-              <p className="font-semibold text-foreground">Delivery</p>
-              <p className="text-sm text-foreground/70">Partner through handoff & beyond</p>
+
+            {/* Step 3 */}
+            <div className="group relative lg:ml-24">
+              <div className="flex items-start gap-6 p-6 rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg cursor-pointer">
+                <div className="flex-shrink-0">
+                  <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-primary text-white font-bold text-lg group-hover:scale-110 transition-transform duration-300">
+                    03
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-foreground mb-2">Polish & Handoff</h3>
+                  <p className="text-foreground/70">
+                    I create pixel-perfect designs, detailed specs, and interactive handoff documentation. Your engineers get everything they need to build it right. I'm here through launch and beyond.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary font-semibold">Design System</span>
+                    <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary font-semibold">Specs</span>
+                    <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary font-semibold">Support</span>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+
+          {/* Fun Stats About My Process */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-16 border-t border-border/50">
+            <div className="text-center group cursor-pointer">
+              <p className="text-3xl md:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">100%</p>
+              <p className="text-sm text-foreground/70">User-Focused</p>
+            </div>
+            <div className="text-center group cursor-pointer">
+              <p className="text-3xl md:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">∞</p>
+              <p className="text-sm text-foreground/70">Iterations</p>
+            </div>
+            <div className="text-center group cursor-pointer">
+              <p className="text-3xl md:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">24/7</p>
+              <p className="text-sm text-foreground/70">Availability</p>
+            </div>
+            <div className="text-center group cursor-pointer">
+              <p className="text-3xl md:text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">🎯</p>
+              <p className="text-sm text-foreground/70">Results-Driven</p>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-16">
+            <p className="text-foreground/80 mb-6 max-w-2xl mx-auto">
+              Ready to bring your vision to life? Let's create something exceptional together.
+            </p>
+            <a
+              href="https://contra.com/designninja?r=designninja"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg hover:opacity-90 transition-opacity hover:shadow-lg"
+            >
+              Let's Work Together <ArrowRight className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </div>
