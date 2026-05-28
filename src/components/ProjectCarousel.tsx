@@ -77,10 +77,12 @@ const ProjectCarousel = () => {
       <div
         ref={scrollContainerRef}
         onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
+        onMouseLeave={() => {
+          setIsPaused(false);
+          handleMouseUp();
+        }}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
         className="flex gap-4 px-4 md:px-8 overflow-x-hidden scroll-smooth cursor-grab active:cursor-grabbing select-none"
         style={{
           scrollBehavior: "auto",
