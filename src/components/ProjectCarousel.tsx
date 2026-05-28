@@ -64,7 +64,7 @@ const ProjectCarousel = () => {
           <div>
             <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-3">Featured Projects</p>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
-              Project I've brought to life
+              Project I've brought to live<br />
             </h2>
           </div>
           <p className="text-muted-foreground text-sm max-w-xs hidden lg:block">
