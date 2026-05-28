@@ -64,7 +64,7 @@ const ProjectCarousel = () => {
           <div>
             <p className="text-sm uppercase tracking-widest text-primary font-semibold mb-3">Featured Projects</p>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
-              Project I've brought to life
+              Project I've brought to live<br />
             </h2>
           </div>
           <p className="text-muted-foreground text-sm max-w-xs hidden lg:block">
@@ -77,10 +77,12 @@ const ProjectCarousel = () => {
       <div
         ref={scrollContainerRef}
         onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
+        onMouseLeave={() => {
+          setIsPaused(false);
+          handleMouseUp();
+        }}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
         className="flex gap-4 px-4 md:px-8 overflow-x-hidden scroll-smooth cursor-grab active:cursor-grabbing select-none"
         style={{
           scrollBehavior: "auto",
