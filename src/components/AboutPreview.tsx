@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import profileImage from "@/assets/profile.jpg";
+import profileImage from "@/assets/profile.png";
 import Card3D from "@/components/Card3D";
 import ContactModal from "@/components/ContactModal";
 
