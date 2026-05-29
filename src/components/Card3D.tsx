@@ -16,7 +16,7 @@ const Card3D = ({ image, alt, className = "" }: Card3DProps) => {
       <img
         src={image}
         alt={alt}
-        className="w-full h-full object-cover transition-transform duration-300"
+        className="w-full h-full object-cover transition-transform duration-300 group"
       />
 
       {/* Gloss shine effect */}
