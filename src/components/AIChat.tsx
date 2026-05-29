@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send, Loader } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const AIChat = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -132,6 +131,7 @@ CONVERSATION STYLE:
       
       setMessages(prev => [...prev, { role: "assistant", content: assistantMessage }]);
     } catch (error) {
+      console.error("AI Chat error:", error);
       setMessages(prev => [...prev, {
         role: "assistant",
         content: "Sorry, I'm having trouble connecting. Please try again or reach out directly through the contact form!"
@@ -153,7 +153,9 @@ CONVERSATION STYLE:
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-8 right-8 z-40 flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+        className="fixed bottom-8 right-8 flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+        style={{ zIndex: 9999 }}
+        title="Ask Ife's AI"
       >
         <MessageCircle className="w-5 h-5" />
         <span className="hidden sm:inline">Ask Ife's AI</span>
@@ -161,7 +163,10 @@ CONVERSATION STYLE:
 
       {/* Chat Modal */}
       {isOpen && (
-        <div className="fixed bottom-24 right-8 z-50 w-full max-w-md h-96 rounded-2xl bg-card border border-border shadow-2xl flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-300">
+        <div 
+          className="fixed bottom-24 right-8 w-full max-w-md h-96 rounded-2xl bg-card border border-border shadow-2xl flex flex-col overflow-hidden"
+          style={{ zIndex: 10000 }}
+        >
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-border/50 bg-primary/10">
             <div>
