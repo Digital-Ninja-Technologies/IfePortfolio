@@ -2,11 +2,24 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import profileImage from "@/assets/profile.jpg";
+import profileImage2 from "@/assets/profile-2.jpg";
+import profileImage3 from "@/assets/profile-3.jpg";
+import profileImage4 from "@/assets/profile-4.jpg";
+import profileImage5 from "@/assets/profile-5.jpg";
 import Card3D from "@/components/Card3D";
 import ContactModal from "@/components/ContactModal";
 
+const galleryImages = [
+  { src: profileImage, alt: "Onifade Ifeoluwa - Product Designer" },
+  { src: profileImage2, alt: "Designing at workstation" },
+  { src: profileImage3, alt: "Sketching wireframes" },
+  { src: profileImage4, alt: "Presenting design concepts" },
+  { src: profileImage5, alt: "Multi-screen design workspace" },
+];
+
 const AboutPreview = () => {
   const [contactOpen, setContactOpen] = useState(false);
+  const [activeImage, setActiveImage] = useState(0);
 
   return (
     <>
@@ -14,9 +27,41 @@ const AboutPreview = () => {
         <div className="container max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Image */}
-            <div className="relative">
-              <Card3D image={profileImage} alt="Onifade Ifeoluwa - Product Designer" />
+            <div className="relative space-y-4">
+              <Card3D
+                key={activeImage}
+                image={galleryImages[activeImage].src}
+                alt={galleryImages[activeImage].alt}
+              />
+              <div className="grid grid-cols-4 gap-3">
+                {galleryImages.slice(1).map((img, i) => {
+                  const idx = i + 1;
+                  const isActive = activeImage === idx;
+                  return (
+                    <button
+                      key={img.src}
+                      onClick={() => setActiveImage(idx)}
+                      aria-label={`View ${img.alt}`}
+                      className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                        isActive
+                          ? "border-primary shadow-[0_0_20px_hsl(var(--primary)/0.4)] scale-[1.03]"
+                          : "border-border/50 hover:border-primary/60 opacity-80 hover:opacity-100"
+                      }`}
+                    >
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        loading="lazy"
+                        width={800}
+                        height={1000}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  );
+                })}
+              </div>
             </div>
+
 
             {/* Text */}
             <div className="space-y-8">
