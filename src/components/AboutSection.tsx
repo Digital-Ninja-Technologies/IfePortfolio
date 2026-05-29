@@ -1,5 +1,5 @@
 import { ArrowRight, BarChart3, Users, Target, Zap } from "lucide-react";
-import profileImage from "@/assets/profile.png";
+import profileImage from "@/assets/profile.jpg";
 import resumeFile from "@/assets/Ifeoluwa_Onifade UX:UI.pdf";
 
 const keyMetrics = [
