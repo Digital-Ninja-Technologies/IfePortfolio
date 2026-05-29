@@ -1,17 +1,13 @@
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Loader } from "lucide-react";
+import { Search, X, Send, Loader } from "lucide-react";
 
 const AIChat = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string }>>([
-    {
-      role: "assistant",
-      content: "Hey! I'm Ife's AI Assistant. Ask me anything about Ife, their portfolio, services, or how to work together! 🚀"
-    }
-  ]);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string }>>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -20,6 +16,12 @@ const AIChat = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  useEffect(() => {
+    if (isExpanded && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [isExpanded]);
 
   const ifeContext = `
 You are Ife's AI Assistant - a friendly, knowledgeable assistant about Onifade Ifeoluwa, a Product Designer.
@@ -120,11 +122,15 @@ CONVERSATION STYLE:
           max_tokens: 500,
           system: ifeContext,
           messages: [
-            ...messages,
+            ...messages.map(m => ({ role: m.role, content: m.content })),
             { role: "user", content: userMessage }
           ]
         })
       });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
 
       const data = await response.json();
       const assistantMessage = data.content[0].text;
@@ -148,90 +154,133 @@ CONVERSATION STYLE:
     }
   };
 
+  const handleClose = () => {
+    setIsExpanded(false);
+    setMessages([]);
+    setInput("");
+  };
+
   return (
     <>
-      {/* Floating Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-8 right-8 flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-        style={{ zIndex: 9999 }}
-        title="Ask Ife's AI"
+      {/* Search Box - Fixed to middle of screen, above Ready to Work button */}
+      <div 
+        className="fixed left-1/2 transform -translate-x-1/2 w-full max-w-2xl px-4"
+        style={{ 
+          zIndex: 9998,
+          bottom: isExpanded ? "auto" : "380px",
+          top: isExpanded ? "50%" : "auto",
+          transform: isExpanded ? "translate(-50%, -50%)" : "translate(-50%, 0)"
+        }}
       >
-        <MessageCircle className="w-5 h-5" />
-        <span className="hidden sm:inline">Ask Ife's AI</span>
-      </button>
-
-      {/* Chat Modal */}
-      {isOpen && (
-        <div 
-          className="fixed bottom-24 right-8 w-full max-w-md h-96 rounded-2xl bg-card border border-border shadow-2xl flex flex-col overflow-hidden"
-          style={{ zIndex: 10000 }}
-        >
-          {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b border-border/50 bg-primary/10">
-            <div>
-              <h3 className="font-bold text-foreground">Ife's AI Assistant</h3>
-              <p className="text-xs text-muted-foreground">Ask anything about portfolio & services</p>
-            </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="p-1 hover:bg-muted rounded-lg transition-colors"
-            >
-              <X className="w-5 h-5 text-foreground/70" />
-            </button>
-          </div>
-
-          {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            {messages.map((msg, idx) => (
-              <div
-                key={idx}
-                className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
-              >
-                <div
-                  className={`max-w-xs px-4 py-2 rounded-2xl text-sm ${
-                    msg.role === "user"
-                      ? "bg-primary text-primary-foreground rounded-br-none"
-                      : "bg-muted text-foreground rounded-bl-none"
-                  }`}
-                >
-                  {msg.content}
-                </div>
-              </div>
-            ))}
-            {loading && (
-              <div className="flex justify-start">
-                <div className="bg-muted text-foreground px-4 py-2 rounded-2xl rounded-bl-none">
-                  <Loader className="w-4 h-4 animate-spin" />
-                </div>
-              </div>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
-
-          {/* Input */}
-          <div className="p-4 border-t border-border/50 flex gap-2">
+        {/* Search Input */}
+        <div className="relative">
+          <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-card border-2 border-primary shadow-xl hover:shadow-2xl transition-all duration-300">
+            <Search className="w-5 h-5 text-primary flex-shrink-0" />
             <input
+              ref={searchInputRef}
               type="text"
-              placeholder="Ask anything..."
+              placeholder="Ask me about Ife's work, portfolio, or services..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
+              onFocus={() => setIsExpanded(true)}
               disabled={loading}
-              className="flex-1 px-4 py-2 rounded-full border border-border/50 bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary/50 transition-colors disabled:opacity-50"
+              className="flex-1 bg-transparent text-foreground placeholder-muted-foreground focus:outline-none text-base"
             />
-            <button
-              onClick={handleSendMessage}
-              disabled={loading || !input.trim()}
-              className="p-2 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-all disabled:opacity-50"
-            >
-              <Send className="w-4 h-4" />
-            </button>
+            {isExpanded && (
+              <button
+                onClick={handleClose}
+                className="p-1 hover:bg-muted rounded-lg transition-colors flex-shrink-0"
+              >
+                <X className="w-5 h-5 text-foreground/70" />
+              </button>
+            )}
           </div>
+
+          {/* Expanded Chat View */}
+          {isExpanded && (
+            <div 
+              className="absolute top-full mt-4 left-1/2 transform -translate-x-1/2 w-full max-w-2xl rounded-2xl bg-card border border-border shadow-2xl flex flex-col"
+              style={{ height: "400px", zIndex: 9998 }}
+            >
+              {/* Messages Container */}
+              <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                {messages.length === 0 && (
+                  <div className="flex items-center justify-center h-full">
+                    <div className="text-center">
+                      <MessageCircleIcon className="w-8 h-8 text-primary/50 mx-auto mb-2" />
+                      <p className="text-muted-foreground text-sm">Start a conversation! Ask me anything about Ife's work.</p>
+                    </div>
+                  </div>
+                )}
+                {messages.map((msg, idx) => (
+                  <div
+                    key={idx}
+                    className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                  >
+                    <div
+                      className={`max-w-xs px-4 py-2 rounded-2xl text-sm ${
+                        msg.role === "user"
+                          ? "bg-primary text-primary-foreground rounded-br-none"
+                          : "bg-muted text-foreground rounded-bl-none"
+                      }`}
+                    >
+                      {msg.content}
+                    </div>
+                  </div>
+                ))}
+                {loading && (
+                  <div className="flex justify-start">
+                    <div className="bg-muted text-foreground px-4 py-2 rounded-2xl rounded-bl-none">
+                      <Loader className="w-4 h-4 animate-spin" />
+                    </div>
+                  </div>
+                )}
+                <div ref={messagesEndRef} />
+              </div>
+
+              {/* Input Area */}
+              <div className="p-4 border-t border-border/50 flex gap-2">
+                <input
+                  type="text"
+                  placeholder="Type your question..."
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  disabled={loading}
+                  className="flex-1 px-4 py-2 rounded-full border border-border/50 bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary/50 transition-colors disabled:opacity-50"
+                  autoFocus
+                />
+                <button
+                  onClick={handleSendMessage}
+                  disabled={loading || !input.trim()}
+                  className="p-2 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-all disabled:opacity-50 flex-shrink-0"
+                >
+                  <Send className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </>
   );
 };
+
+// Simple MessageCircle Icon component
+const MessageCircleIcon = ({ className }: { className: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+);
 
 export default AIChat;
