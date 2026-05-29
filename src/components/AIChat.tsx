@@ -162,12 +162,12 @@ CONVERSATION STYLE:
 
   return (
     <>
-      {/* Search Box - Fixed to middle of screen, above Ready to Work button */}
+      {/* Search Box - Fixed to bottom of screen */}
       <div 
         className="fixed left-1/2 transform -translate-x-1/2 w-full max-w-2xl px-4"
         style={{ 
           zIndex: 9998,
-          bottom: isExpanded ? "auto" : "380px",
+          bottom: isExpanded ? "auto" : "24px",
           top: isExpanded ? "50%" : "auto",
           transform: isExpanded ? "translate(-50%, -50%)" : "translate(-50%, 0)"
         }}
