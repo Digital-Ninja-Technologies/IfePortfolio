@@ -7,7 +7,7 @@ interface Card3DProps {
 const Card3D = ({ image, alt, className = "" }: Card3DProps) => {
   return (
     <div
-      className={`relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-muted shadow-2xl group ${className}`}
+      className={`relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-muted shadow-2xl ${className}`}
     >
       {/* Gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/20 pointer-events-none z-10" />
@@ -16,7 +16,7 @@ const Card3D = ({ image, alt, className = "" }: Card3DProps) => {
       <img
         src={image}
         alt={alt}
-        className="w-full h-full object-cover transition-transform duration-300"
+        className="w-full h-full object-cover transition-transform duration-300 group"
       />
 
       {/* Gloss shine effect */}
