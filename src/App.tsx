@@ -39,6 +39,7 @@ import BlogPost from "./pages/BlogPost.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import ReadyToWorkWidget from "./components/ReadyToWorkWidget.tsx";
+import AIChat from "./components/AIChat.tsx";
 import CustomCursor from "./components/CustomCursor.tsx";
 
 const queryClient = new QueryClient();
@@ -89,6 +90,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ReadyToWorkWidget />
+        <AIChat />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
