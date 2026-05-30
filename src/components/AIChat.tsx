@@ -161,7 +161,7 @@ CONVERSATION STYLE:
         className="fixed left-1/2 transform -translate-x-1/2 w-full max-w-2xl px-4"
         style={{ 
           zIndex: 9998,
-          bottom: "200px"
+          bottom: "180px"
         }}
       >
         <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-card border-2 border-primary shadow-xl hover:shadow-2xl transition-all duration-300">
