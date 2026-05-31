@@ -91,7 +91,7 @@ const AboutPreview = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground">500K+ users impacted through thoughtful design</span>
+                  <span className="text-foreground">10K+ users impacted through thoughtful design</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />

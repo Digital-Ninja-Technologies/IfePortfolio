@@ -5,7 +5,7 @@ import resumeFile from "@/assets/Ifeoluwa_Onifade UX:UI.pdf";
 const keyMetrics = [
   { icon: Target, value: "5+", label: "Years Building Apps", subtext: "Mobile apps, web apps, Web2 products" },
   { icon: Users, value: "26", label: "Products Designed", subtext: "Mobile & web experiences" },
-  { icon: BarChart3, value: "500K+", label: "Downloads & Users", subtext: "Across mobile and web platforms" },
+  { icon: BarChart3, value: "10K+", label: "Downloads & Users", subtext: "Across mobile and web platforms" },
   { icon: Zap, value: "18+", label: "Happy Clients", subtext: "Startups to scale-ups" },
 ];
 
