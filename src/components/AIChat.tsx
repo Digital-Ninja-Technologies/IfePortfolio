@@ -87,7 +87,7 @@ EXPERTISE:
 
 KEY ACHIEVEMENTS:
 - 26+ Projects Delivered (mobile, web, and blockchain)
-- 500K+ Users Impacted
+- 10K+ Users Impacted
 - 18+ Happy Clients
 - 100% User-Focused approach
 - Available 24/7
