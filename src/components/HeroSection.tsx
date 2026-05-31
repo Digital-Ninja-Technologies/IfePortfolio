@@ -54,7 +54,7 @@ const HeroSection = () => {
         <div className="mt-8 md:mt-12 flex flex-col items-center gap-5 animate-fade-in-up animate-delay-300">
           <div className="flex items-center gap-2 max-w-3xl">
             <span className="w-2 h-2 rounded-full bg-primary inline-block flex-shrink-0" />
-            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
               <TypewriterText
                 text="Partnering as a Product Designer, Technical Virtual Assistant, VibeCoder and Low Code Developer. Crafting digital experiences for startups and founders."
                 speed={40}
