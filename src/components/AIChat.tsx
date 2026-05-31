@@ -230,12 +230,12 @@ CONVERSATION STYLE:
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={handleKeyPress}
             disabled={loading}
-            className="flex-1 bg-transparent text-foreground placeholder-muted-foreground focus:outline-none text-base"
+            className="flex-1 bg-transparent text-foreground placeholder-muted-foreground focus:outline-none text-base cursor-text"
           />
           <button
             onClick={handleSendMessage}
             disabled={loading || !input.trim()}
-            className="p-2 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-all disabled:opacity-50 flex-shrink-0"
+            className="p-2 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-all disabled:opacity-50 flex-shrink-0 cursor-pointer"
           >
             <Send className="w-4 h-4" />
           </button>
@@ -245,7 +245,7 @@ CONVERSATION STYLE:
       {/* Modal Backdrop */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm cursor-pointer"
           style={{ zIndex: 9999 }}
           onClick={handleCloseModal}
         />
@@ -254,7 +254,7 @@ CONVERSATION STYLE:
       {/* Chat Modal - Popup */}
       {isModalOpen && (
         <div
-          className="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-[600px] rounded-2xl bg-card border border-border shadow-2xl flex flex-col overflow-hidden"
+          className="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-[600px] rounded-2xl bg-card border border-border shadow-2xl flex flex-col overflow-hidden cursor-auto"
           style={{ zIndex: 10000 }}
           onClick={(e) => e.stopPropagation()}
         >
@@ -317,12 +317,12 @@ CONVERSATION STYLE:
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
               disabled={loading}
-              className="flex-1 px-4 py-2 rounded-full border border-border/50 bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary/50 transition-colors disabled:opacity-50"
+              className="flex-1 px-4 py-2 rounded-full border border-border/50 bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary/50 transition-colors disabled:opacity-50 cursor-text"
             />
             <button
               onClick={handleSendMessage}
               disabled={loading || !input.trim()}
-              className="p-2 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-all disabled:opacity-50 flex-shrink-0"
+              className="p-2 rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-all disabled:opacity-50 flex-shrink-0 cursor-pointer"
             >
               <Send className="w-4 h-4" />
             </button>
