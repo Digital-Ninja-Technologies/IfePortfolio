@@ -154,13 +154,24 @@ CONVERSATION STYLE:
     setIsModalOpen(true);
 
     try {
+      const matches = searchIndex(siteIndex, userMessage, 6);
+      const retrieved = matches.length
+        ? "\n\nRELEVANT PAGES FROM THE WEBSITE (use these to answer; cite the URL when helpful):\n" +
+          matches
+            .map(
+              (m) =>
+                `- [${m.type.toUpperCase()}] ${m.title} (${m.url})\n  ${m.text.slice(0, 700)}`,
+            )
+            .join("\n")
+        : "";
+
       const response = await fetch("/.netlify/functions/ai-chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          system: ifeContext,
+          system: ifeContext + retrieved,
           messages: [
             ...messages.map(m => ({ role: m.role, content: m.content })),
             { role: "user", content: userMessage }
