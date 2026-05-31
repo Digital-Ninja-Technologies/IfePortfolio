@@ -1,12 +1,60 @@
 import { useState, useRef, useEffect } from "react";
 import { Search, X, Send, Loader } from "lucide-react";
 
+interface IndexEntry {
+  type: "page" | "project" | "blog";
+  title: string;
+  url: string;
+  text: string;
+}
+
+const STOPWORDS = new Set([
+  "the","a","an","of","to","in","on","for","and","or","is","are","was","were",
+  "be","been","being","this","that","it","with","as","at","by","from","about",
+  "what","who","how","why","when","where","which","do","does","did","can","you",
+  "your","i","me","my","tell","know","ife","ifeoluwa","onifade","website","site",
+]);
+
+function tokenize(s: string): string[] {
+  return (s.toLowerCase().match(/[a-z0-9]+/g) || []).filter(
+    (t) => t.length > 2 && !STOPWORDS.has(t),
+  );
+}
+
+function searchIndex(entries: IndexEntry[], query: string, topK = 5): IndexEntry[] {
+  const qTokens = tokenize(query);
+  if (qTokens.length === 0) return [];
+  const scored = entries.map((e) => {
+    const hay = (e.title + " " + e.text).toLowerCase();
+    let score = 0;
+    for (const t of qTokens) {
+      const matches = hay.split(t).length - 1;
+      if (matches > 0) score += matches + (e.title.toLowerCase().includes(t) ? 3 : 0);
+    }
+    return { e, score };
+  });
+  return scored
+    .filter((s) => s.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, topK)
+    .map((s) => s.e);
+}
+
 const AIChat = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string }>>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [siteIndex, setSiteIndex] = useState<IndexEntry[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    fetch("/site-index.json")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => data?.entries && setSiteIndex(data.entries))
+      .catch(() => {});
+  }, []);
+
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -106,13 +154,24 @@ CONVERSATION STYLE:
     setIsModalOpen(true);
 
     try {
+      const matches = searchIndex(siteIndex, userMessage, 6);
+      const retrieved = matches.length
+        ? "\n\nRELEVANT PAGES FROM THE WEBSITE (use these to answer; cite the URL when helpful):\n" +
+          matches
+            .map(
+              (m) =>
+                `- [${m.type.toUpperCase()}] ${m.title} (${m.url})\n  ${m.text.slice(0, 700)}`,
+            )
+            .join("\n")
+        : "";
+
       const response = await fetch("/.netlify/functions/ai-chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          system: ifeContext,
+          system: ifeContext + retrieved,
           messages: [
             ...messages.map(m => ({ role: m.role, content: m.content })),
             { role: "user", content: userMessage }
