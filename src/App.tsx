@@ -35,6 +35,7 @@ import CaseStudySynclove from "./pages/CaseStudySynclove.tsx";
 import CaseStudyModucode from "./pages/CaseStudyModucode.tsx";
 import Works from "./pages/Works.tsx";
 import Blog from "./pages/Blog.tsx";
+import Game from "./pages/Game.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
@@ -57,6 +58,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/works" element={<Works />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/game" element={<Game />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/case-study/travelguide" element={<CaseStudyTravelGuide />} />
           <Route path="/case-study/flex2ride" element={<CaseStudyFlex2Ride />} />
