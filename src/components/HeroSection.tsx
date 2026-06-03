@@ -56,7 +56,7 @@ const HeroSection = () => {
             <span className="w-2 h-2 rounded-full bg-primary inline-block flex-shrink-0" />
             <p className="text-sm md:text-base text-muted-foreground leading-relaxed text-center">
               <TypewriterText
-                text="Partnering as a Product Designer, Technical Virtual Assistant, VibeCoder and Low Code Developer. Crafting digital experiences for startups and founders."
+                text="Partnering as a Product Designer, VibeCoder and Low Code Developer. Crafting digital experiences for startups and founders."
                 speed={40}
                 delay={500}
                 className="font-medium text-foreground"
