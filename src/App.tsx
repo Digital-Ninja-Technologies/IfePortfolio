@@ -10,6 +10,7 @@ import CaseStudyFlex2Ride from "./pages/CaseStudyFlex2Ride.tsx";
 import CaseStudyConnekt from "./pages/CaseStudyConnekt.tsx";
 import CaseStudyYumdash from "./pages/CaseStudyYumdash.tsx";
 import CaseStudySportrex from "./pages/CaseStudySportrex.tsx";
+import CaseStudySportrexWallet from "./pages/CaseStudySportrexWallet.tsx";
 import CaseStudyBibleVerse from "./pages/CaseStudyBibleVerse.tsx";
 import CaseStudyEskro from "./pages/CaseStudyEskro.tsx";
 import CaseStudyTaptapSend from "./pages/CaseStudyTaptapSend.tsx";
@@ -65,6 +66,7 @@ const App = () => (
           <Route path="/case-study/connekt" element={<CaseStudyConnekt />} />
           <Route path="/case-study/yumdash" element={<CaseStudyYumdash />} />
           <Route path="/case-study/sportrex" element={<CaseStudySportrex />} />
+          <Route path="/case-study/sportrex-wallet" element={<CaseStudySportrexWallet />} />
           <Route path="/case-study/bible-verse" element={<CaseStudyBibleVerse />} />
           <Route path="/case-study/eskro" element={<CaseStudyEskro />} />
           <Route path="/case-study/taptap-send" element={<CaseStudyTaptapSend />} />
