@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 
 const ProjectCarousel = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
+  const [_trigger, setTrigger] = useState(0); // Minimal state for animation
+  const isPausedRef = useRef(false);
+  const isDraggingRef = useRef(false);
   const scrollPositionRef = useRef(0);
   const animationIdRef = useRef<number>();
   const dragStartRef = useRef(0);
@@ -24,7 +25,7 @@ const ProjectCarousel = () => {
     const maxScroll = container.scrollWidth / 3; // One third is the original content
 
     const animate = () => {
-      if (!isPaused && !isDragging) {
+      if (!isPausedRef.current && !isDraggingRef.current) {
         scrollPositionRef.current += scrollSpeed;
 
         // Reset to beginning when we've scrolled past the first set
@@ -46,15 +47,24 @@ const ProjectCarousel = () => {
         cancelAnimationFrame(animationIdRef.current);
       }
     };
-  }, [isPaused, isDragging, displayProjects.length]);
+  }, [displayProjects.length]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
+    isDraggingRef.current = true;
     dragStartRef.current = e.clientX;
   };
 
   const handleMouseUp = () => {
-    setIsDragging(false);
+    isDraggingRef.current = false;
+  };
+
+  const handleMouseEnter = () => {
+    isPausedRef.current = true;
+  };
+
+  const handleMouseLeave = () => {
+    isPausedRef.current = false;
+    isDraggingRef.current = false;
   };
 
   return (
@@ -76,14 +86,11 @@ const ProjectCarousel = () => {
       {/* Carousel Container */}
       <div
         ref={scrollContainerRef}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => {
-          setIsPaused(false);
-          handleMouseUp();
-        }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
-        className="flex gap-4 px-4 md:px-8 overflow-x-hidden scroll-smooth cursor-grab active:cursor-grabbing select-none"
+        className="flex gap-4 px-4 md:px-8 overflow-x-hidden scroll-smooth cursor-grab active:cursor-grabbing select-none will-change-scroll"
         style={{
           scrollBehavior: "auto",
           WebkitOverflowScrolling: "touch",
@@ -94,7 +101,7 @@ const ProjectCarousel = () => {
           <Link
             key={`${project.title}-${index}`}
             to={project.link}
-            className="flex-shrink-0 group relative pointer-events-auto"
+            className="flex-shrink-0 group relative pointer-events-auto will-change-transform"
             draggable={false}
           >
             <div className="relative h-64 w-80 rounded-2xl overflow-hidden bg-muted border border-border/50 group-hover:border-primary/50 transition-all duration-300 hover:shadow-2xl">
@@ -103,9 +110,10 @@ const ProjectCarousel = () => {
                 src={project.image}
                 alt={project.title}
                 loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 will-change-transform"
                 style={{
                   contentVisibility: "auto",
+                  backfaceVisibility: "hidden",
                 }}
               />
 

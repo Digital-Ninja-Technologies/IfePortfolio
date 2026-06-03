@@ -1,65 +1,110 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [smoothPosition, setSmoothPosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const cursorInnerRef = useRef<HTMLDivElement>(null);
+  const cursorOuterRef = useRef<HTMLDivElement>(null);
+  const positionRef = useRef({ x: 0, y: 0 });
+  const smoothPositionRef = useRef({ x: 0, y: 0 });
+  const isHoveringRef = useRef(false);
+  const isVisibleRef = useRef(false);
 
   useEffect(() => {
     // Hide the default cursor
     document.documentElement.style.cursor = "none";
 
-    const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      setIsVisible(true);
+    const lerp = (start: number, end: number, factor: number) =>
+      start + (end - start) * factor;
+
+    let animationFrameId: number;
+
+    const animate = () => {
+      smoothPositionRef.current = {
+        x: lerp(smoothPositionRef.current.x, positionRef.current.x, 0.25),
+        y: lerp(smoothPositionRef.current.y, positionRef.current.y, 0.25),
+      };
+
+      if (cursorInnerRef.current) {
+        cursorInnerRef.current.style.transform = `translate(${positionRef.current.x - 4}px, ${positionRef.current.y - 4}px)`;
+      }
+
+      if (cursorOuterRef.current) {
+        const offset = isHoveringRef.current ? 28 : 20;
+        cursorOuterRef.current.style.transform = `translate(${smoothPositionRef.current.x - offset}px, ${smoothPositionRef.current.y - offset}px)`;
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
     };
 
-    const handleMouseLeave = () => setIsVisible(false);
-    const handleMouseEnter = () => setIsVisible(true);
-
-    const handleHoverStart = (e: Event) => {
-      const target = e.target as HTMLElement;
-      if (target.closest("a, button, [role='button'], input, textarea, select")) {
-        setIsHovering(true);
+    const handleMouseMove = (e: MouseEvent) => {
+      positionRef.current = { x: e.clientX, y: e.clientY };
+      if (!isVisibleRef.current) {
+        isVisibleRef.current = true;
+        if (cursorInnerRef.current) cursorInnerRef.current.style.opacity = "1";
+        if (cursorOuterRef.current) cursorOuterRef.current.style.opacity = "1";
       }
     };
 
-    const handleHoverEnd = () => setIsHovering(false);
+    const handleMouseLeave = () => {
+      isVisibleRef.current = false;
+      if (cursorInnerRef.current) cursorInnerRef.current.style.opacity = "0";
+      if (cursorOuterRef.current) cursorOuterRef.current.style.opacity = "0";
+    };
 
-    document.addEventListener("mousemove", handleMouseMove);
+    const handleMouseEnter = () => {
+      isVisibleRef.current = true;
+      if (cursorInnerRef.current) cursorInnerRef.current.style.opacity = "1";
+      if (cursorOuterRef.current) cursorOuterRef.current.style.opacity = "1";
+    };
+
+    const handleHoverStart = (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (target.closest("a, button, [role='button'], input, textarea, select, [data-interactive]")) {
+        isHoveringRef.current = true;
+        if (cursorInnerRef.current) {
+          cursorInnerRef.current.style.width = "6px";
+          cursorInnerRef.current.style.height = "6px";
+        }
+        if (cursorOuterRef.current) {
+          cursorOuterRef.current.style.width = "56px";
+          cursorOuterRef.current.style.height = "56px";
+          cursorOuterRef.current.style.borderColor = "hsl(var(--primary))";
+        }
+      }
+    };
+
+    const handleHoverEnd = () => {
+      if (!document.activeElement?.matches("a, button, [role='button'], input, textarea, select")) {
+        isHoveringRef.current = false;
+        if (cursorInnerRef.current) {
+          cursorInnerRef.current.style.width = "8px";
+          cursorInnerRef.current.style.height = "8px";
+        }
+        if (cursorOuterRef.current) {
+          cursorOuterRef.current.style.width = "40px";
+          cursorOuterRef.current.style.height = "40px";
+          cursorOuterRef.current.style.borderColor = "hsl(var(--primary) / 0.4)";
+        }
+      }
+    };
+
+    document.addEventListener("mousemove", handleMouseMove, { passive: true });
     document.addEventListener("mouseleave", handleMouseLeave);
     document.addEventListener("mouseenter", handleMouseEnter);
-    document.addEventListener("mouseover", handleHoverStart);
-    document.addEventListener("mouseout", handleHoverEnd);
+    document.addEventListener("mouseover", handleHoverStart, { passive: true });
+    document.addEventListener("mouseout", handleHoverEnd, { passive: true });
+
+    animationFrameId = requestAnimationFrame(animate);
 
     return () => {
-      // Restore default cursor
       document.documentElement.style.cursor = "auto";
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
       document.removeEventListener("mouseover", handleHoverStart);
       document.removeEventListener("mouseout", handleHoverEnd);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
-
-  useEffect(() => {
-    let animationFrame: number;
-    const lerp = (start: number, end: number, factor: number) =>
-      start + (end - start) * factor;
-
-    const animate = () => {
-      setSmoothPosition((prev) => ({
-        x: lerp(prev.x, position.x, 0.15),
-        y: lerp(prev.y, position.y, 0.15),
-      }));
-      animationFrame = requestAnimationFrame(animate);
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrame);
-  }, [position]);
 
   // Hide on touch devices
   if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
@@ -70,39 +115,39 @@ const CustomCursor = () => {
     <>
       {/* Inner dot */}
       <div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
+        ref={cursorInnerRef}
+        className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference will-change-transform"
         style={{
-          transform: `translate(${position.x - 4}px, ${position.y - 4}px)`,
-          opacity: isVisible ? 1 : 0,
+          opacity: 1,
           transition: "opacity 0.3s ease",
         }}
       >
         <div
           className="rounded-full bg-primary"
           style={{
-            width: isHovering ? 6 : 8,
-            height: isHovering ? 6 : 8,
-            transition: "width 0.3s ease, height 0.3s ease",
+            width: "8px",
+            height: "8px",
+            transition: "width 0.2s ease, height 0.2s ease",
           }}
         />
       </div>
 
       {/* Outer circle */}
       <div
-        className="fixed top-0 left-0 pointer-events-none z-[9998]"
+        ref={cursorOuterRef}
+        className="fixed top-0 left-0 pointer-events-none z-[9998] will-change-transform"
         style={{
-          transform: `translate(${smoothPosition.x - (isHovering ? 28 : 20)}px, ${smoothPosition.y - (isHovering ? 28 : 20)}px)`,
-          opacity: isVisible ? 1 : 0,
+          opacity: 1,
           transition: "opacity 0.3s ease",
         }}
       >
         <div
-          className="rounded-full border-2 border-primary/60"
+          className="rounded-full border-2"
           style={{
-            width: isHovering ? 56 : 40,
-            height: isHovering ? 56 : 40,
-            transition: "width 0.3s ease, height 0.3s ease, border-color 0.3s ease",
-            borderColor: isHovering ? "hsl(var(--primary))" : "hsl(var(--primary) / 0.4)",
+            width: "40px",
+            height: "40px",
+            borderColor: "hsl(var(--primary) / 0.4)",
+            transition: "width 0.2s ease, height 0.2s ease, border-color 0.2s ease",
           }}
         />
       </div>
