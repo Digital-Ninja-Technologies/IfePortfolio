@@ -183,6 +183,6 @@ export const projects: Project[] = [
     link: "/case-study/gigatalik",
     image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/svixixid69saxzf3o7xl.webp",
     bgColor: "hsl(120 40% 95%)",
-    liveUrl: "https://www.gigatalik.com/",
+    liveUrl: "https://contra.com/p/gMF7mcbe-gigatalik-meme-token-landing-page-design?r=designninja",
   },
 ];
