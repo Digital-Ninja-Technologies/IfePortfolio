@@ -21,6 +21,7 @@ export interface CaseStudyData {
   features: { title: string; desc: string }[];
   results: { intro: string; stats: { stat: string; desc: string }[] };
   reflection: string[];
+  gallery?: { title: string; description: string; image: string }[];
   liveUrl?: string;
   contraUrl?: string;
 }
@@ -158,6 +159,29 @@ const CaseStudyLayout = ({ data }: { data: CaseStudyData }) => {
               ))}
             </div>
           </div>
+
+          {/* Gallery Section */}
+          {data.gallery && data.gallery.length > 0 && (
+            <div className="mt-16">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-8">Design Showcase</h2>
+              <div className="space-y-12">
+                {data.gallery.map((item, i) => (
+                  <div key={i} className="space-y-4">
+                    <div>
+                      <h3 className="text-xl font-heading font-bold text-foreground mb-2">{item.title}</h3>
+                      <p className="text-muted-foreground">{item.description}</p>
+                    </div>
+                    <img 
+                      src={item.image} 
+                      alt={item.title}
+                      className="w-full rounded-2xl object-cover shadow-lg"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div>
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-4">Reflection</h2>

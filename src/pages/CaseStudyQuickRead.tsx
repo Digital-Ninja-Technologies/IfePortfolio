@@ -4,7 +4,7 @@ const data: CaseStudyData = {
   title: "QuickRead AI Mobile App",
   subtitle: "An AI-powered mobile app that helps users read, summarize, and interact with PDFs effortlessly. Designed for students, techies, and business owners who need to extract insights from long documents quickly.",
   tags: ["Brand Design", "UX/UI Design", "AI", "Mobile App"],
-  heroImage: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/p8yvu1xbona4e4ueeziw.webp",
+  heroImage: "/assets/quickread/splash-intro.png",
   meta: [
     { label: "Role", value: "UX/UI Designer & Brand Designer" },
     { label: "Timeline", value: "3 Weeks" },
@@ -32,7 +32,7 @@ const data: CaseStudyData = {
       { step: "04", title: "Prototyping & Testing", desc: "Clickable Figma prototypes tested with users for navigation simplicity and AI response placement." },
     ],
   },
-  midImage: { src: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/wsijdl1qnieapalce0a4.webp", alt: "QuickRead App" },
+  midImage: { src: "/assets/quickread/screens-auth.jpg", alt: "QuickRead Authentication Flow - Login, Register, Forgot Password" },
   features: [
     { title: "Smart Summaries", desc: "Instantly distill lengthy documents into key takeaways and actionable insights." },
     { title: "Ask Your PDF", desc: "Use natural language to query document content — 'What does section 3 mean?'" },
@@ -52,6 +52,23 @@ const data: CaseStudyData = {
     "The biggest challenge was balancing AI complexity vs UX simplicity — simplifying the AI-powered experience for non-technical users while keeping it powerful for power users.",
   ],
   contraUrl: "https://contra.com/p/so7Z3QA3-quick-read-ai-mobile-app-and-brand-design?r=designninja",
+  gallery: [
+    {
+      title: "Onboarding & Authentication",
+      description: "Clean, intuitive auth flows with login, registration, and password recovery screens. Dark theme with soft blue accents for a calming study environment.",
+      image: "/assets/quickread/screens-auth.jpg",
+    },
+    {
+      title: "User Profile & Features Overview",
+      description: "Profile management, user settings, and a visual 'How It Works' section guiding users through the 3 core features: Upload → Analyze → Ask Questions.",
+      image: "/assets/quickread/screens-end.jpg",
+    },
+    {
+      title: "Upload, Processing & Chat Interface",
+      description: "Seamless PDF upload experience, AI processing indicators, and the main Q&A chat interface where users interact with their documents conversationally.",
+      image: "/assets/quickread/screens-upload-chat.jpg",
+    },
+  ],
 };
 
 const CaseStudyQuickRead = () => <CaseStudyLayout data={data} />;

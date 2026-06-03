@@ -203,7 +203,7 @@ export const projects: Project[] = [
     description: "An AI-powered mobile app that helps users read, summarize, and interact with PDFs effortlessly. Designed for students, techies, and business owners who need to extract insights from long documents quickly.",
     tags: ["UX/UI Designer", "2025", "Figma & FigJam"],
     link: "/case-study/quickread",
-    image: "https://media.contra.com/image/upload/fl_progressive/q_auto:best/p8yvu1xbona4e4ueeziw.webp",
+    image: "/assets/quickread/splash-intro.png",
     bgColor: "hsl(280 50% 95%)",
     liveUrl: "https://contra.com/p/so7Z3QA3-quick-read-ai-mobile-app-and-brand-design?r=designninja",
   },
