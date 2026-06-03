@@ -244,7 +244,7 @@ const Game = () => {
       <SEO
         title="Play Zen Games — Onifade Ifeoluwa"
         description="Take a break. Pop calming bubbles or play a quick memory match game on Ife's portfolio."
-        canonicalPath="/game"
+        path="/game"
       />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">
