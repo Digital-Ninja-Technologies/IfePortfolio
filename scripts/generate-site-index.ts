@@ -4,7 +4,6 @@
 import { writeFileSync } from "fs";
 import { resolve } from "path";
 import { projects } from "../src/data/projects";
-import { blogPosts } from "../src/data/blogPosts";
 
 interface IndexEntry {
   type: "page" | "project" | "blog";
@@ -18,7 +17,7 @@ const staticPages: IndexEntry[] = [
     type: "page",
     title: "Home",
     url: "/",
-    text: "Onifade Ifeoluwa — Product Designer (Design Ninja). 5+ years building digital products across mobile, web, Web2 and Web3. 26+ projects delivered, 500K+ users impacted, 18+ happy clients. User-focused, results-driven, available 24/7.",
+    text: "Onifade Ifeoluwa — Product Designer (Design Ninja). 5+ years building digital products across mobile, web, Web2 and Web3. 26+ projects delivered, 10K+ users impacted, 18+ happy clients. User-focused, results-driven, available 24/7.",
   },
   {
     type: "page",
@@ -53,14 +52,21 @@ const projectEntries: IndexEntry[] = projects.map((p) => ({
   text: `${p.title} — ${p.category}. ${p.description} Tags: ${p.tags.join(", ")}. Categories: ${p.categories.join(", ")}.${p.liveUrl ? ` Live: ${p.liveUrl}.` : ""}`,
 }));
 
-const blogEntries: IndexEntry[] = blogPosts.map((b) => ({
-  type: "blog",
-  title: b.title,
-  url: `/blog/${b.slug}`,
-  text: `${b.title} (${b.category}, ${b.date}, ${b.readTime}). ${b.excerpt} ${b.content
-    .map((s) => `${s.heading ? s.heading + ": " : ""}${s.body}`)
-    .join(" ")}`,
-}));
+// Blog entries are optional - skip if import fails
+let blogEntries: IndexEntry[] = [];
+try {
+  const { blogPosts } = await import("../src/data/blogPosts");
+  blogEntries = blogPosts.map((b: any) => ({
+    type: "blog",
+    title: b.title,
+    url: `/blog/${b.slug}`,
+    text: `${b.title} (${b.category}, ${b.date}, ${b.readTime}). ${b.excerpt} ${b.content
+      .map((s: any) => `${s.heading ? s.heading + ": " : ""}${s.body}`)
+      .join(" ")}`,
+  }));
+} catch (e) {
+  console.warn("⚠️  Blog posts skipped (image imports not supported in build script)");
+}
 
 const index = [...staticPages, ...projectEntries, ...blogEntries];
 
@@ -69,3 +75,4 @@ writeFileSync(
   JSON.stringify({ generatedAt: new Date().toISOString(), entries: index }, null, 0),
 );
 console.log(`site-index.json written (${index.length} entries)`);
+
