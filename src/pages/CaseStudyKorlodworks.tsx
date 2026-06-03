@@ -52,6 +52,7 @@ const data: CaseStudyData = {
     "A mobile-first mindset ensures brand impact across devices. The client reports a notable uptick in quality feedback from prospects and partners.",
   ],
   liveUrl: "https://korlodworks.com/",
+  contraUrl: "https://contra.com/p/UQUOvroQ-website-design-and-dev-for-korlodworks-figma-to-word-press?r=designninja",
 };
 
 const CaseStudyKorlodworks = () => <CaseStudyLayout data={data} />;

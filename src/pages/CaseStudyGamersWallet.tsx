@@ -52,6 +52,7 @@ const data: CaseStudyData = {
     "The result is a sleek, conversion-focused platform that positions the product for meaningful user adoption and growth in the Web3 gaming economy.",
   ],
   liveUrl: "https://www.sportrex.io/home",
+  contraUrl: "https://contra.com/p/PWBFMY3e-sportrex-gamers-wallet-landing-page?r=designninja",
 };
 
 const CaseStudyGamersWallet = () => <CaseStudyLayout data={data} />;

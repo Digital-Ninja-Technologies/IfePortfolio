@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "A clear message and intentional visual design can go a long way in shaping first impressions. It was exciting to help SquadPay take its first step from idea to product.",
     "Good product design starts with clarity — both in message and emotion — especially in early-stage products. The page made people say, 'Yeah, I'd use this with my friends.'",
   ],
+  contraUrl: "https://contra.com/p/qNlB3BFZ-squad-pay-waitlist-landing-page-design?r=designninja",
 };
 
 const CaseStudySquadPay = () => <CaseStudyLayout data={data} />;

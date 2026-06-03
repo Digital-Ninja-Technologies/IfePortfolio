@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "QuickRead reimagines how we consume written content. Designing a product where AI meets human clarity pushed me to think deeply about both utility and empathy in mobile experiences.",
     "The biggest challenge was balancing AI complexity vs UX simplicity — simplifying the AI-powered experience for non-technical users while keeping it powerful for power users.",
   ],
+  contraUrl: "https://contra.com/p/so7Z3QA3-quick-read-ai-mobile-app-and-brand-design?r=designninja",
 };
 
 const CaseStudyQuickRead = () => <CaseStudyLayout data={data} />;

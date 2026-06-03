@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "By focusing on originality and community engagement, Gigatalik positions itself as a noteworthy player in the memecoin landscape.",
   ],
   liveUrl: "https://www.gigatalik.com/",
+  contraUrl: "https://contra.com/p/gMF7mcbe-gigatalik-meme-token-landing-page-design?r=designninja",
 };
 
 const CaseStudyGigatalik = () => <CaseStudyLayout data={data} />;

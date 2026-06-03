@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "Visual storytelling via the Ripplecat character increased engagement more than plain text — character branding is essential in the Web3 gaming space.",
     "Clarity over hype: users prefer knowing what they're signing up for. The website now acts as a key growth engine for RippleCat.",
   ],
+  contraUrl: "https://contra.com/p/g2bZAObP-ripple-cat-web3-telegram-game-website-design?r=designninja",
 };
 
 const CaseStudyRippleCat = () => <CaseStudyLayout data={data} />;
