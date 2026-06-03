@@ -19,4 +19,27 @@ export default defineConfig(({ mode }) => ({
     },
     dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime", "@tanstack/react-query", "@tanstack/query-core"],
   },
+  build: {
+    outDir: "dist",
+    sourcemap: false,
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom", "react-router-dom"],
+          icons: ["lucide-react"],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
+    reportCompressedSize: true,
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom", "react-router-dom", "lucide-react"],
+  },
 }));
