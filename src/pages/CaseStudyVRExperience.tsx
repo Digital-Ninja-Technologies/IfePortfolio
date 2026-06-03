@@ -50,6 +50,7 @@ const data: CaseStudyData = {
     "This landing page didn't just present a VR product — it told a story. By using cinematic design, immersive storytelling, and contrast-driven UI, we invited users to feel the world before stepping into it.",
     "'I didn't design a page — I designed an entry point into a universe.'",
   ],
+  contraUrl: "https://contra.com/p/NcBWoF66-vr-experience-landing-page-design?r=designninja",
 };
 
 const CaseStudyVRExperience = () => <CaseStudyLayout data={data} />;

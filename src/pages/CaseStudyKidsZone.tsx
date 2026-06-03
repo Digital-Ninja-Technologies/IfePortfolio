@@ -51,6 +51,7 @@ const data: CaseStudyData = {
     "Designing for kids requires balancing fun and function. Audio-driven UX must be simple and error-tolerant. Kids love immediate feedback — the faster, the better.",
     "Parent feedback was overwhelmingly positive: 'It's safe and easy. She's learning fast.' The app proves that educational screen time can be both effective and enjoyable.",
   ],
+  contraUrl: "https://contra.com/p/egQrRoEU-kids-zone-alphabet-learning-app-de-sign?r=designninja",
 };
 
 const CaseStudyKidsZone = () => <CaseStudyLayout data={data} />;
