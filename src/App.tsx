@@ -8,6 +8,7 @@ import About from "./pages/About.tsx";
 import CaseStudyTravelGuide from "./pages/CaseStudyTravelGuide.tsx";
 import CaseStudyFlex2Ride from "./pages/CaseStudyFlex2Ride.tsx";
 import CaseStudyConnekt from "./pages/CaseStudyConnekt.tsx";
+import PaidConsultation from "./pages/PaidConsultation.tsx";
 import CaseStudyYumdash from "./pages/CaseStudyYumdash.tsx";
 import CaseStudySportrex from "./pages/CaseStudySportrex.tsx";
 import CaseStudySportrexWallet from "./pages/CaseStudySportrexWallet.tsx";
@@ -59,6 +60,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/works" element={<Works />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/consultation" element={<PaidConsultation />} />
           <Route path="/game" element={<Game />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/case-study/travelguide" element={<CaseStudyTravelGuide />} />
