@@ -212,7 +212,7 @@ const PaidConsultation = () => {
                 <p className="text-muted-foreground mb-6">For startups and founders</p>
                 <div className="mb-8">
                   <div className="text-5xl font-bold text-foreground">
-                    ₦100,000
+                    $70
                   </div>
                   <p className="text-muted-foreground text-sm mt-2">per 1-hour session</p>
                 </div>
@@ -340,7 +340,7 @@ const PaidConsultation = () => {
                   step: "2",
                   title: "Complete Payment",
                   description:
-                    "Pay ₦100,000 for a 1-hour session. In-house and returning clients may qualify for free consultations.",
+                    "Pay $70 for a 1-hour session. In-house and returning clients may qualify for free consultations.",
                 },
                 {
                   step: "3",
