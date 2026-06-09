@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import ReadyToWorkWidget from "@/components/ReadyToWorkWidget";
+import Footer from "@/components/Footer";
 import { Check, Clock, Users, Zap, X } from "lucide-react";
 
 const PaidConsultation = () => {
@@ -489,6 +490,7 @@ const PaidConsultation = () => {
       )}
 
       <ReadyToWorkWidget />
+      <Footer />
     </>
   );
 };
