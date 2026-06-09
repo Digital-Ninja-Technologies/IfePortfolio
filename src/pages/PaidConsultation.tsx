@@ -1,26 +1,36 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import ReadyToWorkWidget from "@/components/ReadyToWorkWidget";
-import { Check, Clock, Users, Zap } from "lucide-react";
+import { Check, Clock, Users, Zap, X } from "lucide-react";
 
 const PaidConsultation = () => {
+  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+
   useEffect(() => {
-    // Load Calendly widget
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
+    // Load Calendly widget when modal opens
+    if (isCalendlyOpen && typeof window !== "undefined") {
+      const script = document.createElement("script");
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      document.body.appendChild(script);
+      
+      // Reload Calendly widget
+      setTimeout(() => {
+        if (window.Calendly) {
+          window.Calendly.initBadgeWidget({
+            url: "https://calendly.com/ifeoluwa-designs/30min",
+            text: "Book meeting",
+            color: "3b82f6",
+          });
+        }
+      }, 500);
+    }
+  }, [isCalendlyOpen]);
 
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-b from-background via-background to-primary/5">
+      <main className="min-h-screen bg-gradient-to-b from-background via-background to-primary/5 pt-[100px]">
         {/* Hero Section */}
         <section className="py-20 px-4 md:px-8 border-b border-border/50">
           <div className="max-w-4xl mx-auto text-center">
@@ -224,7 +234,10 @@ const PaidConsultation = () => {
                     <span>Email follow-up notes</span>
                   </li>
                 </ul>
-                <button className="w-full px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors">
+                <button 
+                  onClick={() => setIsCalendlyOpen(true)}
+                  className="w-full px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+                >
                   Book Now
                 </button>
               </div>
@@ -295,37 +308,13 @@ const PaidConsultation = () => {
                     <span>Renewal after year</span>
                   </li>
                 </ul>
-                <button className="w-full px-6 py-3 rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary/20 transition-colors">
+                <button 
+                  onClick={() => setIsCalendlyOpen(true)}
+                  className="w-full px-6 py-3 rounded-lg bg-primary/10 text-primary font-semibold hover:bg-primary/20 transition-colors"
+                >
                   Get Your 2 Free Sessions
                 </button>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Calendly Booking Section */}
-        <section className="py-20 px-4 md:px-8 border-b border-border/50">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-                Book Your Consultation
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Pick a time that works for you. Meeting confirmed after payment is made.
-              </p>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-700 dark:text-green-400 text-sm font-medium">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                Payment required to confirm booking
-              </div>
-            </div>
-
-            {/* Calendly Widget */}
-            <div className="bg-card rounded-2xl border border-border/50 p-8 overflow-hidden">
-              <div
-                className="calendly-inline-widget"
-                data-url="https://calendly.com/ifeoluwa-designs/30min"
-                style={{ minWidth: "100%", height: "700px" }}
-              />
             </div>
           </div>
         </section>
@@ -345,7 +334,7 @@ const PaidConsultation = () => {
                   step: "1",
                   title: "Select Your Time",
                   description:
-                    "Choose a time slot from the calendar above that works best for your schedule.",
+                    "Choose a time slot from the calendar that works best for your schedule.",
                 },
                 {
                   step: "2",
@@ -455,12 +444,50 @@ const PaidConsultation = () => {
               Let's discuss your startup's Technology, Business, and Design strategy. 
               Book your consultation today and get expert guidance to accelerate your journey.
             </p>
-            <button className="px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-colors">
+            <button 
+              onClick={() => setIsCalendlyOpen(true)}
+              className="px-8 py-4 rounded-lg bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-colors"
+            >
               Book Consultation Now
             </button>
           </div>
         </section>
       </main>
+
+      {/* Calendly Modal */}
+      {isCalendlyOpen && (
+        <div className="fixed inset-0 bg-black/50 z-[9999] flex items-center justify-center p-4">
+          <div className="bg-background rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
+            {/* Close Button */}
+            <button
+              onClick={() => setIsCalendlyOpen(false)}
+              className="sticky top-4 right-4 z-10 float-right p-2 rounded-full bg-card border border-border hover:bg-primary/10 transition-colors"
+              aria-label="Close"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Calendly Widget */}
+            <div className="p-8">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-heading font-bold text-foreground mb-2">
+                  Book Your Consultation
+                </h3>
+                <p className="text-muted-foreground">
+                  Select a time that works best for you
+                </p>
+              </div>
+
+              <div
+                className="calendly-inline-widget"
+                data-url="https://calendly.com/ifeoluwa-designs/30min"
+                style={{ minWidth: "100%", height: "600px" }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       <ReadyToWorkWidget />
     </>
   );
